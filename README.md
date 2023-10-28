@@ -52,7 +52,7 @@ For help getting started with Flutter, view the online [documentation](https://f
 - For supported widgets, add a suffix 'd' to the widget name to use the simplified version of it.
 - Named arguments will override positional ones.
 
-For example:
+For example: (explained version)
 ```dart
 return Scaffoldd(
     AppBard( // `AppBar` => 'appBar' of Scaffold
