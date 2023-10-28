@@ -52,7 +52,32 @@ For help getting started with Flutter, view the online [documentation](https://f
 - For supported widgets, add a suffix 'd' to the widget name to use the simplified version of it.
 - Named arguments will override positional ones.
 
-For example: (explained version)
+For example:
+```dart
+return Scaffoldd(
+    AppBard(
+      Theme.of(context).colorScheme.inversePrimary,
+      Textd(widget.title),
+    ),
+    Centerd(
+      Columnd(
+        MainAxisAlignment.center,
+        <Widget>[
+          Textd('You have pushed the button this many times:'),
+          Textd('$_counter'),
+          Textd("TextD", 26, 12.5, FontWeight.bold, Colors.red),
+        ],
+      ),
+    ),
+    FloatingActionButtond(
+        _incrementCounter,
+        'Increment',
+        const Icon(Icons.add),
+    ),
+  );
+```
+
+Explained version:
 ```dart
 return Scaffoldd(
     AppBard( // `AppBar` => 'appBar' of Scaffold
@@ -96,30 +121,6 @@ return Scaffoldd(
   );
 ```
 
-Clean verion:
-```dart
-return Scaffoldd(
-    AppBard(
-      Theme.of(context).colorScheme.inversePrimary,
-      Textd(widget.title),
-    ),
-    Centerd(
-      Columnd(
-        MainAxisAlignment.center,
-        <Widget>[
-          Textd('You have pushed the button this many times:'),
-          Textd('$_counter'),
-          Textd("TextD", 26, 12.5, FontWeight.bold, Colors.red),
-        ],
-      ),
-    ),
-    FloatingActionButtond(
-        _incrementCounter,
-        'Increment',
-        const Icon(Icons.add),
-    ),
-  );
-```
 
 ## Additional information
 
