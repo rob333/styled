@@ -128,13 +128,6 @@ return Scaffoldd(
 
 - In the hint document, for example, `Color: 0:color, 1:backgroundColor, 2: decorationColor, 3:selectionColor` means the first Color type argument is treated as 'color', the second is 'backgroundColor', the third is 'decorationColor', and the fourth is 'selectionColor'.
 
-- Named arguments will override positional ones.
-
-
-<!-- TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more. -->
-
 
 ## Supported Widgets
 
