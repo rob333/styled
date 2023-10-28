@@ -1,0 +1,84 @@
+{
+  "Getter/Setter for Mediator Variable": {
+    "prefix": "getset",
+    "body": [
+      "/// Mediator Variable: ${1:var}",
+      "final _${1:var} = ${2:initialValue}.rx;",
+      "${3:type} get $1 => _${1:var}.value;",
+      "set $1(${3:type} value) => _${1:var}.value = value;",
+      "SubscriberFn get ${1:var}Subscribe => _${1:var}.subscribe;",
+      "${3:type} get ${1:var}Notify => _${1:var}.notify;",
+      "$0"
+    ],
+    "description": "Getter/Setter for Mediator Variable"
+  },
+
+  "Getter/Setter for Computed Mediator Variable": {
+    "prefix": "cgetset",
+    "body": [
+      "/// Computed Mediator Variable: ${1:var}",
+      "final _${1:var} = Rx(() => ${2:initialValue});",
+      "get $1 => _${1:var}.value;",
+      "set $1(value) => _${1:var}.value = value;",
+      "$0"
+    ],
+    "description": "Getter/Setter for Computed Mediator Variable"
+  },
+  
+  "Create a Subscriber Widget (Arrow Function)": {
+    "prefix": "sub1",
+    "body": [
+      "${1:Subscriber}(",
+      "\tbuilder: () => ${2:Text}(\"$3\"),",
+      "),",
+      "$0"
+    ],
+    "description": "Create a Subscriber Widget (Arrow Function)"
+  },
+
+  "Create a Subscriber Widget (Multiline)": {
+    "prefix": "subs",
+    "body": [
+      "${1:Subscriber}(",
+      "\tbuilder: () {",
+      "\t\treturn ${2:Text}(\"$3\");",
+      "\t},",
+      "),",
+      "$0"
+    ],
+    "description": "Create a Subscriber Widget (Multiline)"
+  },
+
+  "stateless": {
+    "prefix": "stless",
+    "body": [
+      "class $1 extends StatelessWidget {",
+      "\t@override",
+      "\tWidget build(BuildContext context) {",
+      "\t\treturn ${2:Container}(",
+      "\t\t\t$3",
+      "\t\t);",
+      "\t}",
+      "}"
+    ]
+  },
+  
+  "stateful": {
+    "prefix": "stfull",
+    "body": [
+      "class $1 extends StatefulWidget {",
+      "\t@override",
+      "\tState<$1> createState() => _$1State();",
+      "}",
+  
+      "class _$1State extends State<$1> {",
+      "\t@override",
+      "\tWidget build(BuildContext context) {",
+      "\t\treturn ${2:Container}(",
+      "\t\t\t$3",
+      "\t\t);",
+      "\t}",
+      "} "
+    ]
+  }
+}

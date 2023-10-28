@@ -1,0 +1,15 @@
+{
+  "switch for styled": {
+    "prefix": "switchstyled",
+    "body": [
+      "    switch (${1:i}++) {",
+      "      case 0:",
+      "      case 1:",
+      "      case 2:",
+      "      case 3:",
+      "      case 4:",
+      "    }$0"
+    ],
+    "description": "switch for styled"
+  }
+}
