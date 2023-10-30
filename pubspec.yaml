@@ -1,6 +1,6 @@
 name: styled
-description: A declarative UI tool to simplify the creation of flutter widgets. Pass arguments in positional and without order.
-version: 0.0.9
+description: A declarative UI tool for flutter to simplify the creation of widgets, pass arguments in positional and without order.
+version: 0.0.10
 homepage: https://github.com/rob333/styled
 
 environment:

@@ -11,6 +11,7 @@ core(List argsList, Map<Symbol, dynamic> origArgsMap) {
       return Text(text, style: style);
   }
 
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
   }

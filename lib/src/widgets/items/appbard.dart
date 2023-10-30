@@ -94,6 +94,7 @@ appbard(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
   }

@@ -1,6 +1,6 @@
 {
   "switch for styled": {
-    "prefix": "switchstyled",
+    "prefix": "switchd",
     "body": [
       "    switch (${1:i}++) {",
       "      case 0:",
@@ -11,5 +11,54 @@
       "    }$0"
     ],
     "description": "switch for styled"
+  },
+
+  "def.dart function template": {
+    "prefix": "vartemplate",
+    "body": [
+      "/// Return a `${1:Widget}`.",
+      "///",
+      "/// **supported positional arguments:**<br>",
+      "/// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing",
+      "///",
+      "/// `double`: will be added into `children:List<double>?`",
+      "///",
+      "/// ``",
+      "///",
+      "/// ***not supported:***<br>",
+      "///",
+      "const ${1:Widget}d = Variadic($0${1:Widget}d) as dynamic;"
+    ],
+    "description": "def.dart function template"
+  },
+
+  "d function template": {
+    "prefix": "dtemplate",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "$0${1:Widget}d(List argsList, Map<Symbol, dynamic> origArgsMap) {",
+      "  final argsMap = <Symbol, dynamic>{};",
+      "  int colori = 0;",
+      "  int doublei = 0;",
+      "",
+      "  for (final arg in argsList) {",
+      "    switch (arg) {",
+      "      case Key arg:",
+      "        argsMap[#key] = arg;",
+      "        ",
+      "    }",
+      "  }",
+      "",
+      "  // named args(origArgsMap) precedes positional ones",
+      "  if (origArgsMap.isNotEmpty) {",
+      "    argsMap.addAll(origArgsMap);",
+      "  }",
+      "",
+      "  return Function.apply(${1:Widget}.new, [], argsMap);",
+      "}",
+      ""
+    ],
+    "description": "d function template"
   }
 }

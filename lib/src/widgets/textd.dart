@@ -7,7 +7,7 @@ import '../enums.dart';
 textd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
   // argsMap ??= {};
-  const textStyleSymbol = [
+  const textStyleSymbols = [
     #color,
     #backgroundColor,
     #decorationColor,
@@ -38,7 +38,11 @@ textd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   int localeIdx = 0;
   int paintIdx = 0;
   int overflowIdx = 0;
+
+  // TextStyle
   final textStyle = <Symbol, dynamic>{}; //{...argsMap};
+  TextStyle? textStyleInList;
+  final textStyleInMap = origArgsMap[#style] as TextStyle?;
 
   // marshaling argsList int argsMap, testStyle
   for (final arg in argsList) {
@@ -47,7 +51,8 @@ textd(List argsList, Map<Symbol, dynamic> origArgsMap) {
       case Key arg:
         argsMap[const Symbol("key")] = arg;
       case TextStyle arg:
-        argsMap[const Symbol("style")] = arg;
+        // argsMap[const Symbol("style")] = arg;
+        textStyleInList = arg;
       case StrutStyle arg:
         argsMap[const Symbol("strutStyle")] = arg;
       case TextAlign arg:
@@ -184,26 +189,36 @@ textd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  // namedArgs > positionalArgs => copy textStyle from origArgsMap
+  // namedArgs precede positionalArgs => copy textStyle from origArgsMap
   origArgsMap.forEach((key, value) {
-    if (textStyleSymbol.contains(key)) {
+    if (textStyleSymbols.contains(key)) {
       textStyle[key] = value;
+    } else {
+      argsMap[key] = value;
     }
   });
 
-  late TextStyle style;
-  final textStyleInMap = origArgsMap[#style] as TextStyle?;
+  late TextStyle resStyle;
   if (textStyleInMap != null) {
-    style = Function.apply(textStyleInMap.copyWith, [], textStyle);
+    final style = Function.apply(textStyleInMap.copyWith, [], textStyle);
+    if (textStyleInList != null) {
+      resStyle = textStyleInList.merge(style);
+    } else {
+      resStyle = style;
+    }
   } else {
-    style = Function.apply(TextStyle.new, [], textStyle);
+    if (textStyleInList != null) {
+      resStyle = Function.apply(textStyleInList.copyWith, [], textStyle);
+    } else {
+      resStyle = Function.apply(TextStyle.new, [], textStyle);
+    }
   }
-  argsMap[#style] = style;
+  argsMap[#style] = resStyle;
 
   if (newArgsList.isNotEmpty) {
     // has String => return `Text`
     return Function.apply(Text.new, newArgsList, argsMap);
   }
   // else return `TextStyle`
-  return style;
+  return resStyle;
 }

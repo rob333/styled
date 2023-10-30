@@ -11,6 +11,7 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
+    expect(find.text("counter: 0"), findsOneWidget);
     expect(find.text("text int"), findsOneWidget);
     expect(find.text("text double"), findsOneWidget);
     expect(find.text("text TextStyle"), findsOneWidget);
