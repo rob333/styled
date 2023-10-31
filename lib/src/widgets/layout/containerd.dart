@@ -1,5 +1,17 @@
 import 'package:flutter/material.dart';
 
+const decorationSymbols = [
+  #color,
+  #image,
+  #border,
+  #borderRadius,
+  #boxShadow,
+  #gradient,
+  #backgroundBlendMode,
+  #shape,
+  #shadows, // ShapeDecoration
+];
+
 containerd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
   int decorationi = 0;
@@ -9,7 +21,7 @@ containerd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* mixin `Decoration`
   final decoMap = <Symbol, dynamic>{};
-  Decoration? decoInList, decoInMap;
+  Decoration? decoInList; //, decoInMap;
   Color? color; // either goes into Decoration or Container(can't be both)
   final List<BoxShadow> boxShadow = []; // for Decoration
 
@@ -88,71 +100,7 @@ containerd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  //* BoxShadow handling
-  if (boxShadow.isNotEmpty) {
-    // if (isBoxDecorationMap(decoMap)) {
-    decoMap[#boxShadow] = boxShadow;
-    // } else {
-    //   decoMap[#shadows] = boxShadow; // ShapeDecoration
-    // }
-  }
-
-  //* mixin `Decoration`:
-  //* positional arg(in decoMap) < positional decoration < named arg < named decoration
-  // merge `positional args(decoMap)` into `decoInList`
-  if (decoInList != null && decoMap.isNotEmpty) {
-    decoMap[#color] = color;
-    decoInList = copyWithMap(decoInList, decoMap);
-  }
-
-  const decorationSymbols = [
-    #color,
-    #image,
-    #border,
-    #borderRadius,
-    #boxShadow,
-    #gradient,
-    #backgroundBlendMode,
-    #shape,
-    #shadows, // ShapeDecoration
-  ];
-
-  // named args(origArgsMap) precede positional ones
-  if (origArgsMap.isNotEmpty) {
-    origArgsMap.forEach((key, value) {
-      if (decorationSymbols.contains(key)) {
-        //* fills decoMap with named args of decoration symbols
-        decoMap[key] = value;
-      } else {
-        argsMap[key] = value;
-      }
-    });
-  }
-
-  //* merge `named args(decoMap)` into `decoInMap`
-  decoInMap = origArgsMap[#decoration];
-  if (decoInMap != null && decoMap.isNotEmpty) {
-    decoMap[#color] = color;
-    decoInMap = copyWithMap(decoInMap, decoMap);
-  }
-
-  //* compare decoInMap with decoInList
-  if (decoInMap != null && decoInList != null) {
-    final deco = copyWith(decoInMap, decoInList);
-    argsMap[#decoration] = deco;
-  } else if (decoInMap != null) {
-    argsMap[#decoration] = decoInMap;
-  } else if (decoInList != null) {
-    argsMap[#decoration] = decoInList;
-  } else if (decoMap.isNotEmpty) {
-    decoMap[#color] ??= color;
-    final isBoxDeco = isBoxDecorationMap(decoMap);
-    final fn = isBoxDeco ? BoxDecoration.new : ShapeDecoration.new;
-    final deco = Function.apply(fn, [], decoMap);
-    argsMap[#decoration] = deco;
-  } else {
-    argsMap[#color] = color;
-  }
+  mergeDecoration(argsMap, origArgsMap, decoMap, decoInList, boxShadow, color);
 
   return Function.apply(Container.new, [], argsMap);
 }
@@ -238,4 +186,70 @@ bool isBoxDecorationMap(Map<Symbol, dynamic> map) {
   //     map[#backgroundBlendMode] != null);
   // // && (map[#shadows] == null);
   // return res;
+}
+
+void mergeDecoration(
+  Map<Symbol, dynamic> argsMap,
+  Map<Symbol, dynamic> origArgsMap,
+  Map<Symbol, dynamic> decoMap,
+  Decoration? decoInList,
+  // Decoration? decoInMap,
+  List<BoxShadow> boxShadow,
+  Color? color,
+) {
+  Decoration? decoInMap;
+
+  //* mixin `Decoration`:
+  //* handle BoxShadow
+  if (boxShadow.isNotEmpty) {
+    // if (isBoxDecorationMap(decoMap)) {
+    decoMap[#boxShadow] = boxShadow;
+    // } else {
+    //   decoMap[#shadows] = boxShadow; // ShapeDecoration
+    // }
+  }
+
+  //* positional arg(in decoMap) < positional decoration < named arg < named decoration
+  // merge `positional args(decoMap)` into `decoInList`
+  if (decoInList != null && decoMap.isNotEmpty) {
+    if (color != null) decoMap[#color] = color;
+    decoInList = copyWithMap(decoInList, decoMap);
+  }
+
+  // named args(origArgsMap) precede positional ones
+  if (origArgsMap.isNotEmpty) {
+    origArgsMap.forEach((key, value) {
+      if (decorationSymbols.contains(key)) {
+        //* fills decoMap with named args of decoration symbols
+        decoMap[key] = value;
+      } else {
+        argsMap[key] = value;
+      }
+    });
+  }
+
+  //* merge `named args(decoMap)` into `decoInMap`
+  decoInMap = origArgsMap[#decoration];
+  if (decoInMap != null && decoMap.isNotEmpty) {
+    if (color != null) decoMap[#color] = color;
+    decoInMap = copyWithMap(decoInMap, decoMap);
+  }
+
+  //* compare decoInMap with decoInList
+  if (decoInMap != null && decoInList != null) {
+    final deco = copyWith(decoInMap, decoInList);
+    argsMap[#decoration] = deco;
+  } else if (decoInMap != null) {
+    argsMap[#decoration] = decoInMap;
+  } else if (decoInList != null) {
+    argsMap[#decoration] = decoInList;
+  } else if (decoMap.isNotEmpty) {
+    if (color != null) decoMap[#color] ??= color;
+    final isBoxDeco = isBoxDecorationMap(decoMap);
+    final fn = isBoxDeco ? BoxDecoration.new : ShapeDecoration.new;
+    final deco = Function.apply(fn, [], decoMap);
+    argsMap[#decoration] = deco;
+  } else {
+    if (color != null) argsMap[#color] = color;
+  }
 }

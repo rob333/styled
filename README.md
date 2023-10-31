@@ -13,6 +13,11 @@
 
 A declarative UI tool for flutter to simplify the creation of widgets, pass arguments in positional and without order.
 
+
+<div style="text-align: center">
+<!-- <img src="image.jpg" alt="Image description"> -->
+</div>
+
 <!-- ## Getting started -->
 
 ## Use this package as a library
@@ -133,8 +138,8 @@ return Scaffoldd(
 
 - In the hint document, for example, `Color: 0:color, 1:backgroundColor, 2: decorationColor, 3:selectionColor` means the first Color type argument is treated as 'color', the second is 'backgroundColor', the third is 'decorationColor', and the fourth is 'selectionColor'.
 
-- `Containerd` has mixin with the `Decoration` arguments.
-  - Precedence of mixin arguments, `Decoration` for the following example:
+- `Containerd` mixin with the `Decoration` arguments.
+  - Precedence of mixin arguments, `Decoration` in the `Containerd`.
     1. Positional arguments of `Decoration` (Lowest)
     2. Positional `Decoration` argument.
     3. Named arguments of `Decoration`
@@ -142,7 +147,7 @@ return Scaffoldd(
    
 For example:
 
-Using `BoxDecoration`
+With ***BoxDecoration***:
 ```dart
   Containerd(
     45, // width
@@ -156,7 +161,7 @@ Using `BoxDecoration`
     ),
   ),
 ```
-with Mixin:
+With ***Mixin***:
 ```dart
   Containerd(
     45, // width
@@ -172,29 +177,103 @@ with Mixin:
 
 ## Supported Widgets
 
-- Textd
-- Centerd
-- Rowd
-- Columnd
-- Scaffoldd
-- AppBard
-- FloatingActionButtond
-- Drawerd
-- SafeAread
-- Containerd
-- Paddingd
-- Stackd
-- Positionedd
-- LimitedBoxd
-- ElevatedButtond
+<ul style="column-count:5">
+<li> Textd
+<li> Centerd
+<li> Rowd
+<li> Columnd
+<li> Scaffoldd
+<li> AppBard
+<li> FloatingActionButtond
+<li> Drawerd
+<li> SafeAread
+<li> Containerd
+<li> Paddingd
+<li> Stackd
+<li> Positionedd
+<li> ElevatedButtond
+<li> SizedBoxd
+<li> LimitedBoxd
+<li> Spacerd
+<li> ListViewd
+<li> ListTiled
+<li> GridViewd
+<li> GridTiled
+<li> Expandedd
+<li> Wrapd
+<li> Opacityd
+<li> PageViewd
+<li> Tabled
+<li> TableRowd
+<li> SliverAppBard
+<li> ClipRRectd
+<li> ClipOvald
+<li> ClipPathd
+<li> ClipRectd
+<li> Herod
+<li> CustomPaintd
+<li> ToolTipd
+<li> IconButtond
+<!-- <li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li>  -->
+</ul>
+
 
 ### 
-- BoxShadowd
-- BoxDecorationd
-- LinearGradientd
-- BorderSided
-- Borderd
-- DecorationImaged
+<ul style="column-count:5">
+<li> BoxShadowd
+<li> BoxDecorationd
+<li> LinearGradientd
+<li> BorderSided
+<li> Borderd
+<li> DecorationImaged
+<!-- <li>
+<li> 
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li>  -->
+</ul>
 
 
 ## Changelog

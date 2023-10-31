@@ -21,7 +21,7 @@
       "/// **supported positional arguments:**<br>",
       "/// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing",
       "///",
-      "/// `double`: will be added into `children:List<double>?`",
+      "/// `Widget`: will be added into `children:List<Widget>`",
       "///",
       "/// ``",
       "///",
@@ -60,5 +60,24 @@
       ""
     ],
     "description": "d function template"
+  },
+  "assert for d-widget": {
+    "prefix": "assertd",
+    "body": [
+      "assert(() {",
+      "  if (argsMap[#${1:Symbol:Type}] == null) {",
+      "    throw FlutterError(\"${2:Widget} without `${1:Symbol:Type}`\");",
+      "  }",
+      "  return true;",
+      "}());"
+    ],
+    "description": "assert for d-widget"
+  },
+  "require syntax for def.dart": {
+    "prefix": "required",
+    "body": [
+      "\/\/\/ ***required***: `child:Widget, tag:Object`"
+    ],
+    "description": "require syntax for def.dart"
   }
 }

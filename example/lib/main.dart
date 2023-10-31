@@ -61,11 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.amberAccent,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Styled("text int", 16),
-            Styled("text double", 18.5),
-            Styled("text TextStyle", Theme.of(context).textTheme.bodyLarge),
-            Styled("Styled TextD", Textd(18.5, FontWeight.w300, Colors.orange)),
-            Textd("Styled TextD2", Textd(18.5, backgroundColor: Colors.amber)),
+            Textd("text int", 16),
+            Textd("text double", 18.5),
+            Textd("text TextStyle", Theme.of(context).textTheme.bodyLarge),
+            Textd("Styled TextD", Textd(18.5, FontWeight.w300, Colors.orange)),
+            Textd("Styled TextD2", 18.5, backgroundColor: Colors.amber),
             Textd(
               "TextD", // text
               26, // 1st of type `int|double` which is 'fontSize'
@@ -94,29 +94,23 @@ class _MyHomePageState extends State<MyHomePage> {
               Containerd(
                 35,
                 35,
-                BoxDecorationd(
-                  Colors.red,
-                  BoxShape.circle,
-                  Borderd(3, Colors.redAccent),
-                ),
+                Colors.red,
+                BoxShape.circle,
+                Borderd(3, Colors.redAccent),
               ),
               Containerd(
                 35,
                 35,
-                BoxDecorationd(
-                  Colors.yellow,
-                  BoxShape.circle,
-                  Borderd(3, Colors.yellowAccent),
-                ),
+                Colors.yellow,
+                BoxShape.circle,
+                Borderd(3, Colors.yellowAccent),
               ),
               Containerd(
                 35,
                 35,
-                BoxDecorationd(
-                  Colors.green,
-                  BoxShape.circle,
-                  Borderd(3, Colors.greenAccent),
-                ),
+                Colors.green,
+                BoxShape.circle,
+                Borderd(3, Colors.greenAccent),
               ),
             ),
             Containerd(
@@ -124,20 +118,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 const EdgeInsets.all(5.5),
                 Textd('This is a fancy container!', Colors.blue),
               ),
-              BoxDecorationd(
-                LinearGradientd(Colors.red, Colors.orange, Colors.yellow),
-                BorderRadius.circular(20.0),
-                BoxShadowd(
-                  Colors.black.withOpacity(0.5),
-                  10,
-                  const Offset(0.0, 5.0),
-                ),
+              LinearGradientd(Colors.red, Colors.orange, Colors.yellow),
+              BorderRadius.circular(20.0),
+              BoxShadowd(
+                Colors.black.withOpacity(0.5),
+                10,
+                const Offset(0.0, 5.0),
               ),
             ),
             Containerd(
               45,
               45,
-              // BoxDecorationd(
               Colors.blue,
               Borderd(Colors.black, 3),
               BorderRadius.circular(0.5),
@@ -148,7 +139,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Offset(0, 3),
               ),
               borderRadius: BorderRadius.circular(10.5), // named arg precedes
-              // ),
               // named decoration precedes
               decoration: BoxDecorationd(
                 LinearGradientd(
@@ -165,20 +155,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Offset(10.0, 10.0),
                 ),
               ),
-            ),
-            Containerd(
-              150,
-              150,
-              // decoration: BoxDecoration(
-              const Color(0xff7c94b6),
-              DecorationImaged(
-                const NetworkImage(
-                    'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
-                BoxFit.cover,
-              ),
-              Border.all(width: 3),
-              borderRadius: BorderRadius.circular(12),
-              // ),
             ),
           ),
         ),
@@ -219,6 +195,15 @@ class _MyHomePageState extends State<MyHomePage> {
             const Icon(Icons.ac_unit_rounded), // `icon`
             Textd("label", 16), // `label`
             () {}, // `onPressed`
+          ),
+          IconButtond(
+            26.5, // `iconSize`
+            8.5, // `splashRadius`
+            const Icon(Icons.point_of_sale_rounded),
+            "tooltip", // `tooltip`
+            () {}, // `onPressed`
+            Colors.green,
+            Colors.greenAccent,
           ),
         ),
       ),
