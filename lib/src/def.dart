@@ -32,6 +32,7 @@ import 'widgets/controls/rich_textd.dart';
 import 'widgets/controls/aspect_ratiod.dart';
 import 'widgets/controls/flexibled.dart';
 import 'widgets/controls/dismissibled.dart';
+import 'widgets/controls/animated_containerd.dart';
 import 'widgets/controls/animated_paddingd.dart';
 import 'widgets/controls/animated_positionedd.dart';
 import 'widgets/controls/animated_switcherd.dart';
@@ -862,3 +863,22 @@ const AnimatedPositionedd = Variadic(animatedPositionedd) as dynamic;
 ///
 /// `child:Widget, curve:Curve`
 const AnimatedPaddingd = Variadic(animatedPaddingd) as dynamic;
+
+/// Return a `AnimatedContainer`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `durtaion:Duration`
+///
+/// `AlignmentGeometry`: 0:alignment, 1:transformAlignment
+///
+/// `EdgeInsetsGeometry`: 0:padding, 1:margin
+///
+/// `Decoration`: 0:decoration, 1:foregroundDecoration
+///
+/// `double|int`: 0:width, 1:height
+///
+/// - `void Function()`: onEnd
+///
+/// `color:Color, constraints:BoxConstraints, transform:Matrix4, child:Widget,
+/// clipBehavior:Clip, curve:Curve`
+const AnimatedContainerd = Variadic(animatedContainerd) as dynamic;

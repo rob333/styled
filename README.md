@@ -241,6 +241,7 @@ With ***Mixin***:
 </ul>
 </td><td>
 <ul>
+<li> AnimatedContainerd
 <li> AnimatedBuilder
 <li> AnimatedListd
 <li> AnimatedIcond
@@ -251,7 +252,6 @@ With ***Mixin***:
 <li> AspectRatiod
 <li> Placeholderd
 <li> RichTextd
-<li> 
 <li> 
 <li> 
 <li> 
