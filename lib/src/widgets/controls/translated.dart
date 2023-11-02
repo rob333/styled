@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
-expandedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+translated(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case int arg:
-        argsMap[#flex] = arg;
+      case Offset arg:
+        argsMap[#offset] = arg;
+      case bool arg:
+        argsMap[#transformHitTests] = arg;
+      case FilterQuality arg:
+        argsMap[#filterQuality] = arg;
       case Widget arg:
         argsMap[#child] = arg;
     }
@@ -21,11 +25,11 @@ expandedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
-      throw FlutterError("Expanded without `child:Widget`");
+    if (argsMap[#offset] == null) {
+      throw FlutterError("translated without `offset:Offset`");
     }
     return true;
   }());
 
-  return Function.apply(Expanded.new, [], argsMap);
+  return Function.apply(Transform.translate, [], argsMap);
 }

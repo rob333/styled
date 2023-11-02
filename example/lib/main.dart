@@ -48,8 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       AppBard(
         Theme.of(context).colorScheme.inversePrimary, // backgroundColor
         Text(widget.title), // title
-        title: Textd("named arguments precede positional ones", 20,
-            const Color.fromARGB(255, 33, 211, 71)),
+        title: Textd("named arguments precede positional ones", 20, const Color.fromARGB(255, 33, 211, 71)),
       ),
       Rowd(
         MainAxisAlignment.center,
@@ -89,30 +88,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Containerd(35, 35, const Color.fromARGB(255, 231, 255, 10)),
               Containerd(35, 35, const Color.fromARGB(255, 15, 221, 15)),
             ),
+            Spacer(),
             Rowd(
               MainAxisAlignment.center,
-              Containerd(
-                35,
-                35,
-                Colors.red,
-                BoxShape.circle,
-                Borderd(3, Colors.redAccent),
-              ),
-              Containerd(
-                35,
-                35,
-                Colors.yellow,
-                BoxShape.circle,
-                Borderd(3, Colors.yellowAccent),
-              ),
-              Containerd(
-                35,
-                35,
-                Colors.green,
-                BoxShape.circle,
-                Borderd(3, Colors.greenAccent),
-              ),
+              Containerd(35, 35, Colors.red, BoxShape.circle, Borderd(3, Colors.redAccent)),
+              Containerd(Colors.yellow, BoxShape.circle, 35, 35, Borderd(3, Colors.yellowAccent)),
+              Containerd(35, 35, Borderd(3, Colors.greenAccent), Colors.green, BoxShape.circle),
             ),
+            Spacer(),
             Containerd(
               Paddingd(
                 const EdgeInsets.all(5.5),
@@ -169,8 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Alignment.center,
             Containerd(80, 80, Colors.blue, BoxShape.circle),
             Containerd(60, 60, Colors.yellow, BoxShape.circle),
-            LimitedBoxd(
-                30, 30, Containerd(50, 50, Colors.red, BoxShape.circle)),
+            LimitedBoxd(30, 30, Containerd(50, 50, Colors.red, BoxShape.circle)),
           ),
           Stackd(
             Containerd(80, 80, color: Colors.white),
@@ -191,19 +173,26 @@ class _MyHomePageState extends State<MyHomePage> {
             Textd("Button", 16, Colors.blue), // `child`
             () {}, // `onPressed`
           ),
+          // BackdropFilterd(
+          //   ImageBlurd(5, 6), //ImageFilter.blur(sigmaX: 5, sigmaY: 6),
           ElevatedButtond(
             const Icon(Icons.ac_unit_rounded), // `icon`
             Textd("label", 16), // `label`
             () {}, // `onPressed`
           ),
-          IconButtond(
-            26.5, // `iconSize`
-            8.5, // `splashRadius`
-            const Icon(Icons.point_of_sale_rounded),
-            "tooltip", // `tooltip`
-            () {}, // `onPressed`
-            Colors.green,
-            Colors.greenAccent,
+          // ),
+          Scaled(
+            0.8,
+            1.2,
+            IconButtond(
+              26.5, // `iconSize`
+              8.5, // `splashRadius`
+              const Icon(Icons.point_of_sale_rounded),
+              "tooltip", // `tooltip`
+              () {}, // `onPressed`
+              Colors.green,
+              Colors.greenAccent,
+            ),
           ),
         ),
       ),

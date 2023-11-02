@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
-expandedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+backdropFilterd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case int arg:
-        argsMap[#flex] = arg;
+      case ImageFilter arg:
+        argsMap[#filter] = arg;
       case Widget arg:
         argsMap[#child] = arg;
+      case BlendMode arg:
+        argsMap[#blendMode] = arg;
     }
   }
 
@@ -21,11 +24,11 @@ expandedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
-      throw FlutterError("Expanded without `child:Widget`");
+    if (argsMap[#filter] == null) {
+      throw FlutterError("BackdropFilter without `filter:ImageFilter`");
     }
     return true;
   }());
 
-  return Function.apply(Expanded.new, [], argsMap);
+  return Function.apply(BackdropFilter.new, [], argsMap);
 }

@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
-expandedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+absorbPointerd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
+  int booli = 0;
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case int arg:
-        argsMap[#flex] = arg;
+      case bool arg:
+        switch (booli++) {
+          case 0:
+            argsMap[#absorbing] = arg;
+          case 1:
+            argsMap[#ignoringSemantics] = arg;
+        }
       case Widget arg:
         argsMap[#child] = arg;
     }
@@ -19,13 +25,5 @@ expandedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     argsMap.addAll(origArgsMap);
   }
 
-  //* required:
-  assert(() {
-    if (argsMap[#child] == null) {
-      throw FlutterError("Expanded without `child:Widget`");
-    }
-    return true;
-  }());
-
-  return Function.apply(Expanded.new, [], argsMap);
+  return Function.apply(AbsorbPointer.new, [], argsMap);
 }

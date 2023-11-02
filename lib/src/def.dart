@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+import 'widgets/layout/alignd.dart';
+import 'widgets/layout/fitted_boxd.dart';
 import 'widgets/layout/expandedd.dart';
 import 'widgets/layout/herod.dart';
 import 'widgets/layout/clip_rectd.dart';
@@ -17,7 +19,33 @@ import 'widgets/layout/list_viewd.dart';
 import 'widgets/layout/spacerd.dart';
 import 'widgets/layout/sized_boxd.dart';
 import 'widgets/layout/paddingd.dart';
+import 'widgets/layout/limited_boxd.dart';
+import 'widgets/layout/positionedd.dart';
+import 'widgets/layout/stackd.dart';
+import 'widgets/layout/containerd.dart';
+import 'widgets/layout/columnd.dart';
+import 'widgets/layout/rowd.dart';
+import 'widgets/layout/centerd.dart';
+import 'widgets/layout/safeared.dart';
+import 'widgets/controls/animated_listd.dart';
+import 'widgets/controls/animated_builderd.dart';
+import 'widgets/controls/backdrop_filterd.dart';
+import 'widgets/controls/flipd.dart';
+import 'widgets/controls/translated.dart';
+import 'widgets/controls/scaled.dart';
+import 'widgets/controls/rotated.dart';
+import 'widgets/controls/transformd.dart';
+import 'widgets/controls/absorb_pointerd.dart';
+import 'widgets/controls/icon_buttond.dart';
+import 'widgets/controls/tooltipd.dart';
+import 'widgets/controls/cutom_paintd.dart';
+import 'widgets/controls/page_viewd.dart';
+import 'widgets/controls/elevated_buttond.dart';
 import 'widgets/items/decoration_imaged.dart';
+import 'widgets/items/image_blurd.dart';
+import 'widgets/items/image_composed.dart';
+import 'widgets/items/image_dilated.dart';
+import 'widgets/items/image_eroded.dart';
 import 'widgets/items/tablerowd.dart';
 import 'widgets/items/borderd.dart';
 import 'widgets/items/border_sided.dart';
@@ -27,19 +55,6 @@ import 'widgets/items/box_shadowd.dart';
 import 'widgets/items/appbard.dart';
 import 'widgets/items/floating_action_buttond.dart';
 import 'widgets/items/drawerd.dart';
-import 'widgets/layout/limited_boxd.dart';
-import 'widgets/layout/positionedd.dart';
-import 'widgets/layout/stackd.dart';
-import 'widgets/layout/containerd.dart';
-import 'widgets/layout/columnd.dart';
-import 'widgets/layout/rowd.dart';
-import 'widgets/layout/centerd.dart';
-import 'widgets/layout/safeared.dart';
-import 'widgets/controls/icon_buttond.dart';
-import 'widgets/controls/tooltipd.dart';
-import 'widgets/controls/cutom_paintd.dart';
-import 'widgets/controls/page_viewd.dart';
-import 'widgets/controls/elevated_buttond.dart';
 import 'widgets/scaffoldd.dart';
 import 'widgets/textd.dart';
 
@@ -593,3 +608,130 @@ const ToolTipd = Variadic(tooltipd) as dynamic;
 /// alignment:AlignmentGeometry, mouseCursor:MouseCursor, focusNode:FocusNode,
 /// tooltip:String, constraints:BoxConstraints, style:ButtonStyle`
 const IconButtond = Variadic(iconButtond) as dynamic;
+
+/// Return a `FittedBox`.
+///
+/// **supported positional arguments:**<br>
+/// `fit:BoxFit, child:Widget, alignment:AlignmentGeometry, clipBehavior:Clip`
+const FittedBoxd = Variadic(fittedBoxd) as dynamic;
+
+/// Return a `AbsorbPointer`.
+///
+/// **supported positional arguments:**<br>
+/// `bool`: 0:absorbing, 1:ignoringSemantics
+///
+/// `child:Widget`
+const AbsorbPointerd = Variadic(absorbPointerd) as dynamic;
+
+/// Return a `Transform`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `transform:Matrix4`
+///
+/// `origin:Offset, alignment:AlignmentGeometry,transformHitTests:bool,
+/// filterQuality:FilterQuality, child:Widget`
+const Transformd = Variadic(transformd) as dynamic;
+
+/// Return a `Transform.rotate`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `angle:double`
+///
+/// `origin:Offset, alignment:AlignmentGeometry,transformHitTests:bool,
+/// filterQuality:FilterQuality, child:Widget`
+const Rotated = Variadic(rotated) as dynamic;
+
+/// Return a `Transform.scale`.
+///
+/// **supported positional arguments:**<br>
+/// ***required: `double`***
+/// - one double: scale
+/// - two doubles: scaleX, scaleY
+///
+/// `origin:Offset, alignment:AlignmentGeometry,transformHitTests:bool,
+/// filterQuality:FilterQuality, child:Widget`
+const Scaled = Variadic(scaled) as dynamic;
+
+/// Return a `Transform.translate`.
+///
+/// **supported positional arguments:**<br>
+/// ***required: `offset:Offset`***
+///
+/// `transformHitTests:bool, filterQuality:FilterQuality, child:Widget`
+const Translated = Variadic(translated) as dynamic;
+
+/// Return a `Transform.flip`.
+///
+/// **supported positional arguments:**<br>
+/// `bool`: 0:flipX, 1:flipY, 2:transformHitTests
+///
+/// `origin:Offset, filterQuality:FilterQuality, child:Widget`
+const Flipd = Variadic(flipd) as dynamic;
+
+/// Return a `BackdropFilter`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `filter:ImageFilter`
+///
+/// `child:Widget, blendMode:BlendMode`
+const BackdropFilterd = Variadic(backdropFilterd) as dynamic;
+
+/// Return a `ImageFilter.blur`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:sigmaX, 1:sigmaY
+///
+/// `tileMode:TileMode`
+const ImageBlurd = Variadic(imageBlurd) as dynamic;
+
+/// Return a `ImageFilter.dilate`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:radiusX, 1:radiusY
+const ImageDilated = Variadic(imageDilated) as dynamic;
+
+/// Return a `ImageFilter.erode`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:radiusX, 1:radiusY
+const ImageEroded = Variadic(imageEroded) as dynamic;
+
+/// Return a `ImageFilter.compose`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `outer:ImageFilter, inner:ImageFilter`
+///
+/// `ImageFilter`: 0:outer, 1:inner
+const ImageComposed = Variadic(imageComposed) as dynamic;
+
+/// Return a `Align`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:widthFactor, 1:heightFactor
+///
+/// `alignment:AlignmentGeometry, child:Widget`
+const Alignd = Variadic(alignd) as dynamic;
+
+/// Return a `AnimatedBuilder`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***:
+/// - `animation:Listenable`
+/// - `builder:Widget Function(BuildContext, Widget?)`
+///
+/// `child:Widget`
+
+const AnimatedBuilderd = Variadic(animatedBuilderd) as dynamic;
+
+/// Return a `AnimatedList`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***:
+/// - `itemBuilder:Widget Function(BuildContext, int, Animation<double>)`
+/// - `initialItemCount:int`
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap
+///
+/// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+/// padding:EdgeInsetsGeometry, clipBehavior:Clip`
+const AnimatedListd = Variadic(animatedListd) as dynamic;

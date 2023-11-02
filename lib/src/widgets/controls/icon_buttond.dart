@@ -83,6 +83,7 @@ iconButtond(List argsList, Map<Symbol, dynamic> origArgsMap) {
     argsMap.addAll(origArgsMap);
   }
 
+  //* required:
   assert(() {
     if (argsMap[#icon] == null && argsMap[#onPressed] == null) {
       throw FlutterError(

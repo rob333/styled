@@ -28,6 +28,7 @@ herod(List argsList, Map<Symbol, dynamic> origArgsMap) {
     argsMap.addAll(origArgsMap);
   }
 
+  //* required:
   assert(() {
     if (argsMap[#child] == null && argsMap[#tag] == null) {
       throw FlutterError("Hero without `child:Widget`, `tag:Object`");

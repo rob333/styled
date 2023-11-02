@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+rotated(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
 
   for (final arg in argsList) {
@@ -8,9 +8,15 @@ opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
       case Key arg:
         argsMap[#key] = arg;
       case double arg:
-        argsMap[#opacity] = arg;
+        argsMap[#angle] = arg;
+      case Offset arg:
+        argsMap[#origin] = arg;
+      case AlignmentGeometry arg:
+        argsMap[#alignment] = arg;
       case bool arg:
-        argsMap[#alwaysIncludeSemantics] = arg;
+        argsMap[#transformHitTests] = arg;
+      case FilterQuality arg:
+        argsMap[#filterQuality] = arg;
       case Widget arg:
         argsMap[#child] = arg;
     }
@@ -23,11 +29,11 @@ opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#opacity] == null) {
-      throw FlutterError("Opacity without `opacity:double`");
+    if (argsMap[#angle] == null) {
+      throw FlutterError("rotated without `angle:double`");
     }
     return true;
   }());
 
-  return Function.apply(Opacity.new, [], argsMap);
+  return Function.apply(Transform.rotate, [], argsMap);
 }

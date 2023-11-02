@@ -14,9 +14,16 @@
 A declarative UI tool for flutter to simplify the creation of widgets, pass arguments in positional and without order.
 
 
-<div style="text-align: center">
-<!-- <img src="image.jpg" alt="Image description"> -->
-</div>
+<table border="0" align="center">
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/rob333/styled/main/doc/styled.jpg">
+    </td>
+  </tr>
+</table>
+<!-- <div style="text-align: center">
+<img src="image.jpg" alt="Image description">
+</div> -->
 
 <!-- ## Getting started -->
 
@@ -75,6 +82,12 @@ return Scaffoldd(
           Containerd(50, 50, const Color.fromARGB(255, 255, 0, 0)),
           Containerd(50, 50, const Color.fromARGB(255, 231, 255, 10)),
           Containerd(50, 50, const Color.fromARGB(255, 15, 221, 15)),
+        ),
+        Rowd(
+          MainAxisAlignment.center,
+          Containerd(35, 35, Colors.red, BoxShape.circle, Borderd(3, Colors.redAccent)),
+          Containerd(Colors.yellow, BoxShape.circle, 35, 35, Borderd(3, Colors.yellowAccent)),
+          Containerd(35, 35, Borderd(3, Colors.greenAccent), Colors.green, BoxShape.circle),
         ),
       ),
     ),
@@ -141,9 +154,9 @@ return Scaffoldd(
 - `Containerd` mixin with the `Decoration` arguments.
   - Precedence of mixin arguments, `Decoration` in the `Containerd`.
     1. Positional arguments of `Decoration` (Lowest)
-    2. Positional `Decoration` argument.
+    2. Positional `Decoration` object.
     3. Named arguments of `Decoration`
-    4. Named `Decoration` argument. (Highest)
+    4. Named `Decoration` object. (Highest)
    
 For example:
 
@@ -177,7 +190,9 @@ With ***Mixin***:
 
 ## Supported Widgets
 
-<ul style="column-count:5">
+<table><tr>
+<td>
+<ul> <!--style="column-count:5"-->
 <li> Textd
 <li> Centerd
 <li> Rowd
@@ -214,16 +229,210 @@ With ***Mixin***:
 <li> CustomPaintd
 <li> ToolTipd
 <li> IconButtond
-<!-- <li> 
+<li> FittedBoxd
+<li> AbsorbPointerd
+<li> Rotated as Transform.rotate
+<li> Scaled as Transform.scale
+<li> Translated as Transform.translate
+<li> Flipd as Transform.flip
+<li> BackdropFilterd
+<li> Alignd
 <li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li>  -->
 </ul>
+</td><td>
+<ul>
+<li> AnimatedBuilder
+<li> AnimatedListd
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+</ul>
+</td><td>
+<ul>
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+</ul>
+</td><td>
+<ul>
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+</ul>
+</td><td>
+<ul>
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+</ul>
+</td>
+</tr></table>
 
 
 ### 
@@ -235,11 +444,11 @@ With ***Mixin***:
 <li> Borderd
 <li> DecorationImaged
 <!-- <li>
+<li> ImageBlurd as ImageFilter.blur
+<li> ImageDilated as ImageFilter.dilate
+<li> ImageEroded as ImageFilter.erode
+<li> ImageCompose as ImageFilter.compose
 <li> 
-<li>
-<li>
-<li>
-<li>
 <li>
 <li>
 <li>

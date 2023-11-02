@@ -64,9 +64,10 @@
   "assert for d-widget": {
     "prefix": "assertd",
     "body": [
+      "\/\/* required:", 
       "assert(() {",
-      "  if (argsMap[#${1:Symbol:Type}] == null) {",
-      "    throw FlutterError(\"${2:Widget} without `${1:Symbol:Type}`\");",
+      "  if (argsMap[#${1:Symbol}] == null) {",
+      "    throw FlutterError(\"${2:Widget} without `${1:Symbol}:${3:Type}`\");",
       "  }",
       "  return true;",
       "}());"
