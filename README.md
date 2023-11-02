@@ -17,7 +17,7 @@ A declarative UI tool for flutter to simplify the creation of widgets, pass argu
 <table border="0" align="center">
   <tr>
     <td>
-      <img src="https://raw.githubusercontent.com/rob333/styled/main/doc/styled.jpg">
+      <img src="https://raw.githubusercontent.com/rob333/styled/main/doc/styled.webp">
     </td>
   </tr>
 </table>

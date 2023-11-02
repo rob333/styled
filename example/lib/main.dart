@@ -88,14 +88,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Containerd(35, 35, const Color.fromARGB(255, 231, 255, 10)),
               Containerd(35, 35, const Color.fromARGB(255, 15, 221, 15)),
             ),
-            Spacer(),
             Rowd(
               MainAxisAlignment.center,
               Containerd(35, 35, Colors.red, BoxShape.circle, Borderd(3, Colors.redAccent)),
               Containerd(Colors.yellow, BoxShape.circle, 35, 35, Borderd(3, Colors.yellowAccent)),
               Containerd(35, 35, Borderd(3, Colors.greenAccent), Colors.green, BoxShape.circle),
             ),
-            Spacer(),
             Containerd(
               Paddingd(
                 const EdgeInsets.all(5.5),
