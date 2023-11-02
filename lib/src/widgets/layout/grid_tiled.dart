@@ -29,7 +29,7 @@ gridTiled(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#child] == null) {
-      throw FlutterError("GridTile without `child:Widget`");
+      throw FlutterError("GridTiled without `child:Widget`");
     }
     return true;
   }());

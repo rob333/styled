@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 import 'widgets/layout/alignd.dart';
+import 'widgets/layout/placeholderd.dart';
 import 'widgets/layout/fitted_boxd.dart';
 import 'widgets/layout/expandedd.dart';
 import 'widgets/layout/herod.dart';
@@ -27,6 +28,14 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/rich_textd.dart';
+import 'widgets/controls/aspect_ratiod.dart';
+import 'widgets/controls/flexibled.dart';
+import 'widgets/controls/dismissibled.dart';
+import 'widgets/controls/animated_paddingd.dart';
+import 'widgets/controls/animated_positionedd.dart';
+import 'widgets/controls/animated_switcherd.dart';
+import 'widgets/controls/animated_icond.dart';
 import 'widgets/controls/animated_listd.dart';
 import 'widgets/controls/animated_builderd.dart';
 import 'widgets/controls/backdrop_filterd.dart';
@@ -41,6 +50,7 @@ import 'widgets/controls/tooltipd.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/page_viewd.dart';
 import 'widgets/controls/elevated_buttond.dart';
+import 'widgets/items/text_spand.dart';
 import 'widgets/items/decoration_imaged.dart';
 import 'widgets/items/image_blurd.dart';
 import 'widgets/items/image_composed.dart';
@@ -735,3 +745,120 @@ const AnimatedBuilderd = Variadic(animatedBuilderd) as dynamic;
 /// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
 /// padding:EdgeInsetsGeometry, clipBehavior:Clip`
 const AnimatedListd = Variadic(animatedListd) as dynamic;
+
+/// Return a `Dismissible`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `key:Key, child:Widget`
+///
+/// `Widget`: 0:child, 1:background, 2:secondaryBackground
+///
+/// `Duration`: 0:resizeDuration, 1:movementDuration
+///
+/// - `Future<bool?> Function(DismissDirection)`: confirmDismiss
+/// - `void Function()`: onResize
+/// - `void Function(DismissUpdateDetails)`: onUpdate
+/// - `void Function(DismissDirection)`: onDismissed
+/// - `Future<bool?> Function(DismissDirection)`: confirmDismiss
+///
+/// `direction:DismissDirection, crossAxisEndOffset:double|int,
+/// dragStartBehavior:DragStartBehavior, behavior:HitTestBehavior,
+/// Map<DismissDirection, double>:dismissThresholds`
+const Dismissibled = Variadic(dismissibled) as dynamic;
+
+/// Return a `Flexible`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`
+///
+/// `flex:int, fit:FlexFit`
+const Flexibled = Variadic(flexibled) as dynamic;
+
+/// Return a `AnimatedIcon`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `icon:AnimatedIconData, progress:Animation<double>`
+///
+/// `color:Color, size:double, semanticLabel:String, textDirection:TextDirection`
+const AnimatedIcond = Variadic(animatedIcond) as dynamic;
+
+/// Return a `AspectRatio`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `aspectRatio:double`
+///
+/// `child:Widget`
+const AspectRatiod = Variadic(aspectRatiod) as dynamic;
+
+/// Return a `Placeholder`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:fallbackWidth, 1:fallbackHeight, 2:strokeWidth
+///
+/// `child:Widget, color:Color`
+const Placeholderd = Variadic(placeholderd) as dynamic;
+
+/// Return a `RichText`.
+///
+/// **supported positional arguments:**<br>
+/// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `text:InlineSpan, textAlign:TextAlign, textDirection:TextDirection,
+/// softWrap:bool, overflow:TextOverflow, textScaleFactor:double, maxLines:int,
+/// locale:Locale, strutStyle:StrutStyle, textWidthBasis:TextWidthBasis,
+/// textHeightBehavior:TextHeightBehavior,
+/// selectionRegistrar:SelectionRegistrar, selectionColor:Color`
+const RichTextd = Variadic(richTextd) as dynamic;
+
+/// Return a `TextSpan`.
+///
+/// **supported positional arguments:**<br>
+/// `string`: 0:text, 1:semanticsLabel
+///
+/// `InlineSpan(TextSpan)`: will be added into `children:List<InlineSpan>`
+///
+/// - `void Function(PointerEnterEvent)`: onEnter
+/// - `void Function(PointerExitEvent)` : onExit
+///
+/// `children:List<InlineSpan>, style:TextStyle, recognizer:GestureRecognizer,
+/// mouseCursor:MouseCursor, locale:Locale, spellOut:bool`
+const TextSpand = Variadic(textSpand) as dynamic;
+
+/// Return a `AnimatedSwitcher`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `duration:Duration`
+///
+/// `Duration`: 0:duration, 1:reverseDuration
+///
+/// `Curve`: 0:switchInCurve, 1:switchOutCurve
+///
+/// - `Widget Function(Widget, Animation<double>)`: transitionBuilder
+/// - `Widget Function(Widget?, List<Widget>)`: layoutBuilder
+///
+/// `child:Widget`
+const AnimatedSwitcherd = Variadic(animatedSwitcherd) as dynamic;
+
+/// Return a `AnimatedPositioned`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget, durtaion:Duration`
+///
+/// `double|int`: 0:left, 1:top, 2:right, 3:bottom, 4:width, 5:height
+///
+/// - `void Function()`: onEnd
+///
+/// `curve:Curve`
+const AnimatedPositionedd = Variadic(animatedPositionedd) as dynamic;
+
+/// Return a `AnimatedPadding`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `padding:EdgeInsetsGeometry, durtaion:Duration`
+///
+/// - `void Function()`: onEnd
+///
+/// `child:Widget, curve:Curve`
+const AnimatedPaddingd = Variadic(animatedPaddingd) as dynamic;

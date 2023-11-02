@@ -61,7 +61,7 @@ gridViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#gridDelegate] == null) {
-      throw FlutterError("GridView without `gridDelegate:SliverGridDelegate`");
+      throw FlutterError("GridViewd without `gridDelegate:SliverGridDelegate`");
     }
     return true;
   }());

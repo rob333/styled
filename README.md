@@ -14,7 +14,7 @@
 A declarative UI tool for flutter to simplify the creation of widgets, pass arguments in positional and without order.
 
 
-<table border="0" align="center">
+<table border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td>
       <img src="https://raw.githubusercontent.com/rob333/styled/main/doc/styled.webp">
@@ -237,20 +237,20 @@ With ***Mixin***:
 <li> Flipd as Transform.flip
 <li> BackdropFilterd
 <li> Alignd
-<li> 
+<li> Dismissibled
 </ul>
 </td><td>
 <ul>
 <li> AnimatedBuilder
 <li> AnimatedListd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> AnimatedIcond
+<li> AnimatedSwitcherd
+<li> AnimatedPositionedd
+<li> AnimatedPaddingd
+<li> Flexibled
+<li> AspectRatiod
+<li> Placeholderd
+<li> RichTextd
 <li> 
 <li> 
 <li> 
@@ -443,12 +443,12 @@ With ***Mixin***:
 <li> BorderSided
 <li> Borderd
 <li> DecorationImaged
-<!-- <li>
 <li> ImageBlurd as ImageFilter.blur
 <li> ImageDilated as ImageFilter.dilate
 <li> ImageEroded as ImageFilter.erode
 <li> ImageCompose as ImageFilter.compose
-<li> 
+<li> TextSpand
+<!-- <li>
 <li>
 <li>
 <li>

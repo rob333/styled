@@ -60,8 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.amberAccent,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Textd("text int", 16),
-            Textd("text double", 18.5),
             Textd("text TextStyle", Theme.of(context).textTheme.bodyLarge),
             Textd("Styled TextD", Textd(18.5, FontWeight.w300, Colors.orange)),
             Textd("Styled TextD2", 18.5, backgroundColor: Colors.amber),
@@ -137,6 +135,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            RichTextd(
+              TextSpand(
+                'This\n',
+                Textd(25, Colors.red, FontWeight.bold),
+                TextSpand('is link\n', Textd(20, Colors.blue, TextDecoration.underline)),
+                TextSpand('text.\n', Textd(Colors.yellow, FontStyle.italic)),
+                TextSpand('bold\n', Textd(Colors.purple, FontWeight.bold)),
+              ),
+            ), // RichTextd
           ),
         ),
         Columnd(
@@ -153,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
             LimitedBoxd(30, 30, Containerd(50, 50, Colors.red, BoxShape.circle)),
           ),
           Stackd(
-            Containerd(80, 80, color: Colors.white),
+            Containerd(50, 50, color: Colors.white),
             Containerd(
               const EdgeInsets.all(5.0),
               Alignment.bottomCenter,
@@ -192,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Colors.greenAccent,
             ),
           ),
-        ),
+        ), // Column
       ),
       FloatingActionButtond(
         _incrementCounter, // `void Function()` => 'onPressed'

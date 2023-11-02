@@ -42,7 +42,7 @@ animatedListd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#itemBuilder] == null) {
-      throw FlutterError("AnimatedList without `itemBuilder:Function`");
+      throw FlutterError("AnimatedListd without `itemBuilder:Function`");
     }
     return true;
   }());

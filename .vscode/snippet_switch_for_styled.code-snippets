@@ -67,7 +67,7 @@
       "\/\/* required:", 
       "assert(() {",
       "  if (argsMap[#${1:Symbol}] == null) {",
-      "    throw FlutterError(\"${2:Widget} without `${1:Symbol}:${3:Type}`\");",
+      "    throw FlutterError(\"${2:Widget}d without `${1:Symbol}:${3:Type}`\");",
       "  }",
       "  return true;",
       "}());"
@@ -80,5 +80,12 @@
       "\/\/\/ ***required***: `child:Widget, tag:Object`"
     ],
     "description": "require syntax for def.dart"
+  },
+  "argsMap prefix": {
+    "prefix": "argsMap",
+    "body": [
+      "argsMap[#"
+    ],
+    "description": "argsMap prefix"
   }
 }

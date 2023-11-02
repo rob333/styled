@@ -22,7 +22,7 @@ expandedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#child] == null) {
-      throw FlutterError("Expanded without `child:Widget`");
+      throw FlutterError("Expandedd without `child:Widget`");
     }
     return true;
   }());

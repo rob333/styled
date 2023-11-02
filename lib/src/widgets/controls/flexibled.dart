@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+flexibled(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case double arg:
-        argsMap[#opacity] = arg;
-      case bool arg:
-        argsMap[#alwaysIncludeSemantics] = arg;
       case Widget arg:
         argsMap[#child] = arg;
+      case int arg:
+        argsMap[#flex] = arg;
+      case FlexFit arg:
+        argsMap[#fit] = arg;
     }
   }
 
@@ -23,11 +23,11 @@ opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#opacity] == null) {
-      throw FlutterError("Opacityd without `opacity:double`");
+    if (argsMap[#child] == null) {
+      throw FlutterError("Flexibled without `child:Widget`");
     }
     return true;
   }());
 
-  return Function.apply(Opacity.new, [], argsMap);
+  return Function.apply(Flexible.new, [], argsMap);
 }

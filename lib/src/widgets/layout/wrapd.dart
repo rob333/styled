@@ -57,7 +57,7 @@ wrapd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#children] == null) {
-      throw FlutterError("Wrap without `children:Widget|List<Widgets>`");
+      throw FlutterError("Wrapd without `children:Widget|List<Widgets>`");
     }
     return true;
   }());

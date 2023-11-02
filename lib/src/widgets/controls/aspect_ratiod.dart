@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+aspectRatiod(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
 
   for (final arg in argsList) {
@@ -8,9 +8,9 @@ opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
       case Key arg:
         argsMap[#key] = arg;
       case double arg:
-        argsMap[#opacity] = arg;
-      case bool arg:
-        argsMap[#alwaysIncludeSemantics] = arg;
+        argsMap[#aspectRatio] = arg;
+      case int arg:
+        argsMap[#aspectRatio] = arg.toDouble();
       case Widget arg:
         argsMap[#child] = arg;
     }
@@ -23,11 +23,11 @@ opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#opacity] == null) {
-      throw FlutterError("Opacityd without `opacity:double`");
+    if (argsMap[#aspectRatio] == null) {
+      throw FlutterError("AspectRatiod without `aspectRatio:double`");
     }
     return true;
   }());
 
-  return Function.apply(Opacity.new, [], argsMap);
+  return Function.apply(AspectRatio.new, [], argsMap);
 }

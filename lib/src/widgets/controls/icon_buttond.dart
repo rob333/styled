@@ -86,12 +86,11 @@ iconButtond(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#icon] == null && argsMap[#onPressed] == null) {
-      throw FlutterError(
-          "IconButton without `icon:Widget` and `onPressed:void Function()?`");
+      throw FlutterError("IconButtond without `icon:Widget` and `onPressed:void Function()?`");
     } else if (argsMap[#icon] == null) {
-      throw FlutterError("IconButton without `icon:Widget`");
+      throw FlutterError("IconButtond without `icon:Widget`");
     } else if (argsMap[#onPressed] == null) {
-      throw FlutterError("IconButton without `onPressed:void Function()?`");
+      throw FlutterError("IconButtond without `onPressed:void Function()?`");
     }
     return true;
   }());
