@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+import 'widgets/layout/indexed_stackd.dart';
+import 'widgets/layout/fractionally_sized_boxd.dart';
 import 'widgets/layout/alignd.dart';
 import 'widgets/layout/placeholderd.dart';
 import 'widgets/layout/fitted_boxd.dart';
@@ -28,10 +30,14 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/single_child_scroll_viewd.dart';
+import 'widgets/controls/constrained_boxd.dart';
+import 'widgets/controls/semanticsd.dart';
 import 'widgets/controls/rich_textd.dart';
 import 'widgets/controls/aspect_ratiod.dart';
 import 'widgets/controls/flexibled.dart';
 import 'widgets/controls/dismissibled.dart';
+import 'widgets/controls/animated_opacityd.dart';
 import 'widgets/controls/animated_containerd.dart';
 import 'widgets/controls/animated_paddingd.dart';
 import 'widgets/controls/animated_positionedd.dart';
@@ -51,6 +57,9 @@ import 'widgets/controls/tooltipd.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/page_viewd.dart';
 import 'widgets/controls/elevated_buttond.dart';
+import 'widgets/items/date_celld.dart';
+import 'widgets/items/date_columnd.dart';
+import 'widgets/items/date_rowd.dart';
 import 'widgets/items/text_spand.dart';
 import 'widgets/items/decoration_imaged.dart';
 import 'widgets/items/image_blurd.dart';
@@ -882,3 +891,119 @@ const AnimatedPaddingd = Variadic(animatedPaddingd) as dynamic;
 /// `color:Color, constraints:BoxConstraints, transform:Matrix4, child:Widget,
 /// clipBehavior:Clip, curve:Curve`
 const AnimatedContainerd = Variadic(animatedContainerd) as dynamic;
+
+/// Return a `IndexedStack`.
+///
+/// **supported positional arguments:**<br>
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `children:List<Widget>, alignment:AlignmentGeometry,
+/// textDirection:TextDirection, clipBehavior:Clip, sizing:StackFit, index:int`
+const IndexedStackd = Variadic(indexedStackd) as dynamic;
+
+/// Return a `Semantics`.
+///
+/// **supported positional arguments:**<br>
+/// `int`: 0:maxValueLength, 1:currentValueLength
+///
+/// `bool`: 0:enabled, 1:checked
+///
+/// `String`: 0:label, 1:value, 2:tooltip, 3:hint
+///
+/// - `void Function()`: 0:onTap, 1:onLongPress
+///
+/// `child:Widget, sortKey:SemanticsSortKey, tagForChildren:SemanticsTag,
+/// textDirection:TextDirection`
+///
+/// ***not supported:***<br>
+/// - `void Function(bool)`: onMoveCursorBackwardByCharacter, onMoveCursorForwardByCharacter
+/// - `void Function(TextSelection)`: onSetSelection
+/// - `void Function(String)`: onSetText
+/// - `Map<CustomSemanticsAction, void Function()>`: customSemanticsActions
+/// - `void Function()`: onScrollLeft, onScrollRight, onScrollUp, onScrollDown,
+/// onIncrease, onDecrease, onCopy, onCut, onPaste, onDismiss,
+/// onDidGainAccessibilityFocus
+///
+/// `onDidLoseAccessibilityFocus:bool, explicitChildNodes:bool,
+/// excludeSemantics:bool, blockUserActions:bool, mixed:bool, selected:bool,
+/// toggled:bool, button:bool, slider:bool, keyboardKey:bool, link:bool,
+/// header:bool, textField:bool, readOnly:bool, focusable:bool, focused:bool,
+/// inMutuallyExclusiveGroup:bool, obscured:bool, multiline:bool,
+/// scopesRoute:bool, namesRoute:bool, hidden:bool, image:bool, liveRegion:bool,
+/// increasedValue:String,
+/// decreasedValue:String,
+/// onTapHint:String,
+/// onLongPressHint:String,
+/// attributedLabel:AttributedString,
+/// attributedValue:AttributedString,
+/// attributedIncreasedValue:AttributedString,
+/// attributedDecreasedValue:AttributedString,
+/// attributedHint:AttributedString`
+const Semanticsd = Variadic(semanticsd) as dynamic;
+
+/// Return a `ConstrainedBox`.
+///
+/// **supported positional arguments:**<br>
+/// `child:Widget, constraints:BoxConstraints`
+const ConstrainedBoxd = Variadic(constrainedBoxd) as dynamic;
+
+/// Return a `AnimatedOpacity`.
+///
+/// **supported positional arguments:**<br>
+/// - `void Function()`: onEnd
+///
+/// `child:Widget, opacity:double, curve:Curve, duration:Duration,
+/// alwaysIncludeSemantics:bool`
+const AnimatedOpacityd = Variadic(animatedOpacityd) as dynamic;
+
+/// Return a `FractionallySizedBox`.
+///
+/// **supported positional arguments:**<br>
+/// `double`: 0:widthFactor, 1:heightFactor
+///
+/// `child:Widget, alignment:AlignmentGeometry`
+const FractionallySizedBoxd = Variadic(fractionallySizedBoxd) as dynamic;
+
+/// Return a `SingleChildScrollView`.
+///
+/// **supported positional arguments:**<br>
+/// `bool`: 0:reverse, 1:primary
+///
+/// `child:Widget, scrollDirection:Axis, padding:EdgeInsetsGeometry,
+/// physics:ScrollPhysics, controller:ScrollController,
+/// dragStartBehavior:DragStartBehavior, clipBehavior:Clip,restorationId:String,
+/// keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior`
+const SingleChildScrollViewd = Variadic(singleChildScrollViewd) as dynamic;
+
+/// Return a `DataRow`.
+///
+/// **supported positional arguments:**<br>
+/// `DataCell`: will be added into `cells:List<DataCell>`
+///
+/// - `void Function(bool?)`: onSelectChanged
+/// - `void Function()`: onLongPress
+///
+/// `cells:List<DataCell>, bool:selected,
+/// color:MaterialStateProperty<Color?>,
+/// mouseCursor:MaterialStateProperty<MouseCursor?>`
+const DataRowd = Variadic(dataRowd) as dynamic;
+
+/// Return a `DataColumn`.
+///
+/// **supported positional arguments:**<br>
+/// - `void Function(int, bool)`: onSort
+///
+/// `label:Widget, tooltip:String, numeric:bool,
+/// mouseCursor:MaterialStateProperty<MouseCursor?>`
+const DataColumnd = Variadic(dataColumnd) as dynamic;
+
+/// Return a `DataCell`.
+///
+/// **supported positional arguments:**<br>
+/// `bool`: 0:placeholder, 1:showEditIcon
+///
+/// - `void Function(TapDownDetails)`: onTapDown
+/// - `void Function()`: 0:onTap, 1:onLongPress, 2:onDoubleTap, 3:onTapCancel
+///
+/// `child:Widget`
+const DataCelld = Variadic(dataCelld) as dynamic;

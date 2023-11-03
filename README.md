@@ -11,7 +11,7 @@
 
 ## Features
 
-A declarative UI tool for flutter to simplify the creation of widgets, pass arguments in positional and without order.
+A declarative UI tool for flutter to simplify the creation of widgets, passint arguments in positional without order.
 
 
 <table border="0" align="center" cellpadding="0" cellspacing="0">
@@ -197,9 +197,9 @@ With ***Mixin***:
 <li> Centerd
 <li> Rowd
 <li> Columnd
-<li> Scaffoldd
-<li> AppBard
-<li> FloatingActionButtond
+<li> Scaffoldd (partial)
+<li> AppBard (partial)
+<li> FloatingActionButtond (partial)
 <li> Drawerd
 <li> SafeAread
 <li> Containerd
@@ -210,17 +210,17 @@ With ***Mixin***:
 <li> SizedBoxd
 <li> LimitedBoxd
 <li> Spacerd
-<li> ListViewd
-<li> ListTiled
-<li> GridViewd
+<li> ListViewd (partial)
+<li> ListTiled (partial)
+<li> GridViewd (partial)
 <li> GridTiled
 <li> Expandedd
 <li> Wrapd
 <li> Opacityd
-<li> PageViewd
+<li> PageViewd (partial)
 <li> Tabled
 <li> TableRowd
-<li> SliverAppBard
+<li> SliverAppBard (partial)
 <li> ClipRRectd
 <li> ClipOvald
 <li> ClipPathd
@@ -238,6 +238,11 @@ With ***Mixin***:
 <li> BackdropFilterd
 <li> Alignd
 <li> Dismissibled
+<li> Flexibled
+<li> AspectRatiod
+<li> Placeholderd
+<li> RichTextd
+<li> IndexedStackd
 </ul>
 </td><td>
 <ul>
@@ -248,54 +253,11 @@ With ***Mixin***:
 <li> AnimatedSwitcherd
 <li> AnimatedPositionedd
 <li> AnimatedPaddingd
-<li> Flexibled
-<li> AspectRatiod
-<li> Placeholderd
-<li> RichTextd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-</ul>
-</td><td>
-<ul>
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> AnimatedOpacityd
+<li> Semanticsd (partial)
+<li> ConstrainedBoxd
+<li> FractionallySizedBoxd
+<li> SingleChildScrollViewd
 <li> 
 <li> 
 <li> 
@@ -342,49 +304,6 @@ With ***Mixin***:
 <li> 
 <li> 
 <li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-</ul>
-</td><td>
-<ul>
 <li> 
 <li> 
 <li> 
@@ -448,10 +367,10 @@ With ***Mixin***:
 <li> ImageEroded as ImageFilter.erode
 <li> ImageCompose as ImageFilter.compose
 <li> TextSpand
+<li> DataRowd
+<li> DataColumnd
+<li> DataCelld
 <!-- <li>
-<li>
-<li>
-<li>
 <li>
 <li>
 <li>
@@ -482,6 +401,17 @@ With ***Mixin***:
 <li> 
 <li> 
 <li>  -->
+</ul>
+
+### Known not supported:
+<ul>
+<li> layoutBuilder
+<li> Positioned.*
+<li> ValueListenableBuilder 
+<li> ReorderableListView
+<li> ReorderableListView.builder
+<li> SelectableText
+<li> SelectableText.rich
 </ul>
 
 

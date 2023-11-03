@@ -185,6 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Textd("label", 16), // `label`
             () {}, // `onPressed`
           ),
+          SingleChildScrollViewd(),
           // ),
           Scaled(
             0.8,
