@@ -25,7 +25,7 @@ backdropFilterd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#filter] == null) {
-      throw FlutterError("BackdropFilterd without `filter:ImageFilter`");
+      throw FlutterError("BackdropFilterd requires `filter:ImageFilter`");
     }
     return true;
   }());

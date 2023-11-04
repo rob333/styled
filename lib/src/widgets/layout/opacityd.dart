@@ -24,7 +24,7 @@ opacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#opacity] == null) {
-      throw FlutterError("Opacityd without `opacity:double`");
+      throw FlutterError("Opacityd requires `opacity:double`");
     }
     return true;
   }());

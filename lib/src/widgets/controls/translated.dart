@@ -26,7 +26,7 @@ translated(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#offset] == null) {
-      throw FlutterError("translated without `offset:Offset`");
+      throw FlutterError("translated requires `offset:Offset`");
     }
     return true;
   }());

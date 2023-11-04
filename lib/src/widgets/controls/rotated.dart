@@ -30,7 +30,7 @@ rotated(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#angle] == null) {
-      throw FlutterError("rotated without `angle:double`");
+      throw FlutterError("rotated requires `angle:double`");
     }
     return true;
   }());

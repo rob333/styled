@@ -254,20 +254,20 @@ With ***Mixin***:
 <li> AnimatedPositionedd
 <li> AnimatedPaddingd
 <li> AnimatedOpacityd
+<li> AnimatedCrossFaded
 <li> Semanticsd (partial)
 <li> ConstrainedBoxd
 <li> FractionallySizedBoxd
 <li> SingleChildScrollViewd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> DataTabled (partial)
+<li> Sliderd
+<li> SliderAdaptived as Slider.adaptive
+<li> RangeSliderd
+<li> AlertDialogd
+<li> AlertDialogAdaptived as AlertDialog.adaptive
+<li> DraggableScrollableSheetd
+<li> ColorFilteredd
+<li> ToggleButtonsd
 <li> 
 <li> 
 <li> 
@@ -371,7 +371,7 @@ With ***Mixin***:
 <li> DataColumnd
 <li> DataCelld
 <!-- <li>
-<li>
+<li> 
 <li>
 <li>
 <li>
@@ -412,6 +412,9 @@ With ***Mixin***:
 <li> ReorderableListView.builder
 <li> SelectableText
 <li> SelectableText.rich
+<li> ---
+<li> TableBorder
+<li> ImageFilter.matrix
 </ul>
 
 

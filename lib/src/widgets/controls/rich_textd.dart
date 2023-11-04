@@ -45,7 +45,7 @@ richTextd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#text] == null) {
-      throw FlutterError("RichTextd without `text:InlineSpan`");
+      throw FlutterError("RichTextd requires `text:InlineSpan`");
     }
     return true;
   }());

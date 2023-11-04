@@ -30,11 +30,11 @@ herod(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#child] == null && argsMap[#tag] == null) {
-      throw FlutterError("Herod without `child:Widget`, `tag:Object`");
+      throw FlutterError("Herod requires `child:Widget`, `tag:Object`");
     } else if (argsMap[#child] == null) {
-      throw FlutterError("Herod without `child:Widget`");
+      throw FlutterError("Herod requires `child:Widget`");
     } else if (argsMap[#tag] == null) {
-      throw FlutterError("Herod without `tag:Object`");
+      throw FlutterError("Herod requires `tag:Object`");
     }
     return true;
   }());

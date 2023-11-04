@@ -73,7 +73,7 @@ animatedContainerd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#duration]) {
-      throw FlutterError("AnimatedPositionedd without `duration:Duration`");
+      throw FlutterError("AnimatedPositionedd requires `duration:Duration`");
     }
     return true;
   }());

@@ -40,7 +40,7 @@ animatedSwitcherd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#duration] == null) {
-      throw FlutterError("AnimatedSwitcherd without `duration:Duration`");
+      throw FlutterError("AnimatedSwitcherd requires `duration:Duration`");
     }
     return true;
   }());

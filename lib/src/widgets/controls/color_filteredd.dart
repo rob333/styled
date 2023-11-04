@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
-aspectRatiod(List argsList, Map<Symbol, dynamic> origArgsMap) {
+colorFilteredd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case double arg:
-        argsMap[#aspectRatio] = arg;
-      case int arg:
-        argsMap[#aspectRatio] = arg.toDouble();
+      case ColorFilter arg:
+        argsMap[#colorFilter] = arg;
       case Widget arg:
         argsMap[#child] = arg;
     }
@@ -23,11 +21,11 @@ aspectRatiod(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#aspectRatio] == null) {
-      throw FlutterError("AspectRatiod requires `aspectRatio:double`");
+    if (argsMap[#colorFilter] == null) {
+      throw FlutterError("ColorFilteredd requires `colorFilter:ColorFilter`");
     }
     return true;
   }());
 
-  return Function.apply(AspectRatio.new, [], argsMap);
+  return Function.apply(ColorFiltered.new, [], argsMap);
 }

@@ -25,8 +25,7 @@ imageComposed(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#outer] == null || argsMap[#inner] == null) {
-      throw FlutterError(
-          "ImageComposed without `outer:ImageFilter` and `inner:ImageFilter`");
+      throw FlutterError("ImageComposed requires `outer:ImageFilter` and `inner:ImageFilter`");
     }
     return true;
   }());

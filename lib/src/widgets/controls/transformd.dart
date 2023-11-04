@@ -30,7 +30,7 @@ transformd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#transform] == null) {
-      throw FlutterError("Transformd without `transform:Matrix4`");
+      throw FlutterError("Transformd requires `transform:Matrix4`");
     }
     return true;
   }());

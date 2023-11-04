@@ -57,7 +57,7 @@ dismissibled(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#key] == null || argsMap[#child] == null) {
-      throw FlutterError("Dismissibled without `key:Key` and `child:Widget`");
+      throw FlutterError("Dismissibled requires `key:Key` and `child:Widget`");
     }
     return true;
   }());

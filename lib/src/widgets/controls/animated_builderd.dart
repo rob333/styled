@@ -24,7 +24,7 @@ animatedBuilderd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#animation] == null || argsMap[#builder] == null) {
-      throw FlutterError("AnimatedBuilderd without `animation:Listenable` and `builder:Function`");
+      throw FlutterError("AnimatedBuilderd requires `animation:Listenable` and `builder:Function`");
     }
     return true;
   }());

@@ -22,7 +22,7 @@ constrainedBoxd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#constraints] == null) {
-      throw FlutterError("ConstrainedBoxd without `constraints:BoxConstraints`");
+      throw FlutterError("ConstrainedBoxd requires `constraints:BoxConstraints`");
     }
     return true;
   }());

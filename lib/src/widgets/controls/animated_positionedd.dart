@@ -57,7 +57,7 @@ animatedPositionedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 //* required:
   assert(() {
     if (argsMap[#child] == null || argsMap[#duration]) {
-      throw FlutterError("AnimatedPositionedd without `child:Widget` and `duration:Duration`");
+      throw FlutterError("AnimatedPositionedd requires `child:Widget` and `duration:Duration`");
     }
     return true;
   }());

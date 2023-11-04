@@ -24,7 +24,7 @@ flexibled(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#child] == null) {
-      throw FlutterError("Flexibled without `child:Widget`");
+      throw FlutterError("Flexibled requires `child:Widget`");
     }
     return true;
   }());

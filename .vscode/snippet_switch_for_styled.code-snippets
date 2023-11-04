@@ -67,7 +67,7 @@
       "\/\/* required:", 
       "assert(() {",
       "  if (argsMap[#${1:Symbol}] == null) {",
-      "    throw FlutterError(\"${2:Widget}d without `${1:Symbol}:${3:Type}`\");",
+      "    throw FlutterError(\"${2:Widget}d requires `${1:Symbol}:${3:Type}`\");",
       "  }",
       "  return true;",
       "}());"

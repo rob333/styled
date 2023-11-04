@@ -30,7 +30,7 @@ animatedOpacityd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#opacity] == null || argsMap[#duration]) {
-      throw FlutterError("AnimatedOpacityd without `opacity:double` and `duration:Duration`");
+      throw FlutterError("AnimatedOpacityd requires `opacity:double` and `duration:Duration`");
     }
     return true;
   }());

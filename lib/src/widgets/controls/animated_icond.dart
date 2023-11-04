@@ -32,7 +32,7 @@ animatedIcond(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#icon] == null || argsMap[#progress]) {
-      throw FlutterError("AnimatedIcond without `icon:AnimatedIconData` and `Animation<double>:progress`");
+      throw FlutterError("AnimatedIcond requires `icon:AnimatedIconData` and `Animation<double>:progress`");
     }
     return true;
   }());

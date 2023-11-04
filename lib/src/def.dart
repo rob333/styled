@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 import 'widgets/layout/indexed_stackd.dart';
+import 'widgets/layout/data_tabled.dart';
 import 'widgets/layout/fractionally_sized_boxd.dart';
 import 'widgets/layout/alignd.dart';
 import 'widgets/layout/placeholderd.dart';
@@ -30,6 +31,14 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/toggle_buttonsd.dart';
+import 'widgets/controls/color_filteredd.dart';
+import 'widgets/controls/draggable_scrollable_sheetd.dart';
+import 'widgets/controls/alert_dialog_adaptived.dart';
+import 'widgets/controls/alert_dialogd.dart';
+import 'widgets/controls/range_sliderd.dart';
+import 'widgets/controls/slider_adaptived.dart';
+import 'widgets/controls/sliderd.dart';
 import 'widgets/controls/single_child_scroll_viewd.dart';
 import 'widgets/controls/constrained_boxd.dart';
 import 'widgets/controls/semanticsd.dart';
@@ -37,6 +46,7 @@ import 'widgets/controls/rich_textd.dart';
 import 'widgets/controls/aspect_ratiod.dart';
 import 'widgets/controls/flexibled.dart';
 import 'widgets/controls/dismissibled.dart';
+import 'widgets/controls/animated_cross_faded.dart';
 import 'widgets/controls/animated_opacityd.dart';
 import 'widgets/controls/animated_containerd.dart';
 import 'widgets/controls/animated_paddingd.dart';
@@ -66,7 +76,7 @@ import 'widgets/items/image_blurd.dart';
 import 'widgets/items/image_composed.dart';
 import 'widgets/items/image_dilated.dart';
 import 'widgets/items/image_eroded.dart';
-import 'widgets/items/tablerowd.dart';
+import 'widgets/items/table_rowd.dart';
 import 'widgets/items/borderd.dart';
 import 'widgets/items/border_sided.dart';
 import 'widgets/items/linear_gradientd.dart';
@@ -1007,3 +1017,192 @@ const DataColumnd = Variadic(dataColumnd) as dynamic;
 ///
 /// `child:Widget`
 const DataCelld = Variadic(dataCelld) as dynamic;
+
+/// Return a `DataTable`. (**Mixin with Decoration**)
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `columns:List<DataColumn>, rows:List<DataRow>`
+///
+/// `DataColumn`: will be added into `columns:List<DataColumn>`
+///
+/// `DataRow`: will be added into `rows:List<DataRow>`
+///
+/// - `void Function(bool?)`: onSelectAll
+///
+/// `sortAscending:bool, decoration:Decoration, border:TableBorder,
+/// clipBehavior:Clip, sortColumnIndex:int`
+///
+/// **Mixin with Decoration:**<br>
+/// `BoxShadow`: will be added into `boxShadow:List<BoxShadow>`
+///
+/// `color:Color, image:DecorationImage, border:BoxBorder,
+///  borderRadius:BorderRadiusGeometry, boxShadow:List<BoxShadow>,
+///  gradient:Gradient, backgroundBlendMode:BlendMode, shape:BoxShape`
+///
+/// ***not supported:***<br>
+/// `dataRowColor:MaterialStateProperty<Color?>,
+/// headingRowColor:MaterialStateProperty<Color?>,
+/// dataRowHeight:double, dataRowMinHeight:double, dataRowMaxHeight:double,
+/// dataTextStyle:TextSTyle, headingTextStyle:TextStyle,
+/// headingRowHeight:double, horizontalMargin:double, columnSpacing:double,
+/// showCheckboxColumn:bool, showBottomBorder:bool,
+/// dividerThickness:double, checkboxHorizontalMargin:double`
+const DataTabled = Variadic(dataTabled) as dynamic;
+
+/// Return a `Slider`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `value:double, onChanged:void Function(double)`
+///
+/// `double`: 0:value, 1:min, 2:max, 3:secondaryTrackValue
+///
+/// `void Function(double)`: 0:onChanged, 1:onChangeStart, 2:onChangeEnd
+///
+/// `Color`: 0:activeColor, 1:inactiveColor, 2:secondaryActiveColor, 3:thumbColor
+///
+/// - `String Function(double)`: semanticFormatterCallback
+///
+/// `divisions:int, label:String, mouseCursor:MouseCursor, focusNode:FocusNode,
+/// autofocus:bool, allowedInteraction:SliderInteraction,
+/// overlayColor:MaterialStateProperty<Color?>`
+const Sliderd = Variadic(sliderd) as dynamic;
+
+/// Return a `Slider.adaptive`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `value:double, onChanged:void Function(double)`
+///
+/// `double`: 0:value, 1:min, 2:max, 3:secondaryTrackValue
+///
+/// `void Function(double)`: 0:onChanged, 1:onChangeStart, 2:onChangeEnd
+///
+/// `Color`: 0:activeColor, 1:inactiveColor, 2:secondaryActiveColor, 3:thumbColor
+///
+/// - `String Function(double)`: semanticFormatterCallback
+///
+/// `divisions:int, label:String, mouseCursor:MouseCursor, focusNode:FocusNode,
+/// autofocus:bool, allowedInteraction:SliderInteraction,
+/// overlayColor:MaterialStateProperty<Color?>`
+const SliderAdaptived = Variadic(sliderAdaptived) as dynamic;
+
+/// Return a `RangeSlider`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `value:RangeValues, onChanged:void Function(RangeValues)`
+///
+/// `double`: 0:min, 1:max
+///
+/// `void Function(RangeValues)`: 0:onChanged, 1:onChangeStart, 2:onChangeEnd
+///
+/// `Color`: 0:activeColor, 1:inactiveColor
+///
+/// `divisions:int, labels:RangeLabels,
+/// overlayColor:MaterialStateProperty<Color?>,
+/// mouseCursor:MaterialStateProperty<MouseCursor?>`
+const RangeSliderd = Variadic(rangeSliderd) as dynamic;
+
+/// Return a `AlertDialog`.
+///
+/// **supported positional arguments:**<br>
+/// `Widget`: 0:icon, 1:title, 2:content
+///
+/// `Color`: 0:iconColor, 1:backgroundColor, 2:shadowColor, 3:surfaceTintColor
+///
+/// `EdgeInsetsGeometry`: 0:iconPadding, 1:titlePadding, 2:contentPadding,
+/// 3:actionsPadding, 4:buttonPadding
+///
+/// `TextStyle`: 0:titleTextStyle, 1:contentTextStyle
+///
+/// `double`: 0:elevation, 1:actionsOverflowButtonSpacing
+///
+/// `insetPadding:EdgeInsets, actions:List<Widget>,
+/// actionsAlignment:MainAxisAlignment,
+/// actionsOverflowAlignment:OverflowBarAlignment,
+/// actionsOverflowDirection:VerticalDirection, semanticLabel:String,
+/// clipBehavior:Clip, shape:ShapeBorder, alignment:AlignmentGeometry,
+/// scrollable:bool`
+const AlertDialogd = Variadic(alertDialogd) as dynamic;
+
+/// Return a `AlertDialog.adaptive`.
+///
+/// **supported positional arguments:**<br>
+/// `Widget`: 0:icon, 1:title, 2:content
+///
+/// `Color`: 0:iconColor, 1:backgroundColor, 2:shadowColor, 3:surfaceTintColor
+///
+/// `EdgeInsetsGeometry`: 0:iconPadding, 1:titlePadding, 2:contentPadding,
+/// 3:actionsPadding, 4:buttonPadding
+///
+/// `TextStyle`: 0:titleTextStyle, 1:contentTextStyle
+///
+/// `double`: 0:elevation, 1:actionsOverflowButtonSpacing
+///
+/// `ScrollController`: 0:scrollController, 1:actionScrollController
+///
+/// `insetPadding:EdgeInsets, actions:List<Widget>,
+/// actionsAlignment:MainAxisAlignment,
+/// actionsOverflowAlignment:OverflowBarAlignment,
+/// actionsOverflowDirection:VerticalDirection, semanticLabel:String,
+/// clipBehavior:Clip, shape:ShapeBorder, alignment:AlignmentGeometry,
+/// scrollable:bool, insetAnimationDuration:Duration, insetAnimationCurve:Curve`
+const AlertDialogAdaptived = Variadic(alertDialogAdaptived) as dynamic;
+
+/// Return a `AnimatedCrossFade`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `firstChild:Widget, secondChild:Widget, crossFadeState:CrossFadeState, duration:Duration`
+///
+/// `Widget`: 0:firstChild, 1:secondChild
+///
+/// `Curve`: 0:firstCurve, 1:secondCurve, 2:sizeCurve
+///
+/// `Duration`: 0:duration, 1:reverseDuration
+///
+/// - `Widget Function(Widget, Key, Widget, Key)`: layoutBuilder
+///
+/// `alignment:AlignmentGeometry, crossFadeState:CrossFadeState,
+/// excludeBottomFocus:bool`
+const AnimatedCrossFaded = Variadic(animatedCrossFaded) as dynamic;
+
+/// Return a `DraggableScrollableSheet`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `builder:Widget Function(BuildContext, ScrollController) `
+/// `double`: 0:initialChildSize, 1:minChildSize, 2:maxChildSize
+///
+/// `bool`: 0:expand, 1:snap, 2:shouldCloseOnMinExtent
+///
+/// - `Widget Function(BuildContext, ScrollController)`: builder
+///
+/// `snapSizes:List<double>, snapAnimationDuration:Duration,
+/// controller:DraggableScrollableController`
+const DraggableScrollableSheetd = Variadic(draggableScrollableSheetd) as dynamic;
+
+/// Return a `ColorFiltered`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `colorFilter:ColorFilter`
+///
+/// `child:Widget`
+const ColorFilteredd = Variadic(colorFilteredd) as dynamic;
+
+/// Return a `ToggleButtons`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `children:List<Widget>, isSelected:List<bool>`
+///
+/// `Color`: 0:color, 1:selectedColor, 2:disabledColor, 3:fillColor,
+/// 4:focusColor, 5:highlightColor, 6:hoverColor, 7:splashColor, 8:borderColor,
+/// 9:selectedBorderColor, 10:disabledBorderColor
+///
+/// - `void Function(int)`: onPressed
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `FocusNode`: will be added into `focusNodes:List<FocusNode>`
+///
+/// `renderBorder:bool, mouseCursor:MouseCursor,
+/// tapTargetSize:MaterialTapTargetSize, textStyle:TextStyle,
+/// constraints:BoxConstraints, borderRadius:BorderRadius, borderWidth:double,
+/// direction:Axis, verticalDirection:VerticalDirection`
+const ToggleButtonsd = Variadic(toggleButtonsd) as dynamic;

@@ -28,7 +28,7 @@ animatedPaddingd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#padding] == null || argsMap[#duration]) {
-      throw FlutterError("AnimatedPositionedd without `padding:EdgeInsetsGeometry` and `duration:Duration`");
+      throw FlutterError("AnimatedPositionedd requires `padding:EdgeInsetsGeometry` and `duration:Duration`");
     }
     return true;
   }());
