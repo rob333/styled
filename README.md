@@ -268,15 +268,15 @@ With ***Mixin***:
 <li> DraggableScrollableSheetd
 <li> ColorFilteredd
 <li> ToggleButtonsd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> Imaged
+<li> ImageAssetd
+<li> ImageFiled
+<li> ImageMemoryd
+<li> ImageNetworkd
+<li> DefaultTabControllerd
+<li> TabBard
+<li> Tabd
+<li> TabBarViewd
 <li> 
 <li> 
 <li> 

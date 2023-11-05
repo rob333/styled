@@ -13,7 +13,7 @@ import 'widgets/layout/clip_ovald.dart';
 import 'widgets/layout/clip_pathd.dart';
 import 'widgets/layout/clip_rrectd.dart';
 import 'widgets/layout/tabled.dart';
-import 'widgets/layout/sliver_appbard.dart';
+import 'widgets/layout/sliver_app_bard.dart';
 import 'widgets/layout/wrapd.dart';
 import 'widgets/layout/opacityd.dart';
 import 'widgets/layout/grid_tiled.dart';
@@ -31,6 +31,7 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/default_tab_controllerd.dart';
 import 'widgets/controls/toggle_buttonsd.dart';
 import 'widgets/controls/color_filteredd.dart';
 import 'widgets/controls/draggable_scrollable_sheetd.dart';
@@ -67,6 +68,14 @@ import 'widgets/controls/tooltipd.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/page_viewd.dart';
 import 'widgets/controls/elevated_buttond.dart';
+import 'widgets/items/tabbar_viewd.dart';
+import 'widgets/items/tab_bard.dart';
+import 'widgets/items/tabd.dart';
+import 'widgets/items/image_networkd.dart';
+import 'widgets/items/image_memoryd.dart';
+import 'widgets/items/image_filed.dart';
+import 'widgets/items/image_assetd.dart';
+import 'widgets/items/imaged.dart';
 import 'widgets/items/date_celld.dart';
 import 'widgets/items/date_columnd.dart';
 import 'widgets/items/date_rowd.dart';
@@ -82,7 +91,7 @@ import 'widgets/items/border_sided.dart';
 import 'widgets/items/linear_gradientd.dart';
 import 'widgets/items/box_decorationd.dart';
 import 'widgets/items/box_shadowd.dart';
-import 'widgets/items/appbard.dart';
+import 'widgets/items/app_bard.dart';
 import 'widgets/items/floating_action_buttond.dart';
 import 'widgets/items/drawerd.dart';
 import 'widgets/scaffoldd.dart';
@@ -203,13 +212,18 @@ const FloatingActionButtond = Variadic(floatingactionbuttond) as dynamic;
 ///
 /// `TextStyle`: 0:toolbarTextStyle, 1:titleTextStyle
 ///
-/// `bottom, actions, notificationPredicate, shape, systemOverlayStyle, clipBehavior`
+/// - `bool Function(ScrollNotification)`: notificationPredicate
+///
+/// `bottom:PreferredSizeWidget, actions:List<Widget>, shape:ShapeBorder,
+/// systemOverlayStyle:SystemUiOverlayStyle, clipBehavior:Clip`
 ///
 /// ***not supported:***<br>
-/// `automaticallyImplyLeading, primary, centerTitle, excludeHeaderSemantics,
-/// forceMaterialTransparency, elevation, scrolledUnderElevation, titleSpacing,
-/// toolbarOpacity, bottomOpacity, toolbarHeight, leadingWidth`
-const AppBard = Variadic(appbard) as dynamic;
+/// `automaticallyImplyLeading:bool, primary:bool, centerTitle:bool,
+/// excludeHeaderSemantics:bool, forceMaterialTransparency:bool,
+/// elevation:double, scrolledUnderElevation:double, titleSpacing:double,
+/// toolbarOpacity:double, bottomOpacity:double, toolbarHeight:double,
+/// leadingWidth:double`
+const AppBard = Variadic(appBard) as dynamic;
 
 /// Returns a `SafeArea`.
 ///
@@ -1206,3 +1220,155 @@ const ColorFilteredd = Variadic(colorFilteredd) as dynamic;
 /// constraints:BoxConstraints, borderRadius:BorderRadius, borderWidth:double,
 /// direction:Axis, verticalDirection:VerticalDirection`
 const ToggleButtonsd = Variadic(toggleButtonsd) as dynamic;
+
+/// Return a `Image`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `image:ImageProvider<Object>`
+///
+/// `double|int`: 0:width, 1:height
+///
+/// `bool`: 0:excludeFromSemantics, 1:matchTextDirection, 2:gaplessPlayback 3:isAntiAlias
+///
+/// - `Widget Function(BuildContext, Widget, int?, bool)`: frameBuilder
+/// - `Widget Function(BuildContext, Widget, ImageChunkEvent?)`: loadingBuilder
+/// - `Widget Function(BuildContext, Object, StackTrace?)`: errorBuilder
+///
+/// `image:ImageProvider<Object>, semanticLabel:String, color:Color,
+/// opacity:Animation<double>, colorBlendMode:BlendMode, fit:BoxFit,
+/// alignment:AlignmentGeometry, repeat:ImageRepeat, centerSlice:Rect,
+/// filterQuality:FilterQuality`
+const Imaged = Variadic(imaged) as dynamic;
+
+/// Return a `Image.asset`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `String` as name of the asset
+/// `double`: 0:width, 1:height, 2:scale
+///
+/// `bool`: 0:excludeFromSemantics, 1:matchTextDirection, 2:gaplessPlayback 3:isAntiAlias
+///
+/// `int`: 0:cacheWidth, 1:cacheHeight
+///
+/// `String`: 0:name, 1:semanticLabel, 2:package
+///
+/// - `Widget Function(BuildContext, Widget, int?, bool)`: frameBuilder
+/// - `Widget Function(BuildContext, Object, StackTrace?)`: errorBuilder
+///
+/// `bundle:AssetBundle, color:Color, opacity:Animation<double>,
+/// colorBlendMode:BlendMode, fit:BoxFit, alignment:AlignmentGeometry,
+/// repeat:ImageRepeat, centerSlice:Rect, filterQuality:FilterQuality`
+const ImageAssetd = Variadic(imageAssetd) as dynamic;
+
+/// Return a `Image.file`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `File`
+/// `double`: 0:width, 1:height, 2:scale
+///
+/// `bool`: 0:excludeFromSemantics, 1:matchTextDirection, 2:gaplessPlayback 3:isAntiAlias
+///
+/// `int`: 0:cacheWidth, 1:cacheHeight
+///
+/// - `Widget Function(BuildContext, Widget, int?, bool)`: frameBuilder
+/// - `Widget Function(BuildContext, Object, StackTrace?)`: errorBuilder
+///
+/// `semanticLabel:String, color:Color, opacity:Animation<double>,
+/// colorBlendMode:BlendMode, fit:BoxFit, alignment:AlignmentGeometry,
+/// repeat:ImageRepeat, centerSlice:Rect, filterQuality:FilterQuality`
+const ImageFiled = Variadic(imageFiled) as dynamic;
+
+/// Return a `Image.memory`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `Uint8List`
+/// `double`: 0:width, 1:height, 2:scale
+///
+/// `bool`: 0:excludeFromSemantics, 1:matchTextDirection, 2:gaplessPlayback 3:isAntiAlias
+///
+/// `int`: 0:cacheWidth, 1:cacheHeight
+///
+/// - `Widget Function(BuildContext, Widget, int?, bool)`: frameBuilder
+/// - `Widget Function(BuildContext, Object, StackTrace?)`: errorBuilder
+///
+/// `semanticLabel:String, color:Color, opacity:Animation<double>,
+/// colorBlendMode:BlendMode, fit:BoxFit, alignment:AlignmentGeometry,
+/// repeat:ImageRepeat, centerSlice:Rect, filterQuality:FilterQuality`
+const ImageMemoryd = Variadic(imageMemoryd) as dynamic;
+
+/// Return a `Image.network`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `String`
+///
+/// `String`: 0:(the url of the image), 1:semanticLabel
+///
+/// `double`: 0:width, 1:height, 2:scale
+///
+/// `bool`: 0:excludeFromSemantics, 1:matchTextDirection, 2:gaplessPlayback 3:isAntiAlias
+///
+/// `int`: 0:cacheWidth, 1:cacheHeight
+///
+/// - `Widget Function(BuildContext, Widget, int?, bool)`: frameBuilder
+/// - `Widget Function(BuildContext, Widget, ImageChunkEvent?)`: loadingBuilder
+/// - `Widget Function(BuildContext, Object, StackTrace?)`: errorBuilder
+///
+/// `color:Color, opacity:Animation<double>,
+/// colorBlendMode:BlendMode, fit:BoxFit, alignment:AlignmentGeometry,
+/// repeat:ImageRepeat, centerSlice:Rect, filterQuality:FilterQuality,
+/// headers:Map<String, String>`
+const ImageNetworkd = Variadic(imageNetworkd) as dynamic;
+
+/// Return a `DefaultTabController`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget, length:int`
+///
+/// `int`: 0:length, 1:initialIndex
+///
+/// `initialIndex:int, animationDuration:Duration`
+const DefaultTabControllerd = Variadic(defaultTabControllerd) as dynamic;
+
+/// Return a `TabBar`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `tabs:List<Widget>`
+///
+/// `bool`: 0:isScrollable, 1:automaticIndicatorColorAdjustment, 2:enableFeedback
+///
+/// `EdgeInsetsGeometry`: 0:padding, 1:indicatorPadding, 2:labelPadding
+///
+/// `Color`: 0:indicatorColor, 1:dividerColor, 2:labelColor, 3:unselectedLabelColor
+///
+/// `TextStyle`: 0:labelStyle, 1:unselectedLabelStyle
+///
+/// `void Function(int)`: onTap
+///
+/// `Widget`: will be added into `tabs:List<Widget>`
+///
+/// `controller:TabController, indicatorWeight:double, indicator:Decoration,
+/// indicatorSize:TabBarIndicatorSize, dragStartBehavior:DragStartBehavior,
+/// overlayColor:MaterialStateProperty<Color?>, mouseCursor:MouseCursor,
+/// physics:ScrollPhysics, splashFactory:InteractiveInkFeatureFactory,
+/// splashBorderRadius:BorderRadius, tabAlignment:TabAlignment`
+const TabBard = Variadic(tabBard) as dynamic;
+
+/// Return a `Tab`.
+///
+/// **supported positional arguments:**<br>
+/// `Widget`: 0:icon, 1:child
+///
+/// `text:String, iconMargin:EdgeInsetsGeometry, height:double|int`
+const Tabd = Variadic(tabd) as dynamic;
+
+/// Return a `TabBarView`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `children:List<Widget>`
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `controller:TabController, physics:ScrollPhysics,
+/// dragStartBehavior:DragStartBehavior, viewportFraction:double,
+/// clipBehavior:Clip`
+const TabBarViewd = Variadic(tabBarViewd) as dynamic;

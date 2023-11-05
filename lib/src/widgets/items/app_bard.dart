@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-appbard(List argsList, Map<Symbol, dynamic> origArgsMap) {
+appBard(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
   int colori = 0;
   int widgeti = 0;
