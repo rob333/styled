@@ -277,14 +277,14 @@ With ***Mixin***:
 <li> TabBard
 <li> Tabd
 <li> TabBarViewd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> SnackBard
+<li> ListWheelScrollViewd
+<li> ShaderMaskd
+<li> Builderd
+<li> CircularProgressIndicatord
+<li> LinearProgressIndicatord
+<li> Dividerd
+<li> IgnorePointerd
 <li> 
 <li> 
 <li> 
@@ -412,6 +412,8 @@ With ***Mixin***:
 <li> ReorderableListView.builder
 <li> SelectableText
 <li> SelectableText.rich
+<li> TweenAnimationBuilder
+<li> NotificationListener
 <li> ---
 <li> TableBorder
 <li> ImageFilter.matrix

@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+import 'widgets/layout/dividerd.dart';
 import 'widgets/layout/indexed_stackd.dart';
 import 'widgets/layout/data_tabled.dart';
 import 'widgets/layout/fractionally_sized_boxd.dart';
@@ -31,6 +32,12 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/ignore_pointerd.dart';
+import 'widgets/controls/linear_progress_indicatord.dart';
+import 'widgets/controls/circular_progress_indicatord.dart';
+import 'widgets/controls/builderd.dart';
+import 'widgets/controls/shader_maskd.dart';
+import 'widgets/controls/list_wheel_scroll_viewd.dart';
 import 'widgets/controls/default_tab_controllerd.dart';
 import 'widgets/controls/toggle_buttonsd.dart';
 import 'widgets/controls/color_filteredd.dart';
@@ -68,6 +75,7 @@ import 'widgets/controls/tooltipd.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/page_viewd.dart';
 import 'widgets/controls/elevated_buttond.dart';
+import 'widgets/items/snack_bard.dart';
 import 'widgets/items/tabbar_viewd.dart';
 import 'widgets/items/tab_bard.dart';
 import 'widgets/items/tabd.dart';
@@ -1372,3 +1380,95 @@ const Tabd = Variadic(tabd) as dynamic;
 /// dragStartBehavior:DragStartBehavior, viewportFraction:double,
 /// clipBehavior:Clip`
 const TabBarViewd = Variadic(tabBarViewd) as dynamic;
+
+/// Return a `SnackBar`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `content:Widget`
+///
+/// `Color`: 0:backgroundColor, 1:closeIconColor
+///
+/// `double|int`: 0:elevation, 1:width, 2:actionOverflowThreshold
+///
+/// `EdgeInsetsGeometry`: 0:margin, 1:padding
+///
+/// `SnackBarBehavior`: 0:behavior, 1:action
+///
+/// - `void Function()`: onVisible
+///
+/// `shape:ShapeBorder, showCloseIcon:bool, duration:Duration
+/// animation:Animation<double>, dismissDirection:DismissDirection,
+/// clipBehavior:Clip`
+const SnackBard = Variadic(snackBard) as dynamic;
+
+/// Return a `ListWheelScrollView`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `childen:List<Widget>, itemExtent:double`
+///
+/// `double|int`: 0:itemExtent, 1:diameterRatio, 2:perspective, 3:offAxisFraction,
+/// 4:magnification, 5:overAndUnderCenterOpacity, 6:squeeze
+///
+/// `bool`: 0:useMagnifier, 1:renderChildrenOutsideViewport
+///
+/// - `void Function(int)`: onSelectedItemChanged
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `controller:ScrollController, physics:ScrollPhysics, clipBehavior:Clip,
+/// restorationId:String, scrollBehavior:ScrollBehavior`
+const ListWheelScrollViewd = Variadic(listWheelScrollViewd) as dynamic;
+
+/// Return a `ShaderMask`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `shaderCallback:Shader Function(Rect) `
+///
+/// `child:Widget, blendMode:BlendMode`
+const ShaderMaskd = Variadic(shaderMaskd) as dynamic;
+
+/// Return a `Builder`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `builder:Widget Function(BuildContext)`
+const Builderd = Variadic(builderd) as dynamic;
+
+/// Return a `CircularProgressIndicator`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:value, 1:strokeWidth, 2:strokeAlign
+///
+/// `Color`: 0:backgroundColor, 1:color
+///
+/// `String`: 0:semanticsLabel, 1:semanticsValue
+///
+/// `valueColor:Animation<Color?>, strokeCap:StrokeCap`
+const CircularProgressIndicatord = Variadic(circularProgressIndicatord) as dynamic;
+
+/// Return a `LinearProgressIndicator`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:value, 1:minHeight
+///
+/// `Color`: 0:backgroundColor, 1:color
+///
+/// `String`: 0:semanticsLabel, 1:semanticsValue
+///
+/// `valueColor:Animation<Color?>, borderRadius:BorderRadiusGeometry`
+const LinearProgressIndicatord = Variadic(linearProgressIndicatord) as dynamic;
+
+/// Return a `Divider`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:height, 1:thickness, 2:indent, 3:endIndent
+///
+/// `color:Color`
+const Dividerd = Variadic(dividerd) as dynamic;
+
+/// Return a `IgnorePointer`.
+///
+/// **supported positional arguments:**<br>
+/// `bool`: 0:ignoring, 1:ignoringSemantics
+///
+/// `child:Widget`
+const IgnorePointerd = Variadic(ignorePointerd) as dynamic;
