@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 import 'widgets/layout/dividerd.dart';
+import 'widgets/layout/flexd.dart';
 import 'widgets/layout/indexed_stackd.dart';
 import 'widgets/layout/data_tabled.dart';
 import 'widgets/layout/fractionally_sized_boxd.dart';
@@ -17,6 +18,10 @@ import 'widgets/layout/tabled.dart';
 import 'widgets/layout/sliver_app_bard.dart';
 import 'widgets/layout/wrapd.dart';
 import 'widgets/layout/opacityd.dart';
+import 'widgets/layout/grid_view_extentd.dart';
+import 'widgets/layout/grid_view_customd.dart';
+import 'widgets/layout/grid_view_countd.dart';
+import 'widgets/layout/grid_view_builderd.dart';
 import 'widgets/layout/grid_tiled.dart';
 import 'widgets/layout/grid_viewd.dart';
 import 'widgets/layout/list_tiled.dart';
@@ -32,6 +37,8 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/interactive_viewerd.dart';
+import 'widgets/controls/checkbox_list_tiled.dart';
 import 'widgets/controls/ignore_pointerd.dart';
 import 'widgets/controls/linear_progress_indicatord.dart';
 import 'widgets/controls/circular_progress_indicatord.dart';
@@ -75,6 +82,8 @@ import 'widgets/controls/tooltipd.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/page_viewd.dart';
 import 'widgets/controls/elevated_buttond.dart';
+import 'widgets/items/flexible_space_bard.dart';
+import 'widgets/items/about_dialogd.dart';
 import 'widgets/items/snack_bard.dart';
 import 'widgets/items/tabbar_viewd.dart';
 import 'widgets/items/tab_bard.dart';
@@ -404,6 +413,11 @@ const Spacerd = Variadic(spacerd) as dynamic;
 /// Return a `ListView`.
 ///
 /// **supported positional arguments:**<br>
+/// `double`: 0:itemExtent, 1:cacheExtent
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
+/// 4:addRepaintBoundaries, 5:addSemanticIndexes
+///
 /// `Widget`: will be added into `children:List<Widget>`
 ///
 /// `key:Key, scrollDirection:Axis, controller:ScrollController,
@@ -413,9 +427,7 @@ const Spacerd = Variadic(spacerd) as dynamic;
 /// restorationId:String, clipBehavior:Clip, dragStartBehavior:DragStartBehavior`
 ///
 /// ***not supported:***<br>
-/// `prototypeItem:Widget, reverse:bool, primary:bool, shrinkWrap:bool,
-/// addAutomaticKeepAlives:bool, addRepaintBoundaries:bool,
-/// addSemanticIndexes:bool, itemExtent:double, cacheExtent:double`
+/// `prototypeItem:Widget`
 const ListViewd = Variadic(listViewd) as dynamic;
 
 /// Return a `ListTile`.
@@ -446,6 +458,9 @@ const ListTiled = Variadic(listTiled) as dynamic;
 /// **supported positional arguments:**<br>
 /// ***required***: `gridDelegate:SliverGridDelegate`
 ///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
+/// 4:addRepaintBoundaries, 5:addSemanticIndexes
+///
 /// `Widget`: will be added into `children:List<Widget>`
 ///
 /// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
@@ -453,10 +468,6 @@ const ListTiled = Variadic(listTiled) as dynamic;
 /// semanticChildCount:int, dragStartBehavior:DragStartBehavior,
 /// clipBehavior:Clip, keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
 /// restorationId:String`
-///
-/// ***not supported:***<br>
-/// `reverse:bool, primary:bool, shrinkWrap:bool, addAutomaticKeepAlives:bool,
-/// addRepaintBoundaries:bool, addSemanticIndexes:bool`
 const GridViewd = Variadic(gridViewd) as dynamic;
 
 /// Return a `GridTile`.
@@ -1472,3 +1483,156 @@ const Dividerd = Variadic(dividerd) as dynamic;
 ///
 /// `child:Widget`
 const IgnorePointerd = Variadic(ignorePointerd) as dynamic;
+
+/// Return a `CheckboxListTile`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `value:bool, onChanged:void Function(bool?)`
+///
+/// `Widget`: 0:title, 1:subtitle, 2:secondary
+///
+/// `Color`: 0:activeColor, 1:checkColor, 2:hoverColor, 3:tileColor, 4:selectedTileColor
+///
+/// `MaterialStateProperty<Color?>`: 0:fillColor, 1:overlayColor
+///
+/// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing
+///
+/// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing
+///
+/// - `void Function(bool?)`: 0:onChanged, 1:onFocusChange
+///
+/// `mouseCursor:MouseCursor, splashRadius:double,
+/// materialTapTargetSize:MaterialTapTargetSize, visualDensity:VisualDensity,
+/// focusNode:FocusNode, checkboxShape:OutlinedBorder, shape:ShapeBorder,
+/// side:BorderSide, controlAffinity:ListTileControlAffinity,
+/// contentPadding:EdgeInsetsGeometry, checkboxSemanticLabel:String`
+///
+/// ***not supported:***<br>
+/// `autofocus:bool, isError:bool, enabled:bool, isThreeLine:bool, dense:bool,
+/// selected:bool, tristate:bool, enableFeedback:bool`
+const CheckboxListTiled = Variadic(checkboxListTiled) as dynamic;
+
+/// Return a `AboutDialog`.
+///
+/// **supported positional arguments:**<br>
+/// `String`: 0:applicationName, 1:applicationVersion, 2:applicationLegalese
+///
+/// `applicationIcon:Widget, children:List<Widget>`
+const AboutDialogd = Variadic(aboutDialogd) as dynamic;
+
+/// Return a `FlexibleSpaceBar`.
+///
+/// **supported positional arguments:**<br>
+/// `Widget`: 0:title, 1:background
+///
+/// `StretchMode`: will be added into `stretchModes:List<StretchMode>`
+///
+/// `centerTitle:bool, titlePadding:EdgeInsetsGeometry,
+/// collapseMode:CollapseMode, expandedTitleScale:double|int`
+const FlexibleSpaceBard = Variadic(flexibleSpaceBard) as dynamic;
+
+/// Return a `Flex`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `direction:Axis`
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `children:List<Widget>, mainAxisAlignment:MainAxisAlignment,
+/// mainAxisSize:MainAxisSize, crossAxisAlignment:CrossAxisAlignment,
+/// textDirection:TextDirection, verticalDirection:VerticalDirection,
+/// textBaseline:TextBaseline, clipBehavior:Clip`
+const Flexd = Variadic(flexd) as dynamic;
+
+/// Return a `InteractiveViewer`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`
+///
+/// `int`: 0:alignPanAxis, 1:constrained, 2:panEnabled, 3:scaleEnabled, 4:trackpadScrollCausesScale
+///
+/// `double|int`: 0:maxScale, 1:minScale, 2:interactionEndFrictionCoefficient, 3:scaleFactor
+///
+/// - `void Function(ScaleEndDetails)`: onInteractionEnd
+/// - `void Function(ScaleStartDetails)`: onInteractionStart
+/// - `void Function(ScaleUpdateDetails)`: onInteractionUpdate
+///
+/// `child:Widget, clipBehavior:Clip, panAxis:PanAxis, boundaryMargin:EdgeInsets,
+/// transformationController:TransformationController, alignment:Alignment`
+const InteractiveViewerd = Variadic(interactiveViewerd) as dynamic;
+
+/// Return a `GridView.builder`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `gridDelegate:SliverGridDelegate, itemBuilder:Widget? Function(BuildContext, int)`
+///
+/// `int`: 0:itemCount, 1:semanticChildCount
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
+/// 4:addRepaintBoundaries, 5:addSemanticIndexes
+///
+/// - `Widget? Function(BuildContext, int)`: itemBuilder
+/// - `int? Function(Key)`: findChildIndexCallback
+///
+/// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+/// padding:EdgeInsetsGeometry, cacheExtent:double,
+/// dragStartBehavior:DragStartBehavior,
+/// keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
+/// restorationId:String, clipBehavior:Clip`
+const GridViewBuilderd = Variadic(gridViewBuilderd) as dynamic;
+
+/// Return a `GridView.count`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `crossAxisCount:int`
+///
+/// `int`: 0:crossAxisCount, 1:semanticChildCount
+///
+/// `double`: 0:mainAxisSpacing, 1:crossAxisSpacing, 2:childAspectRatio, 3:cacheExtent
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
+/// 4:addRepaintBoundaries, 5:addSemanticIndexes
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// - `Widget? Function(BuildContext, int)`: itemBuilder
+/// - `int? Function(Key)`: findChildIndexCallback
+///
+/// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+///  padding:EdgeInsetsGeometry, dragStartBehavior:DragStartBehavior,
+///  keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
+///  restorationId:String, clipBehavior:Clip`
+const GridViewCountd = Variadic(gridViewCountd) as dynamic;
+
+/// Return a `GridView.custom`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `gridDelegate:SliverGridDelegate, childrenDelegate:SliverChildDelegate`
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap
+///
+/// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+///  padding:EdgeInsetsGeometry, cacheExtent:double, semanticChildCount:int,
+///  dragStartBehavior:DragStartBehavior,
+///  keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
+///  restorationId:String, clipBehavior:Clip`
+const GridViewCustomd = Variadic(gridViewCustomd) as dynamic;
+
+/// Return a `GridView.extent`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `maxCrossAxisExtent:double`
+///
+/// `double`: 0:maxCrossAxisExtent, 1:mainAxisSpacing, 2:crossAxisSpacing, 3:childAspectRatio, 4:cacheExtent
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
+/// 4:addRepaintBoundaries, 5:addSemanticIndexes
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+///  padding:EdgeInsetsGeometry, semanticChildCount:int,
+///  dragStartBehavior:DragStartBehavior,
+///  keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
+///  restorationId:String, clipBehavior:Clip`
+const GridViewExtentd = Variadic(gridViewExtentd) as dynamic;

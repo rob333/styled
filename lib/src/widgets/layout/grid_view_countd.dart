@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 
-listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+gridViewCountd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
   int booli = 0;
+  int inti = 0;
   int doublei = 0;
   final List<Widget> widgets = [];
 
@@ -11,6 +12,11 @@ listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
+      case List<Widget> arg:
+        // argsMap[#children] = arg;
+        widgets.addAll(arg);
+      case Widget arg:
+        widgets.add(arg);
       case Axis arg:
         argsMap[#scrollDirection] = arg;
       case ScrollController arg:
@@ -19,27 +25,22 @@ listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#physics] = arg;
       case EdgeInsetsGeometry arg:
         argsMap[#padding] = arg;
-      case List<Widget> arg:
-        // argsMap[#children] = arg;
-        widgets.addAll(arg);
-      case Widget arg:
-        // argsMap[#prototypeItem] = arg;
-        widgets.add(arg);
       case int arg:
-        argsMap[#semanticChildCount] = arg;
-      case ScrollViewKeyboardDismissBehavior arg:
-        argsMap[#keyboardDismissBehavior] = arg;
-      case String arg:
-        argsMap[#restorationId] = arg;
-      case Clip arg:
-        argsMap[#clipBehavior] = arg;
-      case DragStartBehavior arg:
-        argsMap[#dragStartBehavior] = arg;
+        switch (inti++) {
+          case 0:
+            argsMap[#crossAxisCount] = arg;
+          case 1:
+            argsMap[#semanticChildCount] = arg;
+        }
       case double arg:
         switch (doublei++) {
           case 0:
-            argsMap[#itemExtent] = arg;
+            argsMap[#mainAxisSpacing] = arg;
           case 1:
+            argsMap[#crossAxisSpacing] = arg;
+          case 2:
+            argsMap[#childAspectRatio] = arg;
+          case 3:
             argsMap[#cacheExtent] = arg;
         }
       case bool arg:
@@ -57,6 +58,15 @@ listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
           case 5:
             argsMap[#addSemanticIndexes] = arg;
         }
+
+      case DragStartBehavior arg:
+        argsMap[#dragStartBehavior] = arg;
+      case ScrollViewKeyboardDismissBehavior arg:
+        argsMap[#keyboardDismissBehavior] = arg;
+      case String arg:
+        argsMap[#restorationId] = arg;
+      case Clip arg:
+        argsMap[#clipBehavior] = arg;
     }
   }
 
@@ -67,5 +77,13 @@ listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     argsMap.addAll(origArgsMap);
   }
 
-  return Function.apply(ListView.new, [], argsMap);
+  //* required:
+  assert(() {
+    if (argsMap[#crossAxisCount] == null) {
+      throw FlutterError("GridViewCountdd requires `crossAxisCount:int`");
+    }
+    return true;
+  }());
+
+  return Function.apply(GridView.count, [], argsMap);
 }

@@ -212,8 +212,12 @@ With ***Mixin***:
 <li> Spacerd
 <li> ListViewd (partial)
 <li> ListTiled (partial)
-<li> GridViewd (partial)
+<li> GridViewd
 <li> GridTiled
+<li> GridViewBuilderd
+<li> GridViewCountd
+<li> GridViewCustomd
+<li> GridViewExtentd
 <li> Expandedd
 <li> Wrapd
 <li> Opacityd
@@ -221,10 +225,6 @@ With ***Mixin***:
 <li> Tabled
 <li> TableRowd
 <li> SliverAppBard (partial)
-<li> ClipRRectd
-<li> ClipOvald
-<li> ClipPathd
-<li> ClipRectd
 <li> Herod
 <li> CustomPaintd
 <li> ToolTipd
@@ -285,14 +285,14 @@ With ***Mixin***:
 <li> LinearProgressIndicatord
 <li> Dividerd
 <li> IgnorePointerd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> CheckboxListTiled (partial)
+<li> AboutDialogd
+<li> Flexd
+<li> InteractiveViewerd
+<li> ClipRRectd
+<li> ClipOvald
+<li> ClipPathd
+<li> ClipRectd
 <li> 
 <li> 
 <li> 
@@ -370,8 +370,8 @@ With ***Mixin***:
 <li> DataRowd
 <li> DataColumnd
 <li> DataCelld
+<li> FlexibleSpaceBard
 <!-- <li>
-<li> 
 <li>
 <li>
 <li>

@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 
 gridViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
+  int booli = 0;
   final List<Widget> widgets = [];
 
   for (final arg in argsList) {
@@ -36,18 +37,21 @@ gridViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#keyboardDismissBehavior] = arg;
       case String arg:
         argsMap[#restorationId] = arg;
-      // case bool arg:
-      //   argsMap[#reverse] = arg;
-      // case bool arg:
-      //   argsMap[#primary] = arg;
-      // case bool arg:
-      //   argsMap[#shrinkWrap] = arg;
-      // case bool arg:
-      //   argsMap[#addAutomaticKeepAlives] = arg;
-      // case bool arg:
-      //   argsMap[#addRepaintBoundaries] = arg;
-      // case bool arg:
-      //   argsMap[#addSemanticIndexes] = arg;
+      case bool arg:
+        switch (booli++) {
+          case 0:
+            argsMap[#reverse] = arg;
+          case 1:
+            argsMap[#primary] = arg;
+          case 2:
+            argsMap[#shrinkWrap] = arg;
+          case 3:
+            argsMap[#addAutomaticKeepAlives] = arg;
+          case 4:
+            argsMap[#addRepaintBoundaries] = arg;
+          case 5:
+            argsMap[#addSemanticIndexes] = arg;
+        }
     }
   }
 

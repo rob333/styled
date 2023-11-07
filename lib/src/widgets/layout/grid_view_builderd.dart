@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 
-listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+gridViewBuilderd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
+  int inti = 0;
   int booli = 0;
-  int doublei = 0;
-  final List<Widget> widgets = [];
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
+      case Widget? Function(BuildContext, int) arg:
+        argsMap[#itemBuilder] = arg;
       case Axis arg:
         argsMap[#scrollDirection] = arg;
       case ScrollController arg:
@@ -19,29 +20,27 @@ listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#physics] = arg;
       case EdgeInsetsGeometry arg:
         argsMap[#padding] = arg;
-      case List<Widget> arg:
-        // argsMap[#children] = arg;
-        widgets.addAll(arg);
-      case Widget arg:
-        // argsMap[#prototypeItem] = arg;
-        widgets.add(arg);
+      case SliverGridDelegate arg:
+        argsMap[#gridDelegate] = arg;
+      case int? Function(Key) arg:
+        argsMap[#findChildIndexCallback] = arg;
       case int arg:
-        argsMap[#semanticChildCount] = arg;
+        switch (inti++) {
+          case 0:
+            argsMap[#itemCount] = arg;
+          case 1:
+            argsMap[#semanticChildCount] = arg;
+        }
+      case double arg:
+        argsMap[#cacheExtent] = arg;
+      case DragStartBehavior arg:
+        argsMap[#dragStartBehavior] = arg;
       case ScrollViewKeyboardDismissBehavior arg:
         argsMap[#keyboardDismissBehavior] = arg;
       case String arg:
         argsMap[#restorationId] = arg;
       case Clip arg:
         argsMap[#clipBehavior] = arg;
-      case DragStartBehavior arg:
-        argsMap[#dragStartBehavior] = arg;
-      case double arg:
-        switch (doublei++) {
-          case 0:
-            argsMap[#itemExtent] = arg;
-          case 1:
-            argsMap[#cacheExtent] = arg;
-        }
       case bool arg:
         switch (booli++) {
           case 0:
@@ -60,12 +59,18 @@ listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#children] = widgets;
-
   // named args(origArgsMap) precedes positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
   }
 
-  return Function.apply(ListView.new, [], argsMap);
+  //* required:
+  assert(() {
+    if (argsMap[#gridDelegate] == null || argsMap[#itemBuilder] == null) {
+      throw FlutterError("GridViewBuilderd requires `gridDelegate:SliverGridDelegate` and  `itemBuilder:Widget? Function(BuildContext, int)`");
+    }
+    return true;
+  }());
+
+  return Function.apply(GridView.builder, [], argsMap);
 }
