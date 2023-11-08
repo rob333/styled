@@ -1,6 +1,10 @@
 // ignore_for_file: constant_identifier_names
 
 import 'widgets/layout/dividerd.dart';
+import 'widgets/layout/physical_modeld.dart';
+import 'widgets/layout/list_view_separatedd.dart';
+import 'widgets/layout/list_view_customedd.dart';
+import 'widgets/layout/list_view_builderd.dart';
 import 'widgets/layout/flexd.dart';
 import 'widgets/layout/indexed_stackd.dart';
 import 'widgets/layout/data_tabled.dart';
@@ -37,6 +41,7 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/switch_list_tiled.dart';
 import 'widgets/controls/interactive_viewerd.dart';
 import 'widgets/controls/checkbox_list_tiled.dart';
 import 'widgets/controls/ignore_pointerd.dart';
@@ -1636,3 +1641,96 @@ const GridViewCustomd = Variadic(gridViewCustomd) as dynamic;
 ///  keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
 ///  restorationId:String, clipBehavior:Clip`
 const GridViewExtentd = Variadic(gridViewExtentd) as dynamic;
+
+/// Return a `ListView.builder`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `itemBuilder:Widget? Function(BuildContext, int)`
+///
+/// `int`: 0:itemCount, 1:semanticChildCount
+///
+/// `double`: 0:itemExtent, 1:cacheExtent
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
+/// 4:addRepaintBoundaries, 5:addSemanticIndexes
+///
+/// - `int? Function(Key)`: findChildIndexCallback
+///
+/// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+/// padding:EdgeInsetsGeometry, prototypeItem:Widget,
+/// dragStartBehavior:DragStartBehavior,
+/// keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
+/// restorationId:String, clipBehavior:Clip`
+const ListViewBuilderd = Variadic(listViewBuilderd) as dynamic;
+
+/// Return a `ListView.separated`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `itemCount:int, itemBuilder:Widget? Function(BuildContext, int), separatorBuilder:Widget Function(BuildContext, int)`
+///
+/// - `Widget? Function(BuildContext, int)`: 0:itemBuilder, 1:separatorBuilder
+///
+/// - `int? Function(Key)`: findChildIndexCallback
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
+/// 4:addRepaintBoundaries, 5:addSemanticIndexes
+///
+/// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+/// padding:EdgeInsetsGeometry, cacheExtent:double,
+/// dragStartBehavior:DragStartBehavior,
+/// keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
+/// restorationId:String, clipBehavior:Clip`
+const ListViewSeparatedd = Variadic(listViewSeparatedd) as dynamic;
+
+/// Return a `ListView.custom`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `childrenDelegate:SliverChildDelegate`
+/// `double`: 0:itemExtent, 1:cacheExtent
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap
+///
+/// `0scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+/// padding:EdgeInsetsGeometry, prototypeItem:Widget, semanticChildCount:int,
+/// dragStartBehavior:DragStartBehavior,
+/// keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
+/// restorationId:String, clipBehavior:Clip`
+const ListViewCustomd = Variadic(listViewCustomd) as dynamic;
+
+/// Return a `SwitchListTile`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `value:bool, onChange:void Function(bool)`
+///
+/// `Widget`: 0:title, 1:subtitle, 2:secondary
+///
+/// `bool`: 0:value, 1:autofocus, 2:isThreeLine, 3:dense, 4:selected, 5:enableFeedback
+///
+/// `Color`: 0:activeColor, 1:activeTrackColor, 2:inactiveThumbColor, 3:inactiveTrackColor
+/// 4:tileColor, 5:selectedTileColor, 6:hoverColor
+///
+/// `ImageProvider<Object>`: 0:activeThumbImage, 1:inactiveThumbImage
+///
+/// `MaterialStateProperty<Color?>`: 0:thumbColor, 1:trackColor, 2:trackOutlineColor, 3:overlayColor
+///
+/// - `void Function(bool)`: 0:onChange, 1:onFocusChange
+/// - `void Function(Object, StackTrace?)`: 0:onActiveThumbImageError, 1:onInactiveThumbImageError
+///
+/// `thumbIcon:MaterialStateProperty<Icon?>,
+/// materialTapTargetSize:MaterialTapTargetSize,
+/// dragStartBehavior:DragStartBehavior, mouseCursor:MouseCursor,
+/// splashRadius:double, focusNode:FocusNode, contentPadding:EdgeInsetsGeometry,
+/// controlAffinity:ListTileControlAffinity, shape:ShapeBorder,
+/// visualDensity:VisualDensity`
+const SwitchListTiled = Variadic(switchListTiled) as dynamic;
+
+/// Return a `PhysicalModel`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `color:Color`
+///
+/// `Color`: 0:color, 1:shadowColor
+///
+/// `shape:BoxShape, clipBehavior:Clip, borderRadius:BorderRadius,
+/// elevation:double, child:Widget`
+const PhysicalModeld = Variadic(physicalModeld) as dynamic;

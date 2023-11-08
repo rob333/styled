@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 
-gridViewExtentd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+listViewBuilderd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
+  int inti = 0;
   int booli = 0;
   int doublei = 0;
-  final List<Widget> widgets = [];
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case List<Widget> arg:
-        // argsMap[#children] = arg;
-        widgets.addAll(arg);
-      case Widget arg:
-        widgets.add(arg);
+      case Widget? Function(BuildContext, int) arg:
+        argsMap[#itemBuilder] = arg;
       case Axis arg:
         argsMap[#scrollDirection] = arg;
       case ScrollController arg:
@@ -24,28 +21,23 @@ gridViewExtentd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#physics] = arg;
       case EdgeInsetsGeometry arg:
         argsMap[#padding] = arg;
-      case int arg:
-        argsMap[#semanticChildCount] = arg;
-      case DragStartBehavior arg:
-        argsMap[#dragStartBehavior] = arg;
-      case ScrollViewKeyboardDismissBehavior arg:
-        argsMap[#keyboardDismissBehavior] = arg;
-      case String arg:
-        argsMap[#restorationId] = arg;
-      case Clip arg:
-        argsMap[#clipBehavior] = arg;
       case double arg:
         switch (doublei++) {
           case 0:
-            argsMap[#maxCrossAxisExtent] = arg;
+            argsMap[#itemExtent] = arg;
           case 1:
-            argsMap[#mainAxisSpacing] = arg;
-          case 2:
-            argsMap[#crossAxisSpacing] = arg;
-          case 3:
-            argsMap[#childAspectRatio] = arg;
-          case 4:
             argsMap[#cacheExtent] = arg;
+        }
+      case Widget arg:
+        argsMap[#prototypeItem] = arg;
+      case int? Function(Key) arg:
+        argsMap[#findChildIndexCallback] = arg;
+      case int arg:
+        switch (inti++) {
+          case 0:
+            argsMap[#itemCount] = arg;
+          case 1:
+            argsMap[#semanticChildCount] = arg;
         }
       case bool arg:
         switch (booli++) {
@@ -62,10 +54,16 @@ gridViewExtentd(List argsList, Map<Symbol, dynamic> origArgsMap) {
           case 5:
             argsMap[#addSemanticIndexes] = arg;
         }
+      case DragStartBehavior arg:
+        argsMap[#dragStartBehavior] = arg;
+      case ScrollViewKeyboardDismissBehavior arg:
+        argsMap[#keyboardDismissBehavior] = arg;
+      case String arg:
+        argsMap[#restorationId] = arg;
+      case Clip arg:
+        argsMap[#clipBehavior] = arg;
     }
   }
-
-  argsMap[#children] = widgets;
 
   // named args(origArgsMap) precedes positional ones
   if (origArgsMap.isNotEmpty) {
@@ -74,11 +72,11 @@ gridViewExtentd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#maxCrossAxisExtent] == null) {
-      throw FlutterError("GridViewExtentd requires `maxCrossAxisExtent:double`");
+    if (argsMap[#itemBuilder] == null) {
+      throw FlutterError("ListViewBuilderdd requires `itemBuilder:itemBuilder:Widget? Function(BuildContext, int)`");
     }
     return true;
   }());
 
-  return Function.apply(GridView.extent, [], argsMap);
+  return Function.apply(ListView.builder, [], argsMap);
 }

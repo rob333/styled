@@ -57,6 +57,7 @@ listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
           case 5:
             argsMap[#addSemanticIndexes] = arg;
         }
+      // Widget? prototypeItem,
     }
   }
 
