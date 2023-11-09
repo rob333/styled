@@ -1,5 +1,9 @@
 // ignore_for_file: constant_identifier_names
 
+import 'widgets/layout/flowd.dart';
+import 'widgets/layout/expansion_panel_listd.dart';
+import 'widgets/layout/expansion_paneld.dart';
+import 'widgets/layout/rotated_boxd.dart';
 import 'widgets/layout/dividerd.dart';
 import 'widgets/layout/physical_modeld.dart';
 import 'widgets/layout/list_view_separatedd.dart';
@@ -41,6 +45,12 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/baselined.dart';
+import 'widgets/controls/tab_page_selectord.dart';
+import 'widgets/controls/refresh_indicatord.dart';
+import 'widgets/controls/hero_moded.dart';
+import 'widgets/controls/mouse_regiond.dart';
+import 'widgets/controls/scrollbard.dart';
 import 'widgets/controls/switch_list_tiled.dart';
 import 'widgets/controls/interactive_viewerd.dart';
 import 'widgets/controls/checkbox_list_tiled.dart';
@@ -1061,14 +1071,20 @@ const DataCelld = Variadic(dataCelld) as dynamic;
 /// **supported positional arguments:**<br>
 /// ***required***: `columns:List<DataColumn>, rows:List<DataRow>`
 ///
+/// `MaterialStateProperty<Color?>`: 0:dataRowColor, 1:headingRowColor
+///
+/// `TextStyle`: 0:dataTextStyle, 1:headingTextStyle
+///
+/// `bool`: 0:sortAscending, 1:showCheckboxColumn, 2:showBottomBorder
+///
 /// `DataColumn`: will be added into `columns:List<DataColumn>`
 ///
 /// `DataRow`: will be added into `rows:List<DataRow>`
 ///
 /// - `void Function(bool?)`: onSelectAll
 ///
-/// `sortAscending:bool, decoration:Decoration, border:TableBorder,
-/// clipBehavior:Clip, sortColumnIndex:int`
+/// `decoration:Decoration, border:TableBorder, clipBehavior:Clip,
+/// sortColumnIndex:int`
 ///
 /// **Mixin with Decoration:**<br>
 /// `BoxShadow`: will be added into `boxShadow:List<BoxShadow>`
@@ -1078,12 +1094,8 @@ const DataCelld = Variadic(dataCelld) as dynamic;
 ///  gradient:Gradient, backgroundBlendMode:BlendMode, shape:BoxShape`
 ///
 /// ***not supported:***<br>
-/// `dataRowColor:MaterialStateProperty<Color?>,
-/// headingRowColor:MaterialStateProperty<Color?>,
-/// dataRowHeight:double, dataRowMinHeight:double, dataRowMaxHeight:double,
-/// dataTextStyle:TextSTyle, headingTextStyle:TextStyle,
+/// `dataRowHeight:double, dataRowMinHeight:double, dataRowMaxHeight:double,
 /// headingRowHeight:double, horizontalMargin:double, columnSpacing:double,
-/// showCheckboxColumn:bool, showBottomBorder:bool,
 /// dividerThickness:double, checkboxHorizontalMargin:double`
 const DataTabled = Variadic(dataTabled) as dynamic;
 
@@ -1734,3 +1746,110 @@ const SwitchListTiled = Variadic(switchListTiled) as dynamic;
 /// `shape:BoxShape, clipBehavior:Clip, borderRadius:BorderRadius,
 /// elevation:double, child:Widget`
 const PhysicalModeld = Variadic(physicalModeld) as dynamic;
+
+/// Return a `RotatedBox`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `quarterTurns:int`
+///
+/// `child:Widget`
+const RotatedBoxd = Variadic(rotatedBoxd) as dynamic;
+
+/// Return a `ExpansionPanel`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `body:Widget`, `headerBuilder:Widget Function(BuildContext, bool)`
+///
+/// `bool`: 0:isExpanded, 1:canTapOnHeader,
+///
+/// `backgroundColor:Color`
+const ExpansionPaneld = Variadic(expansionPaneld) as dynamic;
+
+/// Return a `ExpansionPanelList`.
+///
+/// **supported positional arguments:**<br>
+/// `Color`: 0:dividerColor, 1:expandIconColor
+///
+/// `double`: 0:elevation, 1:materialGapSize
+///
+/// - `void Function(int, bool)`: expansionCallback
+///
+/// `ExpansionPanel`: will be added into `children:List<ExpansionPanel>`
+///
+/// `animationDuration:Duration, expandedHeaderPadding:EdgeInsets`
+const ExpansionPanelListd = Variadic(expansionPanelListd) as dynamic;
+
+/// Return a `Scrollbar`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`
+///
+/// `bool`: 0:thumbVisibility, 1:trackVisibility, 2:interactive, 3:showTrackOnHover
+///
+/// - `bool Function(ScrollNotification)`: notificationPredicate
+///
+/// `thickness:double|int, controller:ScrollController, radius:Radius,
+///  scrollbarOrientation:ScrollbarOrientation`
+const Scrollbard = Variadic(scrollbard) as dynamic;
+
+/// Return a `MouseRegion`.
+///
+/// **supported positional arguments:**<br>
+///
+/// - `void Function(PointerEnterEvent)`: onEnter
+/// - `void Function(PointerExitEvent)`: onExit
+/// - `void Function(PointerHoverEvent)`: onHover
+///
+/// `child:Widget, cursor:MouseCursor, opaque:bool, hitTestBehavior:HitTestBehavior`
+const MouseRegiond = Variadic(mouseRegiond) as dynamic;
+
+/// Return a `HeroMode`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`
+///
+/// `enabled:bool`
+const HeroModed = Variadic(heroModed) as dynamic;
+
+/// Return a `RefreshIndicator`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget, `onRefresh:Future<void> Function()`
+///
+/// - `Future<void> Function()`: onRefresh
+/// - `bool Function(ScrollNotification)`: notificationPredicate
+///
+/// `double|int`: 0:displacement, 1:edgeOffset, 2:strokeWidth
+///
+/// `Color`: 0:color, 1:backgroundColor
+///
+/// `String`: 0:semanticsLabel, 1:semanticsValue
+///
+/// `triggerMode:RefreshIndicatorTriggerMode`
+const RefreshIndicatord = Variadic(refreshIndicatord) as dynamic;
+
+/// Return a `Flow`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `delegate:FlowDelegate`
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `children:List<Widget>, clipBehavior:Clip`
+const Flowd = Variadic(flowd) as dynamic;
+
+/// Return a `TabPageSelector`.
+///
+/// **supported positional arguments:**<br>
+/// `Color`: 0:color, 1:selectedColor
+///
+/// `indicatorSize:double|int, controller:TabController, borderStyle:BorderStyle`
+const TabPageSelectord = Variadic(tabPageSelectord) as dynamic;
+
+/// Return a `Baseline`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `baseline:double, baselineType:TextBaseline`
+///
+/// `baseline:double|int, child:Widget`
+const Baselined = Variadic(baselined) as dynamic;

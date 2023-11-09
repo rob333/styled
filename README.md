@@ -301,16 +301,16 @@ With ***Mixin***:
 <ul>
 <li> SwitchListTiled
 <li> PhysicalModeld
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> RotatedBoxd
+<li> ExpansionPaneld
+<li> ExpansionPanelListd
+<li> Scrollbard
+<li> MouseRegiond
+<li> HeroModed
+<li> RefreshIndicatord
+<li> Flowd
+<li> TabPageSelectord
+<li> Baselined
 <li> 
 <li> 
 <li> 
@@ -414,6 +414,7 @@ With ***Mixin***:
 <li> SelectableText.rich
 <li> TweenAnimationBuilder
 <li> NotificationListener
+<li> GestureDetector
 <li> ---
 <li> TableBorder
 <li> ImageFilter.matrix

@@ -3,6 +3,9 @@ import 'containerd.dart' show mergeDecoration;
 
 dataTabled(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
+  int booli = 0;
+  int materialstatei = 0;
+  int textstylei = 0;
   final List<DataColumn> columns = [];
   final List<DataRow> rows = [];
 
@@ -26,7 +29,14 @@ dataTabled(List argsList, Map<Symbol, dynamic> origArgsMap) {
       case DataRow arg:
         rows.add(arg);
       case bool arg:
-        argsMap[#sortAscending] = arg;
+        switch (booli++) {
+          case 0:
+            argsMap[#sortAscending] = arg;
+          case 1:
+            argsMap[#showCheckboxColumn] = arg;
+          case 2:
+            argsMap[#showBottomBorder] = arg;
+        }
       case Decoration arg:
         argsMap[#decoration] = arg;
       case TableBorder arg:
@@ -38,18 +48,26 @@ dataTabled(List argsList, Map<Symbol, dynamic> origArgsMap) {
       case void Function(bool?) arg:
         argsMap[#onSelectAll] = arg;
 
-      // MaterialStateProperty<Color?>? dataRowColor,
-      // MaterialStateProperty<Color?>? headingRowColor,
+      case MaterialStateProperty<Color?> arg:
+        switch (materialstatei++) {
+          case 0:
+            argsMap[#dataRowColor] = arg;
+          case 1:
+            argsMap[#headingRowColor] = arg;
+        }
+      case TextStyle arg:
+        switch (textstylei++) {
+          case 0:
+            argsMap[#dataTextStyle] = arg;
+          case 1:
+            argsMap[#headingTextStyle] = arg;
+        }
       // double? dataRowHeight,
       // double? dataRowMinHeight,
       // double? dataRowMaxHeight,
-      // TextStyle? dataTextStyle,
-      // TextStyle? headingTextStyle,
       // double? headingRowHeight,
       // double? horizontalMargin,
       // double? columnSpacing,
-      // bool showCheckboxColumn = true,
-      // bool showBottomBorder = false,
       // double? dividerThickness,
       // double? checkboxHorizontalMargin,
 
