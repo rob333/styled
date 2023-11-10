@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+import 'widgets/layout/vertical_dividerd.dart';
+import 'widgets/layout/navigation_raild.dart';
 import 'widgets/layout/flowd.dart';
 import 'widgets/layout/expansion_panel_listd.dart';
 import 'widgets/layout/expansion_paneld.dart';
@@ -45,6 +47,15 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/focusable_action_detectord.dart';
+import 'widgets/controls/focusd.dart';
+import 'widgets/controls/actionsd.dart';
+import 'widgets/controls/shortcutd.dart';
+import 'widgets/controls/outlined_button_icond.dart';
+import 'widgets/controls/outlined_buttond.dart';
+import 'widgets/controls/text_button_icond.dart';
+import 'widgets/controls/text_buttond.dart';
+import 'widgets/controls/repaint_boundaryd.dart';
 import 'widgets/controls/baselined.dart';
 import 'widgets/controls/tab_page_selectord.dart';
 import 'widgets/controls/refresh_indicatord.dart';
@@ -97,6 +108,7 @@ import 'widgets/controls/tooltipd.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/page_viewd.dart';
 import 'widgets/controls/elevated_buttond.dart';
+import 'widgets/items/navigation_rail_destinationd.dart';
 import 'widgets/items/flexible_space_bard.dart';
 import 'widgets/items/about_dialogd.dart';
 import 'widgets/items/snack_bard.dart';
@@ -1853,3 +1865,152 @@ const TabPageSelectord = Variadic(tabPageSelectord) as dynamic;
 ///
 /// `baseline:double|int, child:Widget`
 const Baselined = Variadic(baselined) as dynamic;
+
+/// Return a `RepaintBoundary`.
+///
+/// **supported positional arguments:**<br>
+/// `child:Widget`
+const RepaintBoundaryd = Variadic(repaintBoundaryd) as dynamic;
+
+/// Return a `TextButton`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget, onPressed:void Function()`
+///
+/// `bool`: 0:autofocus, 1:isSemanticButton
+///
+/// - `void Function()`: 0:onPressed, 1:onLongPress
+/// - `void Function(bool)`: 0:onHover, 1:onFocusChange
+///
+/// `style:ButtonStyle, focusNode:FocusNode, clipBehavior:Clip,
+/// statesController:MaterialStatesController`
+const TextButtond = Variadic(textButtond) as dynamic;
+
+/// Return a `TextButton.icon`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `icon:Widget, label:Widget, onPressed:void Function()`
+///
+/// `Widget`: 0:icon, 1:label
+///
+/// - `void Function()`: 0:onPressed, 1:onLongPress
+/// - `void Function(bool)`: 0:onHover, 1:onFocusChange
+///
+/// `autofocus:bool, style:ButtonStyle, focusNode:FocusNode, clipBehavior:Clip,
+/// statesController:MaterialStatesController`
+const TextButtonIcond = Variadic(textButtonIcond) as dynamic;
+
+/// Return a `OutlinedButton`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget, onPressed:void Function()`
+///
+/// - `void Function()`: 0:onPressed, 1:onLongPress
+/// - `void Function(bool)`: 0:onHover, 1:onFocusChange
+///
+/// `autofocus:bool, style:ButtonStyle, focusNode:FocusNode, clipBehavior:Clip,
+/// statesController:MaterialStatesController`
+const OutlinedButtond = Variadic(outlinedButtond) as dynamic;
+
+/// Return a `OutlinedButton.icon`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `icon:Widget, label:Widget, onPressed:void Function()`
+///
+/// `Widget`: 0:icon, 1:label
+///
+/// - `void Function()`: 0:onPressed, 1:onLongPress
+///
+/// `autofocus:bool, style:ButtonStyle, focusNode:FocusNode, clipBehavior:Clip,
+/// statesController:MaterialStatesController`
+const OutlinedButtonIcond = Variadic(outlinedButtonIcond) as dynamic;
+
+/// Return a `Shortcuts`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`, `shortcuts:Map<ShortcutActivator, Intent>`
+///
+/// `debugLabel:String`
+const Shortcutsd = Variadic(shortcutsd) as dynamic;
+
+/// Return a `Actions`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`, `actions:Map<Type, Action<Intent>>`
+///
+/// `dispatcher:ActionDispatcher`
+const Actionsd = Variadic(actionsd) as dynamic;
+
+/// Return a `Focus`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`
+///
+/// `FocusNode`: 0:focusNode, 1:parentNode
+///
+/// `bool`: 0:autofocus, 1:canRequestFocus, 2:skipTraversal, 3:descendantsAreFocusable,
+///  4:descendantsAreTraversable, 5:includeSemantics
+///
+/// - `void Function(bool)`: onFocusChange
+/// - `KeyEventResult Function(FocusNode, KeyEvent)`: onKeyEvent
+/// - `KeyEventResult Function(FocusNode, RawKeyEvent)`: onKey
+///
+/// `debugLabel:String`
+const Focusd = Variadic(focusd) as dynamic;
+
+/// Return a `FocusableActionDetector`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`
+///
+/// `bool`: 0:enabled, 1:autofocus, 2:descendantsAreFocusable, 3:descendantsAreTraversable
+///  4:includeFocusSemantics
+///
+/// - `void Function(bool)`: 0:onShowFocusHighlight, 1:onShowHoverHighlight, 2:onFocusChange
+///
+/// `focusNode:FocusNode, shortcuts:Map<ShortcutActivator, Intent>,
+/// actions:Map<Type, Action<Intent>>, mouseCursor:MouseCursor`
+const FocusableActionDetectord = Variadic(focusableActionDetectord) as dynamic;
+
+/// Return a `VerticalDivider`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:width, 1:thickness, 2:indent, 3:endIndent
+///
+/// `color:Color`
+const VerticalDividerd = Variadic(verticalDividerd) as dynamic;
+
+/// Return a `NavigationRail`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `selectedIndex:int`, `destinations:List<NavigationRailDestination>`
+///
+/// `Widget`: 0:leading, 1:trailing
+///
+/// `Color`: 0:backgroundColor, 1:indicatorColor
+///
+/// `Widget`: 0:leading, 1:trailing
+///
+/// `double`: 0:elevation, 1:groupAlignment, 2:minWidth, 3:minExtendedWidth
+///
+/// `TextStyle`: 0:unselectedLabelTextStyle, 1:selectedLabelTextStyle
+///
+/// `IconThemeData`: 0:unselectedIconTheme, 1:selectedIconTheme
+///
+/// - `void Function(int)`: onDestinationSelected
+///
+/// `NavigationRailDestination`: will be added into `destinations:List<NavigationRailDestination>`
+///
+/// `selectedIndex:int, labelType:NavigationRailLabelType, indicatorShape:ShapeBorder`
+const NavigationRaild = Variadic(navigationRaild) as dynamic;
+
+/// Return a `NavigationRailDestination`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `icon:Widget`, `label:Widget`
+///
+/// `Widget`: 0:icon, 1:label, 2:selectedIcon
+///
+/// `indicatorColor:Color, indicatorShape:ShapeBorder,
+///  padding:EdgeInsetsGeometry, disabled:bool`
+const NavigationRailDestinationd = Variadic(navigationRailDestinationd) as dynamic;

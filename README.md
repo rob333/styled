@@ -311,18 +311,18 @@ With ***Mixin***:
 <li> Flowd
 <li> TabPageSelectord
 <li> Baselined
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> RepaintBoundaryd
+<li> TextButtond
+<li> TextButtonIcond
+<li> OutlinedButtond
+<li> OutlinedButtonIcond
+<li> Shortcutsd
+<li> Actionsd
+<li> Focusd
+<li> FocusableActionDetectord
+<li> VerticalDividerd
+<li> NavigationRaild
+<li> NavigationRailDestinationd
 <li> 
 <li> 
 <li> 
@@ -415,6 +415,8 @@ With ***Mixin***:
 <li> TweenAnimationBuilder
 <li> NotificationListener
 <li> GestureDetector
+<li> DropdownButton
+<li> Autocomplete
 <li> ---
 <li> TableBorder
 <li> ImageFilter.matrix
