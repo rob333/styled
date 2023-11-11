@@ -47,6 +47,20 @@ import 'widgets/layout/columnd.dart';
 import 'widgets/layout/rowd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
+import 'widgets/controls/custom_scroll_viewd.dart';
+import 'widgets/controls/scrollabled.dart';
+import 'widgets/controls/will_pop_scoped.dart';
+import 'widgets/controls/formd.dart';
+import 'widgets/controls/raw_keyboard_listenerd.dart';
+import 'widgets/controls/exclude_semanticsd.dart';
+import 'widgets/controls/merge_semanticsd.dart';
+import 'widgets/controls/callback_shortcutsd.dart';
+import 'widgets/controls/raw_magnifierd.dart';
+import 'widgets/controls/navigation_destinationd.dart';
+import 'widgets/controls/navigation_drawerd.dart';
+import 'widgets/controls/navigation_bard.dart';
+import 'widgets/controls/bottom_app_bard.dart';
+import 'widgets/controls/bottom_navigation_bard.dart';
 import 'widgets/controls/focusable_action_detectord.dart';
 import 'widgets/controls/focusd.dart';
 import 'widgets/controls/actionsd.dart';
@@ -108,6 +122,9 @@ import 'widgets/controls/tooltipd.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/page_viewd.dart';
 import 'widgets/controls/elevated_buttond.dart';
+import 'widgets/items/raw_imaged.dart';
+import 'widgets/items/magnifier_decorationd.dart';
+import 'widgets/items/bottom_navigation_bar_itemd.dart';
 import 'widgets/items/navigation_rail_destinationd.dart';
 import 'widgets/items/flexible_space_bard.dart';
 import 'widgets/items/about_dialogd.dart';
@@ -2014,3 +2031,198 @@ const NavigationRaild = Variadic(navigationRaild) as dynamic;
 /// `indicatorColor:Color, indicatorShape:ShapeBorder,
 ///  padding:EdgeInsetsGeometry, disabled:bool`
 const NavigationRailDestinationd = Variadic(navigationRailDestinationd) as dynamic;
+
+/// Return a `NavigationBar`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `destinations:List<Widget>`
+///
+/// `double`: 0:elevation, 1:height
+///
+/// `Color`: 0:backgroundColor, 1:shadowColor, 2:surfaceTintColor, 3:indicatorColor
+///
+/// - `void Function(int)`: onDestinationSelected
+///
+/// `Widget`: will be added into `destinations:List<Widget>`
+///
+/// `selectedIndex:int, animationDuration:Duration, indicatorShape:ShapeBorder,
+/// labelBehavior:NavigationDestinationLabelBehavior`
+const NavigationBard = Variadic(navigationBard) as dynamic;
+
+/// Return a `NavigationDrawer`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `children:List<Widget>`
+///
+/// `Color`: 0:backgroundColor, 1:shadowColor, 2:surfaceTintColor, 3:indicatorColor
+///
+/// - `void Function(int)`: onDestinationSelected
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `elevation:double, selectedIndex:int, animationDuration:Duration, indicatorShape:ShapeBorder,
+/// tilePadding:EdgeInsetsGeometry`
+const NavigationDrawerd = Variadic(navigationDrawerd) as dynamic;
+
+/// Return a `NavigationDestination`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `icon:Widget`, `label:String`
+///
+/// `Widget`: 0:icon, 1:selectedIcon
+///
+/// `String`: 0:label, 1:tooltip
+const NavigationDestinationd = Variadic(navigationDestinationd) as dynamic;
+
+/// Return a `BottomNavigationBar`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `items:List<BottomNavigationBarItem>`
+///
+/// `double`: 0:elevation, 1:iconSize, 2:selectedFontSize, 3:unselectedFontSize
+///
+/// `Color`: 0:fixedColor, 1:backgroundColor, 2:selectedItemColor, 3:unselectedItemColor
+///
+/// `IconThemeData`: 0:selectedIconTheme, 1:unselectedIconTheme
+///
+/// `TextStyle`: 0:selectedLabelStyle, 1:unselectedLabelStyle
+///
+/// `bool`: 0:showSelectedLabels, 1:showUnselectedLabels, 2:enableFeedback, 3:useLegacyColorScheme
+///
+/// - `void Function(int)`: onTap
+///
+/// `BottomNavigationBarItem`: will be added into `items:List<BottomNavigationBarItem>`
+///
+/// `currentIndex:int, type:BottomNavigationBarType, mouseCursor:MouseCursor,
+///  landscapeLayout:BottomNavigationBarLandscapeLayout`
+const BottomNavigationBard = Variadic(bottomNavigationBard) as dynamic;
+
+/// Return a `BottomNavigationBarItem`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `icon:Widget`
+///
+/// `Widget`: 0:icon, 1:activeIcon
+///
+/// `String`: 0:label, 1:tooltip
+///
+/// `backgroundColor:Color`
+const BottomNavigationBarItemd = Variadic(bottomNavigationBarItemd) as dynamic;
+
+/// Return a `BottomAppBar`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:elevation, 1:height, 2:notchMargin
+///
+/// `Color`: 0:color, 1:surfaceTintColor, 2:shadowColor
+///
+/// `child:Widget, shape:NotchedShape, clipBehavior:Clip,
+///  padding:EdgeInsetsGeometry`
+const BottomAppBard = Variadic(bottomAppBard) as dynamic;
+
+/// Return a `RawMagnifier`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `size:Size`
+///
+/// `child:Widget, decoration:MagnifierDecoration, focalPointOffset:Offset
+/// magnificationScale:double|int`
+const RawMagnifierd = Variadic(rawMagnifierd) as dynamic;
+
+/// Return a `MagnifierDecoration`.
+///
+/// **supported positional arguments:**<br>
+///
+/// `BoxShadow`: will be added into `shadows:List<BoxShadow>`
+///
+/// `opacity:double, shape:ShapeBorder, shadows:List<BoxShadow>`
+const MagnifierDecorationd = Variadic(magnifierDecorationd) as dynamic;
+
+/// Return a `CallbackShortcuts`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`, `bindings:Map<ShortcutActivator, void Function()>`
+const CallbackShortcutsd = Variadic(callbackShortcutsd) as dynamic;
+
+/// Return a `MergeSemantics`.
+///
+/// **supported positional arguments:**<br>
+/// `child:Widget`
+const MergeSemanticsd = Variadic(mergeSemanticsd) as dynamic;
+
+/// Return a `ExcludeSemantics`.
+///
+/// **supported positional arguments:**<br>
+/// `child:Widget, excluding:bool`
+const ExcludeSemanticsd = Variadic(excludeSemanticsd) as dynamic;
+
+/// Return a `RawImage`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:width, 1:height, 2:scale
+///
+/// `bool`: 0:matchTextDirection, 1:invertColors, 2:isAntiAlias
+///
+/// `image:Image, debugImageLabel:String, color:Color,
+/// opacity:Animation<double>, colorBlendMode:BlendMode, fit:BoxFit,
+/// alignment:AlignmentGeometry, repeat:ImageRepeat, centerSlice:Rect,
+/// filterQuality:FilterQuality`
+const RawImaged = Variadic(rawImaged) as dynamic;
+
+/// Return a `RawKeyboardListener`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`, `focusNode:FocusNode`
+///
+/// `bool`: 0:autofocus, 1:includeSemantics
+///
+/// - `void Function(RawKeyEvent)`: onKey
+const RawKeyboardListenerd = Variadic(rawKeyboardListenerd) as dynamic;
+
+/// Return a `Form`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`
+///
+/// - `Future<bool> Function()`: onWillPop
+/// - `void Function()`: onChanged
+///
+/// `autovalidateMode:AutovalidateMode`
+const Formd = Variadic(formd) as dynamic;
+
+/// Return a `WillPopScope`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`, `onWillPop:Future<bool> Function()`
+const WillPopScoped = Variadic(willPopScoped) as dynamic;
+
+/// Return a `Scrollable`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `viewportBuilder:Widget Function(BuildContext, ViewportOffset)`
+///
+/// - `double Function(ScrollIncrementDetails)`: incrementCalculator
+///
+/// `axisDirection:AxisDirection, controller:ScrollController,
+/// physics:ScrollPhysics, excludeFromSemantics:bool, semanticChildCount:int,
+/// dragStartBehavior:DragStartBehavior, restorationId:String,
+/// scrollBehavior:ScrollBehavior, clipBehavior:Clip`
+const Scrollabled = Variadic(scrollabled) as dynamic;
+
+/// Return a `CustomScrollView`.
+///
+/// **supported positional arguments:**<br>
+/// `Key`: 0:key, 1:center
+///
+/// `bool`: 0:reverse, 1:primary, 2:shrinkWrap
+///
+/// `double`: 0:anchor, 1:cacheExtent
+///
+/// `Widget`: will be added into `slivers:List<Widget>`
+///
+/// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
+/// scrollBehavior:ScrollBehavior, semanticChildCount:int,
+/// dragStartBehavior:DragStartBehavior,
+/// keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
+/// restorationId:String, clipBehavior:Clip`
+const CustomScrollViewd = Variadic(customScrollViewd) as dynamic;

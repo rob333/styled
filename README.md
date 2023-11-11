@@ -174,7 +174,7 @@ With ***BoxDecoration***:
     ),
   ),
 ```
-With ***Mixin***:
+With ***Mixin*** of Decoration:
 ```dart
   Containerd(
     45, // width
@@ -323,22 +323,22 @@ With ***Mixin***:
 <li> VerticalDividerd
 <li> NavigationRaild
 <li> NavigationRailDestinationd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> NavigationBard
+<li> NavigationDrawerd
+<li> NavigationDestinationd
+<li> BottomNavigationBard
+<li> BottomNavigationBarItemd
+<li> BottomAppBard
+<li> RawMagnifierd
+<li> CallbackShortcutsd
+<li> MergeSemanticsd
+<li> ExcludeSemanticsd
+<li> RawImaged
+<li> RawKeyboardListenerd
+<li> Formd
+<li> WillPopScoped
+<li> Scrollabled
+<li> CustomScrollViewd
 <li> 
 <li> 
 <li> 
@@ -371,8 +371,8 @@ With ***Mixin***:
 <li> DataColumnd
 <li> DataCelld
 <li> FlexibleSpaceBard
+<li> MagnifierDecorationd
 <!-- <li>
-<li>
 <li>
 <li>
 <li>
@@ -417,6 +417,17 @@ With ***Mixin***:
 <li> GestureDetector
 <li> DropdownButton
 <li> Autocomplete
+<li> RadioListTile
+<li> Draggable
+<li> DragTarget
+<li> LongPressDraggable
+<li> FutureBuilder
+<li> StreamBuilder
+<li> FormField
+<li> TextField
+<li> TextFormField
+<li> 
+<li> Cupertino widgets
 <li> ---
 <li> TableBorder
 <li> ImageFilter.matrix
