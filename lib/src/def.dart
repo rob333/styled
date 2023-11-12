@@ -1,160 +1,179 @@
 // ignore_for_file: constant_identifier_names
 
-import 'widgets/layout/vertical_dividerd.dart';
-import 'widgets/layout/navigation_raild.dart';
-import 'widgets/layout/flowd.dart';
-import 'widgets/layout/expansion_panel_listd.dart';
-import 'widgets/layout/expansion_paneld.dart';
-import 'widgets/layout/rotated_boxd.dart';
-import 'widgets/layout/dividerd.dart';
-import 'widgets/layout/physical_modeld.dart';
-import 'widgets/layout/list_view_separatedd.dart';
-import 'widgets/layout/list_view_customedd.dart';
-import 'widgets/layout/list_view_builderd.dart';
-import 'widgets/layout/flexd.dart';
-import 'widgets/layout/indexed_stackd.dart';
-import 'widgets/layout/data_tabled.dart';
-import 'widgets/layout/fractionally_sized_boxd.dart';
 import 'widgets/layout/alignd.dart';
-import 'widgets/layout/placeholderd.dart';
-import 'widgets/layout/fitted_boxd.dart';
-import 'widgets/layout/expandedd.dart';
-import 'widgets/layout/herod.dart';
-import 'widgets/layout/clip_rectd.dart';
+import 'widgets/layout/cardd.dart';
+import 'widgets/layout/centerd.dart';
 import 'widgets/layout/clip_ovald.dart';
 import 'widgets/layout/clip_pathd.dart';
+import 'widgets/layout/clip_rectd.dart';
 import 'widgets/layout/clip_rrectd.dart';
-import 'widgets/layout/tabled.dart';
-import 'widgets/layout/sliver_app_bard.dart';
-import 'widgets/layout/wrapd.dart';
-import 'widgets/layout/opacityd.dart';
-import 'widgets/layout/grid_view_extentd.dart';
-import 'widgets/layout/grid_view_customd.dart';
-import 'widgets/layout/grid_view_countd.dart';
-import 'widgets/layout/grid_view_builderd.dart';
-import 'widgets/layout/grid_tiled.dart';
-import 'widgets/layout/grid_viewd.dart';
-import 'widgets/layout/list_tiled.dart';
-import 'widgets/layout/list_viewd.dart';
-import 'widgets/layout/spacerd.dart';
-import 'widgets/layout/sized_boxd.dart';
-import 'widgets/layout/paddingd.dart';
-import 'widgets/layout/limited_boxd.dart';
-import 'widgets/layout/positionedd.dart';
-import 'widgets/layout/stackd.dart';
-import 'widgets/layout/containerd.dart';
 import 'widgets/layout/columnd.dart';
+import 'widgets/layout/containerd.dart';
+import 'widgets/layout/custom_multi_child_layoutd.dart';
+import 'widgets/layout/custom_single_child_layoutd.dart';
+import 'widgets/layout/data_tabled.dart';
+import 'widgets/layout/dividerd.dart';
+import 'widgets/layout/expandedd.dart';
+import 'widgets/layout/expansion_panel_listd.dart';
+import 'widgets/layout/expansion_paneld.dart';
+import 'widgets/layout/fitted_boxd.dart';
+import 'widgets/layout/flexd.dart';
+import 'widgets/layout/flowd.dart';
+import 'widgets/layout/fractionally_sized_boxd.dart';
+import 'widgets/layout/grid_tiled.dart';
+import 'widgets/layout/grid_view_builderd.dart';
+import 'widgets/layout/grid_view_countd.dart';
+import 'widgets/layout/grid_view_customd.dart';
+import 'widgets/layout/grid_view_extentd.dart';
+import 'widgets/layout/grid_viewd.dart';
+import 'widgets/layout/herod.dart';
+import 'widgets/layout/indexed_stackd.dart';
+import 'widgets/layout/intrinsic_heightd.dart';
+import 'widgets/layout/intrinsic_widthd.dart';
+import 'widgets/layout/limited_boxd.dart';
+import 'widgets/layout/list_bodyd.dart';
+import 'widgets/layout/list_tiled.dart';
+import 'widgets/layout/list_view_builderd.dart';
+import 'widgets/layout/list_view_customedd.dart';
+import 'widgets/layout/list_view_separatedd.dart';
+import 'widgets/layout/list_viewd.dart';
+import 'widgets/layout/navigation_raild.dart';
+import 'widgets/layout/opacityd.dart';
+import 'widgets/layout/overflow_boxd.dart';
+import 'widgets/layout/paddingd.dart';
+import 'widgets/layout/physical_modeld.dart';
+import 'widgets/layout/placeholderd.dart';
+import 'widgets/layout/positionedd.dart';
+import 'widgets/layout/rotated_boxd.dart';
 import 'widgets/layout/rowd.dart';
-import 'widgets/layout/centerd.dart';
 import 'widgets/layout/safeared.dart';
-import 'widgets/controls/custom_scroll_viewd.dart';
-import 'widgets/controls/scrollabled.dart';
-import 'widgets/controls/will_pop_scoped.dart';
-import 'widgets/controls/formd.dart';
-import 'widgets/controls/raw_keyboard_listenerd.dart';
-import 'widgets/controls/exclude_semanticsd.dart';
-import 'widgets/controls/merge_semanticsd.dart';
-import 'widgets/controls/callback_shortcutsd.dart';
-import 'widgets/controls/raw_magnifierd.dart';
-import 'widgets/controls/navigation_destinationd.dart';
-import 'widgets/controls/navigation_drawerd.dart';
-import 'widgets/controls/navigation_bard.dart';
-import 'widgets/controls/bottom_app_bard.dart';
-import 'widgets/controls/bottom_navigation_bard.dart';
-import 'widgets/controls/focusable_action_detectord.dart';
-import 'widgets/controls/focusd.dart';
+import 'widgets/layout/sized_boxd.dart';
+import 'widgets/layout/sized_overflow_boxd.dart';
+import 'widgets/layout/sliver_app_bard.dart';
+import 'widgets/layout/spacerd.dart';
+import 'widgets/layout/stackd.dart';
+import 'widgets/layout/tabled.dart';
+import 'widgets/layout/unconstrained_boxd.dart';
+import 'widgets/layout/vertical_dividerd.dart';
+import 'widgets/layout/wrapd.dart';
+import 'widgets/controls/absorb_pointerd.dart';
 import 'widgets/controls/actionsd.dart';
-import 'widgets/controls/shortcutd.dart';
-import 'widgets/controls/outlined_button_icond.dart';
-import 'widgets/controls/outlined_buttond.dart';
-import 'widgets/controls/text_button_icond.dart';
-import 'widgets/controls/text_buttond.dart';
-import 'widgets/controls/repaint_boundaryd.dart';
-import 'widgets/controls/baselined.dart';
-import 'widgets/controls/tab_page_selectord.dart';
-import 'widgets/controls/refresh_indicatord.dart';
-import 'widgets/controls/hero_moded.dart';
-import 'widgets/controls/mouse_regiond.dart';
-import 'widgets/controls/scrollbard.dart';
-import 'widgets/controls/switch_list_tiled.dart';
-import 'widgets/controls/interactive_viewerd.dart';
-import 'widgets/controls/checkbox_list_tiled.dart';
-import 'widgets/controls/ignore_pointerd.dart';
-import 'widgets/controls/linear_progress_indicatord.dart';
-import 'widgets/controls/circular_progress_indicatord.dart';
-import 'widgets/controls/builderd.dart';
-import 'widgets/controls/shader_maskd.dart';
-import 'widgets/controls/list_wheel_scroll_viewd.dart';
-import 'widgets/controls/default_tab_controllerd.dart';
-import 'widgets/controls/toggle_buttonsd.dart';
-import 'widgets/controls/color_filteredd.dart';
-import 'widgets/controls/draggable_scrollable_sheetd.dart';
 import 'widgets/controls/alert_dialog_adaptived.dart';
 import 'widgets/controls/alert_dialogd.dart';
-import 'widgets/controls/range_sliderd.dart';
-import 'widgets/controls/slider_adaptived.dart';
-import 'widgets/controls/sliderd.dart';
-import 'widgets/controls/single_child_scroll_viewd.dart';
-import 'widgets/controls/constrained_boxd.dart';
-import 'widgets/controls/semanticsd.dart';
-import 'widgets/controls/rich_textd.dart';
-import 'widgets/controls/aspect_ratiod.dart';
-import 'widgets/controls/flexibled.dart';
-import 'widgets/controls/dismissibled.dart';
-import 'widgets/controls/animated_cross_faded.dart';
-import 'widgets/controls/animated_opacityd.dart';
+import 'widgets/controls/animated_builderd.dart';
 import 'widgets/controls/animated_containerd.dart';
+import 'widgets/controls/animated_cross_faded.dart';
+import 'widgets/controls/animated_icond.dart';
+import 'widgets/controls/animated_listd.dart';
+import 'widgets/controls/animated_opacityd.dart';
 import 'widgets/controls/animated_paddingd.dart';
 import 'widgets/controls/animated_positionedd.dart';
 import 'widgets/controls/animated_switcherd.dart';
-import 'widgets/controls/animated_icond.dart';
-import 'widgets/controls/animated_listd.dart';
-import 'widgets/controls/animated_builderd.dart';
+import 'widgets/controls/aspect_ratiod.dart';
 import 'widgets/controls/backdrop_filterd.dart';
-import 'widgets/controls/flipd.dart';
-import 'widgets/controls/translated.dart';
-import 'widgets/controls/scaled.dart';
-import 'widgets/controls/rotated.dart';
-import 'widgets/controls/transformd.dart';
-import 'widgets/controls/absorb_pointerd.dart';
-import 'widgets/controls/icon_buttond.dart';
-import 'widgets/controls/tooltipd.dart';
+import 'widgets/controls/baselined.dart';
+import 'widgets/controls/bottom_app_bard.dart';
+import 'widgets/controls/bottom_navigation_bard.dart';
+import 'widgets/controls/builderd.dart';
+import 'widgets/controls/callback_shortcutsd.dart';
+import 'widgets/controls/checkbox_list_tiled.dart';
+import 'widgets/controls/circular_progress_indicatord.dart';
+import 'widgets/controls/color_filteredd.dart';
+import 'widgets/controls/constrained_boxd.dart';
+import 'widgets/controls/custom_scroll_viewd.dart';
 import 'widgets/controls/cutom_paintd.dart';
-import 'widgets/controls/page_viewd.dart';
+import 'widgets/controls/default_tab_controllerd.dart';
+import 'widgets/controls/dismissibled.dart';
+import 'widgets/controls/draggable_scrollable_sheetd.dart';
 import 'widgets/controls/elevated_buttond.dart';
-import 'widgets/items/raw_imaged.dart';
-import 'widgets/items/magnifier_decorationd.dart';
-import 'widgets/items/bottom_navigation_bar_itemd.dart';
-import 'widgets/items/navigation_rail_destinationd.dart';
-import 'widgets/items/flexible_space_bard.dart';
+import 'widgets/controls/exclude_semanticsd.dart';
+import 'widgets/controls/filled_button_tonal_icond.dart';
+import 'widgets/controls/filled_button_tonald.dart';
+import 'widgets/controls/filled_buttond.dart';
+import 'widgets/controls/flexibled.dart';
+import 'widgets/controls/flipd.dart';
+import 'widgets/controls/focusable_action_detectord.dart';
+import 'widgets/controls/focusd.dart';
+import 'widgets/controls/formd.dart';
+import 'widgets/controls/hero_moded.dart';
+import 'widgets/controls/icon_buttond.dart';
+import 'widgets/controls/ignore_pointerd.dart';
+import 'widgets/controls/interactive_viewerd.dart';
+import 'widgets/controls/linear_progress_indicatord.dart';
+import 'widgets/controls/list_wheel_scroll_viewd.dart';
+import 'widgets/controls/merge_semanticsd.dart';
+import 'widgets/controls/mouse_regiond.dart';
+import 'widgets/controls/navigation_bard.dart';
+import 'widgets/controls/navigation_destinationd.dart';
+import 'widgets/controls/navigation_drawerd.dart';
+import 'widgets/controls/offstaged.dart';
+import 'widgets/controls/outlined_button_icond.dart';
+import 'widgets/controls/outlined_buttond.dart';
+import 'widgets/controls/page_viewd.dart';
+import 'widgets/controls/range_sliderd.dart';
+import 'widgets/controls/raw_keyboard_listenerd.dart';
+import 'widgets/controls/raw_magnifierd.dart';
+import 'widgets/controls/raw_material_buttond.dart';
+import 'widgets/controls/refresh_indicatord.dart';
+import 'widgets/controls/repaint_boundaryd.dart';
+import 'widgets/controls/rich_textd.dart';
+import 'widgets/controls/rotated.dart';
+import 'widgets/controls/scaled.dart';
+import 'widgets/controls/scrollabled.dart';
+import 'widgets/controls/scrollbard.dart';
+import 'widgets/controls/segmented_buttond.dart';
+import 'widgets/controls/semanticsd.dart';
+import 'widgets/controls/shader_maskd.dart';
+import 'widgets/controls/shortcutd.dart';
+import 'widgets/controls/single_child_scroll_viewd.dart';
+import 'widgets/controls/slider_adaptived.dart';
+import 'widgets/controls/sliderd.dart';
+import 'widgets/controls/sliver_offstaged.dart';
+import 'widgets/controls/switch_list_tiled.dart';
+import 'widgets/controls/tab_page_selectord.dart';
+import 'widgets/controls/text_button_icond.dart';
+import 'widgets/controls/text_buttond.dart';
+import 'widgets/controls/toggle_buttonsd.dart';
+import 'widgets/controls/tooltipd.dart';
+import 'widgets/controls/transformd.dart';
+import 'widgets/controls/translated.dart';
+import 'widgets/controls/visibilityd.dart';
+import 'widgets/controls/will_pop_scoped.dart';
 import 'widgets/items/about_dialogd.dart';
-import 'widgets/items/snack_bard.dart';
-import 'widgets/items/tabbar_viewd.dart';
-import 'widgets/items/tab_bard.dart';
-import 'widgets/items/tabd.dart';
-import 'widgets/items/image_networkd.dart';
-import 'widgets/items/image_memoryd.dart';
-import 'widgets/items/image_filed.dart';
-import 'widgets/items/image_assetd.dart';
-import 'widgets/items/imaged.dart';
+import 'widgets/items/app_bard.dart';
+import 'widgets/items/border_sided.dart';
+import 'widgets/items/borderd.dart';
+import 'widgets/items/bottom_navigation_bar_itemd.dart';
+import 'widgets/items/box_decorationd.dart';
+import 'widgets/items/box_shadowd.dart';
+import 'widgets/items/button_segmentd.dart';
 import 'widgets/items/date_celld.dart';
 import 'widgets/items/date_columnd.dart';
 import 'widgets/items/date_rowd.dart';
-import 'widgets/items/text_spand.dart';
 import 'widgets/items/decoration_imaged.dart';
+import 'widgets/items/drawerd.dart';
+import 'widgets/items/flexible_space_bard.dart';
+import 'widgets/items/floating_action_button_extendedd.dart';
+import 'widgets/items/floating_action_buttond.dart';
+import 'widgets/items/image_assetd.dart';
 import 'widgets/items/image_blurd.dart';
 import 'widgets/items/image_composed.dart';
 import 'widgets/items/image_dilated.dart';
 import 'widgets/items/image_eroded.dart';
-import 'widgets/items/table_rowd.dart';
-import 'widgets/items/borderd.dart';
-import 'widgets/items/border_sided.dart';
+import 'widgets/items/image_filed.dart';
+import 'widgets/items/image_memoryd.dart';
+import 'widgets/items/image_networkd.dart';
+import 'widgets/items/imaged.dart';
 import 'widgets/items/linear_gradientd.dart';
-import 'widgets/items/box_decorationd.dart';
-import 'widgets/items/box_shadowd.dart';
-import 'widgets/items/app_bard.dart';
-import 'widgets/items/floating_action_buttond.dart';
-import 'widgets/items/drawerd.dart';
+import 'widgets/items/magnifier_decorationd.dart';
+import 'widgets/items/navigation_rail_destinationd.dart';
+import 'widgets/items/raw_imaged.dart';
+import 'widgets/items/snack_bard.dart';
+import 'widgets/items/tab_bard.dart';
+import 'widgets/items/tabbar_viewd.dart';
+import 'widgets/items/tabd.dart';
+import 'widgets/items/table_rowd.dart';
+import 'widgets/items/text_spand.dart';
 import 'widgets/scaffoldd.dart';
 import 'widgets/textd.dart';
 
@@ -249,18 +268,40 @@ const Scaffoldd = Variadic(scaffoldd) as dynamic;
 /// Returns a `FloatingActionButton`.
 ///
 /// **supported positional arguments:**<br>
+/// ***required***: `onPressed:void Function()`
+///
 /// `Color`: 0:foregroundColor, 1:backgroundColor, 2:focusColor, 3:hoverColor, 4:splashColor
 ///
-/// `double`: 0:elevation, 1:focusElevation, 2:hoverElevation, 3:highlightElevation, 4disabledElevation
+/// `double|int`: 0:elevation, 1:focusElevation, 2:hoverElevation, 3:highlightElevation,
+///  4:disabledElevation
 ///
-/// `String`: tooltip
+/// `bool`: 0:mini, 1:autofocus, 2:isExtended, 3:enableFeedback
 ///
-/// `child:Widget, onPressed, mouseCursor, shape, clipBehavior,
-/// focusNode, materialTapTargetSize, autofocus`
-///
-/// ***not supported:***<br>
-/// `mini, isExtended, enableFeedback`
+/// `child:Widget, tooltip:String, mouseCursor:MouseCursor, shape:ShapeBorder,
+/// clipBehavior:Clip, focusNode:FocusNode,
+/// materialTapTargetSize:MaterialTapTargetSize, heroTag:Object`
 const FloatingActionButtond = Variadic(floatingactionbuttond) as dynamic;
+
+/// Returns a `FloatingActionButton.extended`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `onPressed:void Function()`, `label:Widget`
+///
+/// `Widget`: 0:label, 1:icon
+///
+/// `Color`: 0:foregroundColor, 1:backgroundColor, 2:focusColor, 3:hoverColor, 4:splashColor
+///
+/// `double|int`: 0:elevation, 1:focusElevation, 2:hoverElevation, 3:highlightElevation,
+///  4:disabledElevation, 5:extendedIconLabelSpacing
+///
+/// `bool`: 0:autofocus, 1:isExtended, 2:enableFeedback
+///
+/// `tooltip:String, mouseCursor:MouseCursor, shape:ShapeBorder,
+/// clipBehavior:Clip, focusNode:FocusNode,
+/// materialTapTargetSize:MaterialTapTargetSize,
+/// extendedPadding:EdgeInsetsGeometry, extendedTextStyle:TextStyle,
+/// heroTag:Object`
+const FloatingActionButtonExtendedd = Variadic(floatingActionButtonExtendedd) as dynamic;
 
 /// Returns a `AppBar`.
 ///
@@ -2226,3 +2267,185 @@ const Scrollabled = Variadic(scrollabled) as dynamic;
 /// keyboardDismissBehavior:ScrollViewKeyboardDismissBehavior,
 /// restorationId:String, clipBehavior:Clip`
 const CustomScrollViewd = Variadic(customScrollViewd) as dynamic;
+
+/// Return a `Card`.
+///
+/// **supported positional arguments:**<br>
+/// `Color`: 0:color, 1:shadowColor, 2:surfaceTintColor
+///
+/// `bool`: 0:borderOnForeground, 1:semanticContainer
+///
+/// `child:Widget, elevation:double|int, shape:ShapeBorder,
+///  margin:EdgeInsetsGeometry, clipBehavior:Clip`
+const Cardd = Variadic(cardd) as dynamic;
+
+/// Return a `CustomSingleChildLayout`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `delegate:SingleChildLayoutDelegate`
+///
+/// `child:Widget`
+const CustomSingleChildLayoutd = Variadic(customSingleChildLayoutd) as dynamic;
+
+/// Return a `IntrinsicHeight`.
+///
+/// **supported positional arguments:**<br>
+/// `child:Widget`
+const IntrinsicHeightd = Variadic(intrinsicHeightd) as dynamic;
+
+/// Return a `IntrinsicWidth`.
+///
+/// **supported positional arguments:**<br>
+/// 'double|int': stepWidth, stepHeight
+///
+/// `child:Widget`
+const IntrinsicWidthd = Variadic(intrinsicWidthd) as dynamic;
+
+/// Return a `Offstage`.
+///
+/// **supported positional arguments:**<br>
+/// `offstage:bool, child:Widget`
+const Offstaged = Variadic(offstaged) as dynamic;
+
+/// Return a `SliverOffstage`.
+///
+/// **supported positional arguments:**<br>
+/// `offstage:bool, child:Widget`
+const SliverOffstaged = Variadic(sliverOffstaged) as dynamic;
+
+/// Return a `Visibility`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`
+///
+/// `Widget`: 0:child, 1:replacement
+///
+/// `bool`: 0:visible, 1:maintainState, 2:maintainAnimation, 3:maintainSize,
+/// 4:maintainSemantics, 5:maintainInteractivity
+const Visibilityd = Variadic(visibilityd) as dynamic;
+
+/// Return a `OverflowBox`.
+///
+/// **supported positional arguments:**<br>
+/// `double|int`: 0:minWidth, 1:maxWidth, 2:minHeight, 3:maxHeight
+///
+/// `child:Widget, alignment:AlignmentGeometry`
+const OverflowBoxd = Variadic(overflowBoxd) as dynamic;
+
+/// Return a `UnconstrainedBox`.
+///
+/// **supported positional arguments:**<br>
+/// `child:Widget, textDirection:TextDirection, alignment:AlignmentGeometry,
+/// constrainedAxis:Axis, clipBehavior:Clip`
+const UnconstrainedBoxd = Variadic(unconstrainedBoxd) as dynamic;
+
+/// Return a `SizedOverflowBox`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `size:Size`
+///
+/// `child:Widget, alignment:AlignmentGeometry`
+const SizedOverflowBoxd = Variadic(sizedOverflowBoxd) as dynamic;
+
+/// Return a `CustomMultiChildLayout`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `delegate:MultiChildLayoutDelegate`
+///
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `children:List<Widget>`
+const CustomMultiChildLayoutd = Variadic(customMultiChildLayoutd) as dynamic;
+
+/// Return a `RawMaterialButton`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `onPressed:void Function()`
+///
+/// `Color`: 0:fillColor, 1:focusColor, 2:hoverColor, 3:highlightColor, 4:splashColor
+///
+/// `double|int`: 0:elevation, 1:focusElevation, 2:hoverElevation, 3:highlightElevation, 4:disabledElevation
+///
+/// `bool`: 0:autofocus, 1:enableFeedback
+///
+/// - `void Function()`: 0:onPressed, 1:onLongPress
+/// - `void Function(bool)`: onHighlightChanged
+///
+/// `mouseCursor:MouseCursor, textStyle:TextStyle, padding:EdgeInsetsGeometry,
+/// visualDensity:VisualDensity, constraints:BoxConstraints, shape:ShapeBorder,
+/// animationDuration:Duration, clipBehavior:Clip, focusNode:FocusNode,
+/// materialTapTargetSize:MaterialTapTargetSize, child:Widget`
+const RawMaterialButtond = Variadic(rawMaterialButtond) as dynamic;
+
+/// Return a `ListBody`.
+///
+/// **supported positional arguments:**<br>
+/// `Widget`: will be added into `children:List<Widget>`
+///
+/// `mainAxis:Axis, reverse:bool, children:List<Widget>`
+const ListBodyd = Variadic(listBodyd) as dynamic;
+
+/// Return a `FilledButton`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`, `onPressed:void Function()`
+///
+/// `void Function()`: 0:onPressed, 1:onLongPress
+///
+/// `void Function(bool)`: 0:onHover, 1:onFocusChange
+///
+/// `style:ButtonStyle, focusNode:FocusNode, autofocus:bool, clipBehavior:Clip,
+/// statesController:MaterialStatesController`
+const FilledButtond = Variadic(filledButtond) as dynamic;
+
+/// Return a `FilledButton.tonal`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `child:Widget`, `onPressed:void Function()`
+///
+/// `void Function()`: 0:onPressed, 1:onLongPress
+///
+/// `void Function(bool)`: 0:onHover, 1:onFocusChange
+///
+/// `style:ButtonStyle, focusNode:FocusNode, autofocus:bool, clipBehavior:Clip,
+/// statesController:MaterialStatesController`
+const FilledButtonTonald = Variadic(filledButtonTonald) as dynamic;
+
+/// Return a `FilledButton.tonalIcon`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `icon:Widget`, `label:Widget`, `onPressed:void Function()`
+///
+/// `Widget`: 0:icon, 1:label
+///
+/// `void Function()`: 0:onPressed, 1:onLongPress
+///
+/// `void Function(bool)`: 0:onHover, 1:onFocusChange
+///
+/// `style:ButtonStyle, focusNode:FocusNode, autofocus:bool, clipBehavior:Clip,
+/// statesController:MaterialStatesController`
+const FilledButtonTonalIcond = Variadic(filledButtonTonalIcond) as dynamic;
+
+/// Return a `SegmentedButton`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `segments:List<ButtonSegment<T>>`, `selected:Set<T>`
+///
+/// `bool`: 0:multiSelectionEnabled, 1:emptySelectionAllowed, 2:showSelectedIcon
+///
+/// - `void Function(Set)`: onSelectionChanged
+///
+/// `ButtonSegment<T>`: will be added into `segments:List<ButtonSegment<T>>`
+///
+/// `selected:Set, style:ButtonStyle, selectedIcon:Widget`
+const SegmentedButtond = Variadic(segmentedButtond) as dynamic;
+
+/// Return a `ButtonSegment`.
+///
+/// **supported positional arguments:**<br>
+/// ***required***: `value:Template`
+///
+/// `Widget`: 0:icon, 1:label
+///
+/// `tooltip:String, enabled:bool`
+const ButtonSegmentd = Variadic(buttonSegmentd) as dynamic;

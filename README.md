@@ -199,7 +199,7 @@ With ***Mixin*** of Decoration:
 <li> Columnd
 <li> Scaffoldd (partial)
 <li> AppBard (partial)
-<li> FloatingActionButtond (partial)
+<li> FloatingActionButtond
 <li> Drawerd
 <li> SafeAread
 <li> Containerd
@@ -339,12 +339,23 @@ With ***Mixin*** of Decoration:
 <li> WillPopScoped
 <li> Scrollabled
 <li> CustomScrollViewd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> Cardd
+<li> CustomSingleChildLayoutd
+<li> IntrinsicHeightd
+<li> IntrinsicWidthd
+<li> Offstaged
+<li> SliverOffstaged
+<li> Visibilityd
+<li> OverflowBoxd
+<li> UnconstrainedBoxd
+<li> SizedOverflowBoxd
+<li> CustomMultiChildLayoutd
+<li> RawMaterialButtond
+<li> ListBodyd
+<li> FilledButtond
+<li> FilledButtonTonalIcond
+<li> FloatingActionButtonExtendedd
+<li> SegmentedButtond
 <li> 
 <li> 
 <li> 
@@ -355,82 +366,54 @@ With ***Mixin*** of Decoration:
 
 
 ### 
-<ul style="column-count:5">
-<li> BoxShadowd
-<li> BoxDecorationd
-<li> LinearGradientd
+<ul style="column-count:3">
 <li> BorderSided
 <li> Borderd
+<li> BoxDecorationd
+<li> BoxShadowd
+<li> ButtonSegmentd
+<li> DataCelld
+<li> DataColumnd
+<li> DataRowd
 <li> DecorationImaged
+<li> FlexibleSpaceBard
 <li> ImageBlurd as ImageFilter.blur
+<li> ImageCompose as ImageFilter.compose
 <li> ImageDilated as ImageFilter.dilate
 <li> ImageEroded as ImageFilter.erode
-<li> ImageCompose as ImageFilter.compose
-<li> TextSpand
-<li> DataRowd
-<li> DataColumnd
-<li> DataCelld
-<li> FlexibleSpaceBard
+<li> LinearGradientd
 <li> MagnifierDecorationd
-<!-- <li>
-<li>
-<li>
-<li>
-<li>
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li>  -->
+<li> TextSpand
 </ul>
 
 ### Known not supported:
 <ul>
-<li> layoutBuilder
+<li> Autocomplete
+<li> ButtonStyle
+<li> Cupertino widgets
+<li> DragTarget
+<li> Draggable
+<li> DropdownButton
+<li> FormField
+<li> FutureBuilder
+<li> GestureDetector
+<li> ImageFilter.matrix
+<li> LayoutBuilder
+<li> LongPressDraggable
+<li> NotificationListener
 <li> Positioned.*
-<li> ValueListenableBuilder 
+<li> RadioListTile
 <li> ReorderableListView
 <li> ReorderableListView.builder
 <li> SelectableText
 <li> SelectableText.rich
-<li> TweenAnimationBuilder
-<li> NotificationListener
-<li> GestureDetector
-<li> DropdownButton
-<li> Autocomplete
-<li> RadioListTile
-<li> Draggable
-<li> DragTarget
-<li> LongPressDraggable
-<li> FutureBuilder
 <li> StreamBuilder
-<li> FormField
+<li> TableBorder
 <li> TextField
 <li> TextFormField
-<li> 
-<li> Cupertino widgets
-<li> ---
-<li> TableBorder
-<li> ImageFilter.matrix
+<li> TickerMode
+<li> TweenAnimationBuilder
+<li> ValueListenableBuilder 
 </ul>
 
 

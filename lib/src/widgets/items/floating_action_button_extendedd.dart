@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 
-floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
+floatingActionButtonExtendedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
   int colori = 0;
   int doublei = 0;
   int booli = 0;
+  int widgeti = 0;
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case Widget arg:
-        argsMap[#child] = arg;
       case String arg:
         argsMap[#tooltip] = arg;
+      case Widget arg:
+        switch (widgeti++) {
+          case 0:
+            argsMap[#label] = arg;
+          case 1:
+            argsMap[#icon] = arg;
+        }
       case Color arg:
         switch (colori++) {
           case 0:
@@ -39,6 +45,8 @@ floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
             argsMap[#highlightElevation] = arg;
           case 4:
             argsMap[#disabledElevation] = arg;
+          case 5:
+            argsMap[#extendedIconLabelSpacing] = arg;
         }
       case int arg:
         switch (doublei++) {
@@ -52,6 +60,8 @@ floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
             argsMap[#highlightElevation] = arg.toDouble();
           case 4:
             argsMap[#disabledElevation] = arg.toDouble();
+          case 5:
+            argsMap[#extendedIconLabelSpacing] = arg.toDouble();
         }
       case void Function() arg:
         argsMap[#onPressed] = arg;
@@ -68,20 +78,22 @@ floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
       case bool arg:
         switch (booli++) {
           case 0:
-            argsMap[#mini] = arg;
-          case 1:
             argsMap[#autofocus] = arg;
-          case 2:
+          case 1:
             argsMap[#isExtended] = arg;
-          case 3:
+          case 2:
             argsMap[#enableFeedback] = arg;
         }
+      case EdgeInsetsGeometry arg:
+        argsMap[#extendedPadding] = arg;
+      case TextStyle arg:
+        argsMap[#extendedTextStyle] = arg;
       case Object arg:
         argsMap[#heroTag] = arg;
     }
   }
 
-  // named args(origArgsMap) precede positional ones
+  // named args(origArgsMap) precedes positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
   }
@@ -89,10 +101,10 @@ floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#onPressed] == null) {
-      throw FlutterError("FloatingActionButtond requires `onPressed:void Function()`");
+      throw FlutterError("FloatingActionButtonExtendedd requires `onPressed:void Function()` and `label:Widget`");
     }
     return true;
   }());
 
-  return Function.apply(FloatingActionButton.new, [], argsMap);
+  return Function.apply(FloatingActionButton.extended, [], argsMap);
 }

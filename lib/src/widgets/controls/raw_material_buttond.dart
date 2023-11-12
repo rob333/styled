@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
+rawMaterialButtond(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
+  int functioni = 0;
   int colori = 0;
   int doublei = 0;
   int booli = 0;
@@ -10,20 +11,29 @@ floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case Widget arg:
-        argsMap[#child] = arg;
-      case String arg:
-        argsMap[#tooltip] = arg;
+      case void Function() arg:
+        switch (functioni++) {
+          case 0:
+            argsMap[#onPressed] = arg;
+          case 1:
+            argsMap[#onLongPress] = arg;
+        }
+      case void Function(bool) arg:
+        argsMap[#onHighlightChanged] = arg;
+      case MouseCursor arg:
+        argsMap[#mouseCursor] = arg;
+      case TextStyle arg:
+        argsMap[#textStyle] = arg;
       case Color arg:
         switch (colori++) {
           case 0:
-            argsMap[#foregroundColor] = arg;
+            argsMap[#fillColor] = arg;
           case 1:
-            argsMap[#backgroundColor] = arg;
-          case 2:
             argsMap[#focusColor] = arg;
-          case 3:
+          case 2:
             argsMap[#hoverColor] = arg;
+          case 3:
+            argsMap[#highlightColor] = arg;
           case 4:
             argsMap[#splashColor] = arg;
         }
@@ -53,35 +63,35 @@ floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
           case 4:
             argsMap[#disabledElevation] = arg.toDouble();
         }
-      case void Function() arg:
-        argsMap[#onPressed] = arg;
-      case MouseCursor arg:
-        argsMap[#mouseCursor] = arg;
+      case EdgeInsetsGeometry arg:
+        argsMap[#padding] = arg;
+      case VisualDensity arg:
+        argsMap[#visualDensity] = arg;
+      case BoxConstraints arg:
+        argsMap[#constraints] = arg;
       case ShapeBorder arg:
         argsMap[#shape] = arg;
+      case Duration arg:
+        argsMap[#animationDuration] = arg;
       case Clip arg:
         argsMap[#clipBehavior] = arg;
       case FocusNode arg:
         argsMap[#focusNode] = arg;
-      case MaterialTapTargetSize arg:
-        argsMap[#materialTapTargetSize] = arg;
       case bool arg:
         switch (booli++) {
           case 0:
-            argsMap[#mini] = arg;
-          case 1:
             argsMap[#autofocus] = arg;
-          case 2:
-            argsMap[#isExtended] = arg;
-          case 3:
+          case 1:
             argsMap[#enableFeedback] = arg;
         }
-      case Object arg:
-        argsMap[#heroTag] = arg;
+      case MaterialTapTargetSize arg:
+        argsMap[#materialTapTargetSize] = arg;
+      case Widget arg:
+        argsMap[#child] = arg;
     }
   }
 
-  // named args(origArgsMap) precede positional ones
+  // named args(origArgsMap) precedes positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
   }
@@ -89,10 +99,10 @@ floatingactionbuttond(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#onPressed] == null) {
-      throw FlutterError("FloatingActionButtond requires `onPressed:void Function()`");
+      throw FlutterError("RawMaterialButtond requires `onPressed:void Function()`");
     }
     return true;
   }());
 
-  return Function.apply(FloatingActionButton.new, [], argsMap);
+  return Function.apply(RawMaterialButton.new, [], argsMap);
 }
