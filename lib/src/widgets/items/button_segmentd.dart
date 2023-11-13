@@ -32,7 +32,7 @@ buttonSegmentd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#value] == null) {
-      throw FlutterError("ButtonSegmentd requires `value:Template`");
+      throw FlutterError("ButtonSegmentd requires `value:dynamic`");
     }
     return true;
   }());

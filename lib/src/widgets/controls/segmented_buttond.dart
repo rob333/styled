@@ -43,8 +43,8 @@ segmentedButtond(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#segments] == null) {
-      throw FlutterError("SegmentedButtond requires `segments:List<ButtonSegment<T>>` and `selected:Set<T>`");
+    if (argsMap[#segments] == null || argsMap[#selected] == null) {
+      throw FlutterError("SegmentedButtond requires `segments:List<ButtonSegment>` and `selected:Set`");
     }
     return true;
   }());

@@ -97,7 +97,7 @@ checkboxListTiled(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#value] == null) {
+    if (argsMap[#value] == null || argsMap[#onChanged] == null) {
       throw FlutterError("CheckboxListTiled requires `value:bool` and `onChanged:void Function(bool?)`");
     }
     return true;

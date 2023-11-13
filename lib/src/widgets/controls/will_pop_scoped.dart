@@ -21,7 +21,7 @@ willPopScoped(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
+    if (argsMap[#child] == null || argsMap[#onWillPop] == null) {
       throw FlutterError("WillPopScoped requires `child:Widget` and `onWillPop:Future<bool> Function()`");
     }
     return true;

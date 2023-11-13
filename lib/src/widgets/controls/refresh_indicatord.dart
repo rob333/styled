@@ -60,7 +60,7 @@ refreshIndicatord(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
+    if (argsMap[#child] == null || argsMap[#onRefresh] == null) {
       throw FlutterError("RefreshIndicatord requires `child:Widget` and `onRefresh:Future<void> Function()`");
     }
     return true;

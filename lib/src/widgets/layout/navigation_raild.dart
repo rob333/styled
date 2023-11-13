@@ -83,7 +83,7 @@ navigationRaild(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#selectedIndex] == null) {
+    if (argsMap[#selectedIndex] == null || argsMap[#destinations] == null) {
       throw FlutterError("NavigationRaild requires `selectedIndex:int` and `destinations:List<NavigationRailDestination>`");
     }
     return true;

@@ -147,7 +147,7 @@ return Scaffoldd(
 
 ## Additional information
 
-- `Textd`: Return a Text widget or a TextStyle if no String type argument is specified. 
+- `Textd`: Returns a Text widget or a TextStyle if no String type argument is specified. 
 
 - In the hint document, for example, `Color: 0:color, 1:backgroundColor, 2: decorationColor, 3:selectionColor` means the first Color type argument is treated as 'color', the second is 'backgroundColor', the third is 'decorationColor', and the fourth is 'selectionColor'.
 
@@ -356,7 +356,7 @@ With ***Mixin*** of Decoration:
 <li> FilledButtonTonalIcond
 <li> FloatingActionButtonExtendedd
 <li> SegmentedButtond
-<li> 
+<li> Badged
 <li> 
 <li> 
 <li> 
@@ -369,6 +369,7 @@ With ***Mixin*** of Decoration:
 <ul style="column-count:3">
 <li> BorderSided
 <li> Borderd
+<li> BottomSheetd
 <li> BoxDecorationd
 <li> BoxShadowd
 <li> ButtonSegmentd

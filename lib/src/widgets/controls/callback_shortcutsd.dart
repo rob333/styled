@@ -21,7 +21,7 @@ callbackShortcutsd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
+    if (argsMap[#child] == null || argsMap[#bindings] == null) {
       throw FlutterError("CallbackShortcutsd requires `child:Widget` and `bindings:Map<ShortcutActivator, void Function()>`");
     }
     return true;

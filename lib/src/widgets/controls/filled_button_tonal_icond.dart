@@ -51,7 +51,7 @@ filledButtonTonalIcond(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
+    if (argsMap[#icon] == null || argsMap[#label] == null || argsMap[#onPressed] == null) {
       throw FlutterError("FilledButtond requires `icon:Widget`, `label:Widget` and `onPressed:void Function()`");
     }
     return true;

@@ -52,7 +52,7 @@ gridViewCustomd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#gridDelegate] == null) {
+    if (argsMap[#gridDelegate] == null || argsMap[#childrenDelegate] == null) {
       throw FlutterError("Widgetd requires `gridDelegate:SliverGridDelegate` and `childrenDelegate:SliverChildDelegate`");
     }
     return true;

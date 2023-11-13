@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 
 scaffoldd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
@@ -12,6 +13,8 @@ scaffoldd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#appBar] = arg;
       case FloatingActionButton arg:
         argsMap[#floatingActionButton] = arg;
+      case NavigationBar arg:
+        argsMap[#bottomNavigationBar] = arg;
       case BottomNavigationBar arg:
         argsMap[#bottomNavigationBar] = arg;
       case BottomSheet arg:
@@ -35,13 +38,6 @@ scaffoldd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
       case Widget arg:
         argsMap[#body] = arg;
-      case MaterialColor arg:
-        switch (colori++) {
-          case 0:
-            argsMap[#backgroundColor] = arg;
-          case 1:
-            argsMap[#drawerScrimColor] = arg;
-        }
       case Color arg:
         switch (colori++) {
           case 0:
@@ -49,12 +45,12 @@ scaffoldd(List argsList, Map<Symbol, dynamic> origArgsMap) {
           case 1:
             argsMap[#drawerScrimColor] = arg;
         }
+      case List<Widget> arg:
+        argsMap[#persistentFooterButtons] = arg;
       case FloatingActionButtonLocation arg:
         argsMap[#floatingActionButtonLocation] = arg;
       case FloatingActionButtonAnimator arg:
         argsMap[#floatingActionButtonAnimator] = arg;
-      case List<Widget> arg:
-        argsMap[#persistentFooterButtons] = arg;
       case AlignmentDirectional arg:
         argsMap[#persistentFooterAlignment] = arg;
       // case bool arg:
@@ -69,10 +65,10 @@ scaffoldd(List argsList, Map<Symbol, dynamic> origArgsMap) {
       //   argsMap[#drawerEnableOpenDragGesture] = arg;
       // case bool arg:
       //   argsMap[#endDrawerEnableOpenDragGesture] = arg;
-      // case DragStartBehavior arg:
-      //   argsMap[#drawerDragStartBehavior] = arg;
-      // case String arg:
-      //   argsMap[#restorationId] = arg;
+      case DragStartBehavior arg:
+        argsMap[#drawerDragStartBehavior] = arg;
+      case String arg:
+        argsMap[#restorationId] = arg;
     }
   }
 

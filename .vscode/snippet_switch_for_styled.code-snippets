@@ -16,17 +16,19 @@
   "def.dart function template": {
     "prefix": "vartemplate",
     "body": [
-      "/// Return a `${1:Widget}`.",
+      "/// Returns a `${1:Widget}`.",
       "///",
-      "/// **supported positional arguments:**<br>",
-      "/// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing",
+      "/// **`supported positional arguments:`**",
+      "/// ```",
+      "/// int: 0:fontSize, 1:letterSpacing, 2:wordSpacing",
       "///",
-      "/// `Widget`: will be added into `children:List<Widget>`",
+      "/// Widget: will be added into children:List<Widget>",
       "///",
-      "/// ``",
-      "///",
-      "/// ***not supported:***<br>",
-      "///",
+      "/// ```",
+      // "///",
+      // "/// ***`not supported:`***,
+      // "/// ```,
+      // "/// ```
       "const ${1:Widget}d = Variadic($0${1:Widget}d) as dynamic;"
     ],
     "description": "def.dart function template"
@@ -87,5 +89,12 @@
       "argsMap[#"
     ],
     "description": "argsMap prefix"
+  },
+  "argsMap if null": {
+    "prefix": "arnull",
+    "body": [
+      " || argsMap[#${1:label}] == null"
+    ],
+    "description": "argsMap if null"
   }
 }

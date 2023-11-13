@@ -33,7 +33,7 @@ navigationDestinationd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#icon] == null) {
+    if (argsMap[#icon] == null || argsMap[#label] == null) {
       throw FlutterError("NavigationDestinationd requires `icon:Widget` and `label:String`");
     }
     return true;

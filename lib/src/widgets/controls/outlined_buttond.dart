@@ -45,7 +45,7 @@ outlinedButtond(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
+    if (argsMap[#child] == null || argsMap[#onPressed] == null) {
       throw FlutterError("OutlinedButtond requires `child:Widget` and `onPressed:void Function()`");
     }
     return true;

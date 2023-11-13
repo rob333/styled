@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 rowd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
-  final children = <Widget>[];
+  final List<Widget> widgets = [];
 
   for (final arg in argsList) {
     switch (arg) {
@@ -22,9 +22,9 @@ rowd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#textBaseline] = arg;
       case List<Widget> arg:
         // argsMap[#children] = arg;
-        children.addAll(arg);
+        widgets.addAll(arg);
       case Widget arg:
-        children.add(arg);
+        widgets.add(arg);
     }
   }
 
@@ -32,13 +32,13 @@ rowd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
 
-    // merge children
+    // merge widgets
     final chMap = argsMap[#children] as List<Widget>?;
     if (chMap != null) {
-      children.addAll(chMap);
+      widgets.addAll(chMap);
     }
   }
-  argsMap[#children] = children;
+  argsMap[#children] = widgets;
 
   return Function.apply(Row.new, [], argsMap);
 }

@@ -31,7 +31,7 @@ rawKeyboardListenerd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
+    if (argsMap[#child] == null || argsMap[#focusNode] == null) {
       throw FlutterError("RawKeyboardListenerd requires `child:Widget` and `focusNode:FocusNode`");
     }
     return true;

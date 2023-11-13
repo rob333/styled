@@ -25,7 +25,7 @@ baselined(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#baseline] == null) {
+    if (argsMap[#baseline] == null || argsMap[#baselineType] == null) {
       throw FlutterError("Baselined requires `baseline:double` and `baselineType:TextBaseline");
     }
     return true;

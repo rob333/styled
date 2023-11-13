@@ -23,7 +23,7 @@ actionsd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null) {
+    if (argsMap[#child] == null || argsMap[#actions] == null) {
       throw FlutterError("Actionsd requires `child:Widget` and `actions:Map<Type, Action<Intent>>`");
     }
     return true;

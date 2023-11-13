@@ -100,7 +100,7 @@ floatingActionButtonExtendedd(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#onPressed] == null) {
+    if (argsMap[#onPressed] == null || argsMap[#label] == null) {
       throw FlutterError("FloatingActionButtonExtendedd requires `onPressed:void Function()` and `label:Widget`");
     }
     return true;
