@@ -357,6 +357,19 @@ With ***Mixin*** of Decoration:
 <li> FloatingActionButtonExtendedd
 <li> SegmentedButtond
 <li> Badged
+<li> SliverPaddingd
+<li> DecoratedSliverd
+<li> FractionalTranslationd
+<li> DefaultTextStyled
+<li> CircleAvatard
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
+<li> 
 <li> 
 <li> 
 <li> 

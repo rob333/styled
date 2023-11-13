@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
 
 // ignore: avoid_relative_lib_imports
 import '../example/lib/main.dart';
@@ -16,9 +17,15 @@ void main() {
     expect(find.text("Styled TextD2"), findsOneWidget);
     expect(find.text("This is a fancy container!"), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    // await tester.tap(find.byIcon(Icons.add));
-    // await tester.tap(find.byIcon(Icons.add));
-    // await tester.pump();
+    await tester.tap(find.byIcon(Icons.straight));
+    await tester.pumpAndSettle();
+
+    expect(find.text("Week"), findsOneWidget);
+    expect(find.text("Month"), findsOneWidget);
+    expect(find.text("Year"), findsOneWidget);
+    expect(find.text("XS"), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.join_right));
+    await tester.pumpAndSettle();
   });
 }

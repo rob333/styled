@@ -3,6 +3,8 @@
 import 'widgets/layout/alignd.dart';
 import 'widgets/layout/cardd.dart';
 import 'widgets/layout/centerd.dart';
+import 'widgets/layout/circle_avatard.dart';
+import 'widgets/layout/sliver_paddingd.dart';
 import 'widgets/layout/clip_ovald.dart';
 import 'widgets/layout/clip_pathd.dart';
 import 'widgets/layout/clip_rectd.dart';
@@ -56,6 +58,9 @@ import 'widgets/layout/tabled.dart';
 import 'widgets/layout/unconstrained_boxd.dart';
 import 'widgets/layout/vertical_dividerd.dart';
 import 'widgets/layout/wrapd.dart';
+import 'widgets/controls/default_text_styled.dart';
+import 'widgets/controls/fractional_translationd.dart';
+import 'widgets/controls/decorated_sliverd.dart';
 import 'widgets/controls/badged.dart';
 import 'widgets/controls/absorb_pointerd.dart';
 import 'widgets/controls/actionsd.dart';
@@ -140,6 +145,7 @@ import 'widgets/controls/transformd.dart';
 import 'widgets/controls/translated.dart';
 import 'widgets/controls/visibilityd.dart';
 import 'widgets/controls/will_pop_scoped.dart';
+import 'widgets/items/checkboxd.dart';
 import 'widgets/items/bottom_sheetd.dart';
 import 'widgets/items/about_dialogd.dart';
 import 'widgets/items/app_bard.dart';
@@ -229,7 +235,7 @@ const Textd = Variadic(textd) as dynamic;
 ///
 /// **`supported positional arguments:`**
 /// ```
-/// Widget: will be added into children:List<Widget>
+/// Widget will be added into children:List<Widget>
 ///
 /// children:List<Widget>
 /// mainAxisAlignment:MainAxisAlignment
@@ -245,7 +251,7 @@ const Columnd = Variadic(columnd) as dynamic;
 ///
 /// **`supported positional arguments:`**
 /// ```
-/// Widget: will be added into children:List<Widget>
+/// Widget will be added into children:List<Widget>
 ///
 /// children:List<Widget>
 /// mainAxisAlignment:MainAxisAlignment
@@ -400,12 +406,20 @@ const Drawerd = Variadic(drawerd) as dynamic;
 /// `child:Widget, color:Color, constraints:BoxConstraints, transform:Matrix4,
 /// clipBehavior:Clip`
 ///
-/// **Mixin with Decoration:**<br>
-/// `BoxShadow`: will be added into `boxShadow:List<BoxShadow>`
+/// ---
+/// **Decoration Mixin:**
+/// ```
+/// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
-/// `color:Color, image:DecorationImage, border:BoxBorder,
-///  borderRadius:BorderRadiusGeometry, boxShadow:List<BoxShadow>,
-///  gradient:Gradient, backgroundBlendMode:BlendMode, shape:BoxShape`
+/// color: Color
+/// image: DecorationImage
+/// border: BoxBorder
+/// borderRadius: BorderRadiusGeometry
+/// boxShadow: List<BoxShadow>
+/// gradient: Gradient
+/// backgroundBlendMode: BlendMode
+/// shape: BoxShape
+/// ```
 const Containerd = Variadic(containerd) as dynamic;
 
 /// Returns a `BoxShadow`.
@@ -419,7 +433,7 @@ const BoxShadowd = Variadic(boxShadowd) as dynamic;
 /// Returns a `BoxDecoration`.
 ///
 /// **supported positional arguments:**<br>
-/// `BoxShadow`: will be added into `boxShadow:List<BoxShadow>`
+/// `BoxShadow` will be added into `boxShadow:List<BoxShadow>`
 ///
 /// `color:Color, image:DecorationImage, border:BoxBorder,
 ///  borderRadius:BorderRadiusGeometry, boxShadow:List<BoxShadow>,
@@ -431,9 +445,9 @@ const BoxDecorationd = Variadic(boxDecorationd) as dynamic;
 /// **supported positional arguments:**<br>
 /// `AlignmentGeometry`: 0:begin, 1:end
 ///
-/// `Color`: will be added into `colors:List<Color>`
+/// `Color` will be added into `colors:List<Color>`
 ///
-/// `double`: will be added into `stops:List<double>`
+/// `double` will be added into `stops:List<double>`
 ///
 /// `colors:List<Color>, stops:List<double>, tileMode:TileMode,
 /// transform:GradientTransform`
@@ -484,7 +498,7 @@ const DecorationImaged = Variadic(decorationImaged) as dynamic;
 /// **supported positional arguments:**<br>
 /// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `alignment:AlignmentGeometry, textDirection:TextDirection, fit:StackFit,
 /// clipBehavior:Clip, children:List<Widget>`
@@ -544,7 +558,7 @@ const Spacerd = Variadic(spacerd) as dynamic;
 /// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
 /// 4:addRepaintBoundaries, 5:addSemanticIndexes
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `key:Key, scrollDirection:Axis, controller:ScrollController,
 /// physics:ScrollPhysics, padding:EdgeInsetsGeometry, children:List<Widget>,
@@ -591,7 +605,7 @@ const ListTiled = Variadic(listTiled) as dynamic;
 /// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
 /// 4:addRepaintBoundaries, 5:addSemanticIndexes
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
 /// padding:EdgeInsetsGeometry, cacheExtent:double, children:List<Widget>,
@@ -625,7 +639,7 @@ const Expandedd = Variadic(expandedd) as dynamic;
 ///
 /// `WrapAlignment`: 0:alignment, 1:runAlignment
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `direction:Axis, crossAxisAlignment:WrapCrossAlignment,
 /// textDirection:TextDirection, verticalDirection:VerticalDirection,
@@ -645,7 +659,7 @@ const Opacityd = Variadic(opacityd) as dynamic;
 /// **supported positional arguments:**<br>
 /// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `onPageChanged:void Function(int), `
 /// `scrollDirection:Axis, controller:PageController, physics:ScrollPhysics,
@@ -663,7 +677,7 @@ const PageViewd = Variadic(pageViewd) as dynamic;
 /// **supported positional arguments:**<br>
 /// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing
 ///
-/// `TableRow`: will be added into `children:List<TableRow>`
+/// `TableRow` will be added into `children:List<TableRow>`
 ///
 /// `columnWidths:Map<int, TableColumnWidth>,
 /// defaultColumnWidth:TableColumnWidth, textDirection:TextDirection,
@@ -674,16 +688,24 @@ const Tabled = Variadic(tabled) as dynamic;
 /// Returns a `TableRow`. (**Mixin with Decoration**)
 ///
 /// **supported positional arguments:**<br>
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `decoration:Decoration`
 ///
-/// **Mixin with Decoration:**<br>
-/// `BoxShadow`: will be added into `boxShadow:List<BoxShadow>`
+/// ---
+/// **Decoration Mixin:**
+/// ```
+/// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
-/// `color:Color, image:DecorationImage, border:BoxBorder,
-///  borderRadius:BorderRadiusGeometry, boxShadow:List<BoxShadow>,
-///  gradient:Gradient, backgroundBlendMode:BlendMode, shape:BoxShape`
+/// color: Color
+/// image: DecorationImage
+/// border: BoxBorder
+/// borderRadius: BorderRadiusGeometry
+/// boxShadow: List<BoxShadow>
+/// gradient: Gradient
+/// backgroundBlendMode: BlendMode
+/// shape: BoxShape
+/// ```
 const TableRowd = Variadic(tableRowd) as dynamic;
 
 /// Returns a `SliverAppBar`.
@@ -781,12 +803,20 @@ const CustomPaintd = Variadic(customPaintd) as dynamic;
 /// `child:Widget, message:String, richMessage:InlineSpan, decoration:Decoration,
 /// textStyle:TextStyle, textAlign:TextAlign, triggerMode:TooltipTriggerMode`
 ///
-/// **Mixin with Decoration:**<br>
-/// `BoxShadow`: will be added into `boxShadow:List<BoxShadow>`
+/// ---
+/// **Decoration Mixin:**
+/// ```
+/// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
-/// `color:Color, image:DecorationImage, border:BoxBorder,
-///  borderRadius:BorderRadiusGeometry, boxShadow:List<BoxShadow>,
-///  gradient:Gradient, backgroundBlendMode:BlendMode, shape:BoxShape`
+/// color: Color
+/// image: DecorationImage
+/// border: BoxBorder
+/// borderRadius: BorderRadiusGeometry
+/// boxShadow: List<BoxShadow>
+/// gradient: Gradient
+/// backgroundBlendMode: BlendMode
+/// shape: BoxShape
+/// ```
 const ToolTipd = Variadic(tooltipd) as dynamic;
 
 /// Returns a `IconButton`.
@@ -986,7 +1016,7 @@ const Placeholderd = Variadic(placeholderd) as dynamic;
 /// **supported positional arguments:**<br>
 /// `int`: 0:fontSize, 1:letterSpacing, 2:wordSpacing
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `text:InlineSpan, textAlign:TextAlign, textDirection:TextDirection,
 /// softWrap:bool, overflow:TextOverflow, textScaleFactor:double, maxLines:int,
@@ -1000,7 +1030,7 @@ const RichTextd = Variadic(richTextd) as dynamic;
 /// **supported positional arguments:**<br>
 /// `string`: 0:text, 1:semanticsLabel
 ///
-/// `InlineSpan(TextSpan)`: will be added into `children:List<InlineSpan>`
+/// `InlineSpan(TextSpan)` will be added into `children:List<InlineSpan>`
 ///
 /// - `void Function(PointerEnterEvent)`: onEnter
 /// - `void Function(PointerExitEvent)` : onExit
@@ -1068,7 +1098,7 @@ const AnimatedContainerd = Variadic(animatedContainerd) as dynamic;
 /// Returns a `IndexedStack`.
 ///
 /// **supported positional arguments:**<br>
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `children:List<Widget>, alignment:AlignmentGeometry,
 /// textDirection:TextDirection, clipBehavior:Clip, sizing:StackFit, index:int`
@@ -1153,7 +1183,7 @@ const SingleChildScrollViewd = Variadic(singleChildScrollViewd) as dynamic;
 /// Returns a `DataRow`.
 ///
 /// **supported positional arguments:**<br>
-/// `DataCell`: will be added into `cells:List<DataCell>`
+/// `DataCell` will be added into `cells:List<DataCell>`
 ///
 /// - `void Function(bool?)`: onSelectChanged
 /// - `void Function()`: onLongPress
@@ -1194,22 +1224,31 @@ const DataCelld = Variadic(dataCelld) as dynamic;
 ///
 /// `bool`: 0:sortAscending, 1:showCheckboxColumn, 2:showBottomBorder
 ///
-/// `DataColumn`: will be added into `columns:List<DataColumn>`
+/// `DataColumn` will be added into `columns:List<DataColumn>`
 ///
-/// `DataRow`: will be added into `rows:List<DataRow>`
+/// `DataRow` will be added into `rows:List<DataRow>`
 ///
 /// - `void Function(bool?)`: onSelectAll
 ///
 /// `decoration:Decoration, border:TableBorder, clipBehavior:Clip,
 /// sortColumnIndex:int`
 ///
-/// **Mixin with Decoration:**<br>
-/// `BoxShadow`: will be added into `boxShadow:List<BoxShadow>`
+/// ---
+/// **Decoration Mixin:**
+/// ```
+/// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
-/// `color:Color, image:DecorationImage, border:BoxBorder,
-///  borderRadius:BorderRadiusGeometry, boxShadow:List<BoxShadow>,
-///  gradient:Gradient, backgroundBlendMode:BlendMode, shape:BoxShape`
+/// color: Color
+/// image: DecorationImage
+/// border: BoxBorder
+/// borderRadius: BorderRadiusGeometry
+/// boxShadow: List<BoxShadow>
+/// gradient: Gradient
+/// backgroundBlendMode: BlendMode
+/// shape: BoxShape
+/// ```
 ///
+/// ---
 /// ***`not supported:`***
 /// ```
 /// dataRowHeight:double, dataRowMinHeight:double, dataRowMaxHeight:double,
@@ -1366,9 +1405,9 @@ const ColorFilteredd = Variadic(colorFilteredd) as dynamic;
 ///
 /// - `void Function(int)`: onPressed
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
-/// `FocusNode`: will be added into `focusNodes:List<FocusNode>`
+/// `FocusNode` will be added into `focusNodes:List<FocusNode>`
 ///
 /// `renderBorder:bool, mouseCursor:MouseCursor,
 /// tapTargetSize:MaterialTapTargetSize, textStyle:TextStyle,
@@ -1499,7 +1538,7 @@ const DefaultTabControllerd = Variadic(defaultTabControllerd) as dynamic;
 ///
 /// `void Function(int)`: onTap
 ///
-/// `Widget`: will be added into `tabs:List<Widget>`
+/// `Widget` will be added into `tabs:List<Widget>`
 ///
 /// `controller:TabController, indicatorWeight:double, indicator:Decoration,
 /// indicatorSize:TabBarIndicatorSize, dragStartBehavior:DragStartBehavior,
@@ -1521,7 +1560,7 @@ const Tabd = Variadic(tabd) as dynamic;
 /// **supported positional arguments:**<br>
 /// ***required***: `children:List<Widget>`
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `controller:TabController, physics:ScrollPhysics,
 /// dragStartBehavior:DragStartBehavior, viewportFraction:double,
@@ -1560,7 +1599,7 @@ const SnackBard = Variadic(snackBard) as dynamic;
 ///
 /// - `void Function(int)`: onSelectedItemChanged
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `controller:ScrollController, physics:ScrollPhysics, clipBehavior:Clip,
 /// restorationId:String, scrollBehavior:ScrollBehavior`
@@ -1663,7 +1702,7 @@ const AboutDialogd = Variadic(aboutDialogd) as dynamic;
 /// **supported positional arguments:**<br>
 /// `Widget`: 0:title, 1:background
 ///
-/// `StretchMode`: will be added into `stretchModes:List<StretchMode>`
+/// `StretchMode` will be added into `stretchModes:List<StretchMode>`
 ///
 /// `centerTitle:bool, titlePadding:EdgeInsetsGeometry,
 /// collapseMode:CollapseMode, expandedTitleScale:double|int`
@@ -1674,7 +1713,7 @@ const FlexibleSpaceBard = Variadic(flexibleSpaceBard) as dynamic;
 /// **supported positional arguments:**<br>
 /// ***required***: `direction:Axis`
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `children:List<Widget>, mainAxisAlignment:MainAxisAlignment,
 /// mainAxisSize:MainAxisSize, crossAxisAlignment:CrossAxisAlignment,
@@ -1731,7 +1770,7 @@ const GridViewBuilderd = Variadic(gridViewBuilderd) as dynamic;
 /// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
 /// 4:addRepaintBoundaries, 5:addSemanticIndexes
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// - `Widget? Function(BuildContext, int)`: itemBuilder
 /// - `int? Function(Key)`: findChildIndexCallback
@@ -1766,7 +1805,7 @@ const GridViewCustomd = Variadic(gridViewCustomd) as dynamic;
 /// `bool`: 0:reverse, 1:primary, 2:shrinkWrap, 3:addAutomaticKeepAlives,
 /// 4:addRepaintBoundaries, 5:addSemanticIndexes
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
 ///  padding:EdgeInsetsGeometry, semanticChildCount:int,
@@ -1895,7 +1934,7 @@ const ExpansionPaneld = Variadic(expansionPaneld) as dynamic;
 ///
 /// - `void Function(int, bool)`: expansionCallback
 ///
-/// `ExpansionPanel`: will be added into `children:List<ExpansionPanel>`
+/// `ExpansionPanel` will be added into `children:List<ExpansionPanel>`
 ///
 /// `animationDuration:Duration, expandedHeaderPadding:EdgeInsets`
 const ExpansionPanelListd = Variadic(expansionPanelListd) as dynamic;
@@ -1954,7 +1993,7 @@ const RefreshIndicatord = Variadic(refreshIndicatord) as dynamic;
 /// **supported positional arguments:**<br>
 /// ***required***: `delegate:FlowDelegate`
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `children:List<Widget>, clipBehavior:Clip`
 const Flowd = Variadic(flowd) as dynamic;
@@ -2108,7 +2147,7 @@ const VerticalDividerd = Variadic(verticalDividerd) as dynamic;
 ///
 /// - `void Function(int)`: onDestinationSelected
 ///
-/// `NavigationRailDestination`: will be added into `destinations:List<NavigationRailDestination>`
+/// `NavigationRailDestination` will be added into `destinations:List<NavigationRailDestination>`
 ///
 /// `selectedIndex:int, labelType:NavigationRailLabelType, indicatorShape:ShapeBorder`
 const NavigationRaild = Variadic(navigationRaild) as dynamic;
@@ -2135,7 +2174,7 @@ const NavigationRailDestinationd = Variadic(navigationRailDestinationd) as dynam
 ///
 /// - `void Function(int)`: onDestinationSelected
 ///
-/// `Widget`: will be added into `destinations:List<Widget>`
+/// `Widget` will be added into `destinations:List<Widget>`
 ///
 /// `selectedIndex:int, animationDuration:Duration, indicatorShape:ShapeBorder,
 /// labelBehavior:NavigationDestinationLabelBehavior`
@@ -2150,7 +2189,7 @@ const NavigationBard = Variadic(navigationBard) as dynamic;
 ///
 /// - `void Function(int)`: onDestinationSelected
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `elevation:double, selectedIndex:int, animationDuration:Duration, indicatorShape:ShapeBorder,
 /// tilePadding:EdgeInsetsGeometry`
@@ -2183,7 +2222,7 @@ const NavigationDestinationd = Variadic(navigationDestinationd) as dynamic;
 ///
 /// - `void Function(int)`: onTap
 ///
-/// `BottomNavigationBarItem`: will be added into `items:List<BottomNavigationBarItem>`
+/// `BottomNavigationBarItem` will be added into `items:List<BottomNavigationBarItem>`
 ///
 /// `currentIndex:int, type:BottomNavigationBarType, mouseCursor:MouseCursor,
 ///  landscapeLayout:BottomNavigationBarLandscapeLayout`
@@ -2225,7 +2264,7 @@ const RawMagnifierd = Variadic(rawMagnifierd) as dynamic;
 ///
 /// **supported positional arguments:**<br>
 ///
-/// `BoxShadow`: will be added into `shadows:List<BoxShadow>`
+/// `BoxShadow` will be added into `shadows:List<BoxShadow>`
 ///
 /// `opacity:double, shape:ShapeBorder, shadows:List<BoxShadow>`
 const MagnifierDecorationd = Variadic(magnifierDecorationd) as dynamic;
@@ -2310,7 +2349,7 @@ const Scrollabled = Variadic(scrollabled) as dynamic;
 ///
 /// `double`: 0:anchor, 1:cacheExtent
 ///
-/// `Widget`: will be added into `slivers:List<Widget>`
+/// `Widget` will be added into `slivers:List<Widget>`
 ///
 /// `scrollDirection:Axis, controller:ScrollController, physics:ScrollPhysics,
 /// scrollBehavior:ScrollBehavior, semanticChildCount:int,
@@ -2403,7 +2442,7 @@ const SizedOverflowBoxd = Variadic(sizedOverflowBoxd) as dynamic;
 /// **supported positional arguments:**<br>
 /// ***required***: `delegate:MultiChildLayoutDelegate`
 ///
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `children:List<Widget>`
 const CustomMultiChildLayoutd = Variadic(customMultiChildLayoutd) as dynamic;
@@ -2431,7 +2470,7 @@ const RawMaterialButtond = Variadic(rawMaterialButtond) as dynamic;
 /// Returns a `ListBody`.
 ///
 /// **supported positional arguments:**<br>
-/// `Widget`: will be added into `children:List<Widget>`
+/// `Widget` will be added into `children:List<Widget>`
 ///
 /// `mainAxis:Axis, reverse:bool, children:List<Widget>`
 const ListBodyd = Variadic(listBodyd) as dynamic;
@@ -2486,7 +2525,7 @@ const FilledButtonTonalIcond = Variadic(filledButtonTonalIcond) as dynamic;
 ///
 /// - `void Function(Set)`: onSelectionChanged
 ///
-/// `ButtonSegment`: will be added into `segments:List<ButtonSegment>`
+/// `ButtonSegment` will be added into `segments:List<ButtonSegment>`
 ///
 /// `selected:Set, style:ButtonStyle, selectedIcon:Widget`
 const SegmentedButtond = Variadic(segmentedButtond) as dynamic;
@@ -2509,7 +2548,7 @@ const ButtonSegmentd = Variadic(buttonSegmentd) as dynamic;
 /// Color: 0:backgroundColor, 1:textColor
 /// double|int: 0:smallSize, 1:largeSize
 ///
-/// textStyle:T extStyle
+/// textStyle: TextStyle
 /// padding: EdgeInsetsGeometry
 /// alignment: AlignmentGeometry
 /// offset: Offset
@@ -2521,14 +2560,113 @@ const Badged = Variadic(badged) as dynamic;
 ///
 /// **`supported positional arguments:`**
 /// ```
-/// ***required***: `builder:Widget Function(BuildContext)`, `onClosing:void Function()`
+/// required: builder:Widget Function(BuildContext)
+/// required: onClosing:void Function()
+///
 /// bool: 0:enableDrag, 1:showDragHandle
 /// Color: 0:dragHandleColor, 1:backgroundColor, 2:shadowColor
 /// - void Function(DragStartDetails): onDragStart
 /// - void Function(DragEndDetails, {required bool isClosing}): onDragEnd
+///
 /// elevation: double|int
 /// shape: ShapeBorder
 /// clipBehavior: Clip
 /// constraints: BoxConstraints
 /// ```
 const BottomSheetd = Variadic(bottomSheetd) as dynamic;
+
+/// Returns a `Checkbox`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: value:bool
+/// required: onChanged:void Function(bool?)
+///
+/// bool: 0:value, 1:autofocus, 2:isError, 3:tristate
+/// Color: 0:activeColor, 1:checkColor, 2:focusColor, 3:hoverColor
+/// MaterialStateProperty<Color?>: 0:fillColor, 1:overlayColor
+///
+/// splashRadius: double|int
+/// materialTapTargetSize: MaterialTapTargetSize
+/// visualDensity: VisualDensity
+/// focusNode: FocusNode
+/// shape: OutlinedBorder
+/// side: BorderSide
+/// ```
+const Checkboxd = Variadic(checkboxd) as dynamic;
+
+/// Returns a `SliverPadding`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: padding:EdgeInsetsGeometry
+///
+/// sliver: Widget
+/// ```
+const SliverPaddingd = Variadic(sliverPaddingd) as dynamic;
+
+/// Returns a `DecoratedSliver`. (**Mixin with Decoration**)
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: decoration:Decoration
+///
+/// sliver: Widget
+/// position: DecorationPosition
+/// ```
+///
+/// ---
+/// **Decoration Mixin:**
+/// ```
+/// BoxShadow will be added into boxShadow:List<BoxShadow>
+///
+/// color: Color
+/// image: DecorationImage
+/// border: BoxBorder
+/// borderRadius: BorderRadiusGeometry
+/// boxShadow: List<BoxShadow>
+/// gradient: Gradient
+/// backgroundBlendMode: BlendMode
+/// shape: BoxShape
+/// ```
+const DecoratedSliverd = Variadic(decoratedSliverd) as dynamic;
+
+/// Returns a `FractionalTranslation`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: translation:Offset
+///
+/// transformHitTests: bool
+/// child: Widget
+/// ```
+const FractionalTranslationd = Variadic(fractionalTranslationd) as dynamic;
+
+/// Returns a `DefaultTextStyle`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: style:TextStyle
+/// required: child:Widget
+///
+/// textAlign: TextAlign
+/// softWrap: bool
+/// overflow: TextOverflow
+/// maxLines: int
+/// textWidthBasis: TextWidthBasis
+/// textHeightBehavior: TextHeightBehavior
+/// ```
+const DefaultTextStyled = Variadic(defaultTextStyled) as dynamic;
+
+/// Returns a `CircleAvatar`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// Color: 0:backgroundColor, 1:foregroundColor
+/// double|int: 0:radius, 1:minRadius, 2:maxRadius
+/// ImageProvider<Object>: 0:backgroundImage, 1:foregroundImage
+/// void Function(Object, StackTrace?): 0:onBackgroundImageError, 1:onForegroundImageError
+///
+/// child: Widget
+/// ```
+const CircleAvatard = Variadic(circleAvatard) as dynamic;
