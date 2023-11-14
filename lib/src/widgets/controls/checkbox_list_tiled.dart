@@ -53,6 +53,8 @@ checkboxListTiled(List argsList, Map<Symbol, dynamic> origArgsMap) {
         }
       case double arg:
         argsMap[#splashRadius] = arg;
+      case int arg:
+        argsMap[#splashRadius] = arg.toDouble();
       case MaterialTapTargetSize arg:
         argsMap[#materialTapTargetSize] = arg;
       case VisualDensity arg:

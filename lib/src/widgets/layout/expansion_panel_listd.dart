@@ -35,6 +35,13 @@ expansionPanelListd(List argsList, Map<Symbol, dynamic> origArgsMap) {
           case 1:
             argsMap[#materialGapSize] = arg;
         }
+      case int arg:
+        switch (doublei++) {
+          case 0:
+            argsMap[#elevation] = arg.toDouble();
+          case 1:
+            argsMap[#materialGapSize] = arg.toDouble();
+        }
     }
   }
 
