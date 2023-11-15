@@ -10,6 +10,8 @@ scaled(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#key] = arg;
       case double arg:
         doubles.add(arg);
+      case int arg:
+        doubles.add(arg.toDouble());
       case Offset arg:
         argsMap[#origin] = arg;
       case AlignmentGeometry arg:

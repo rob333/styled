@@ -362,6 +362,16 @@ With ***Mixin*** of Decoration:
 <li> FractionalTranslationd
 <li> DefaultTextStyled
 <li> CircleAvatard
+<li> Inkd
+<li> InkResponsed
+<li> InkWelld
+<li> AnimatedAlignd
+<li> DecoratedBoxTransitiond
+<li> Switchd
+<li> 
+<li> 
+<li> 
+<li> 
 <li> 
 <li> 
 <li> 

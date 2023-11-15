@@ -9,6 +9,8 @@ rotated(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#key] = arg;
       case double arg:
         argsMap[#angle] = arg;
+      case int arg:
+        argsMap[#angle] = arg.toDouble();
       case Offset arg:
         argsMap[#origin] = arg;
       case AlignmentGeometry arg:

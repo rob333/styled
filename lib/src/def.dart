@@ -4,7 +4,6 @@ import 'widgets/layout/alignd.dart';
 import 'widgets/layout/cardd.dart';
 import 'widgets/layout/centerd.dart';
 import 'widgets/layout/circle_avatard.dart';
-import 'widgets/layout/sliver_paddingd.dart';
 import 'widgets/layout/clip_ovald.dart';
 import 'widgets/layout/clip_pathd.dart';
 import 'widgets/layout/clip_rectd.dart';
@@ -52,20 +51,18 @@ import 'widgets/layout/safeared.dart';
 import 'widgets/layout/sized_boxd.dart';
 import 'widgets/layout/sized_overflow_boxd.dart';
 import 'widgets/layout/sliver_app_bard.dart';
+import 'widgets/layout/sliver_paddingd.dart';
 import 'widgets/layout/spacerd.dart';
 import 'widgets/layout/stackd.dart';
 import 'widgets/layout/tabled.dart';
 import 'widgets/layout/unconstrained_boxd.dart';
 import 'widgets/layout/vertical_dividerd.dart';
 import 'widgets/layout/wrapd.dart';
-import 'widgets/controls/default_text_styled.dart';
-import 'widgets/controls/fractional_translationd.dart';
-import 'widgets/controls/decorated_sliverd.dart';
-import 'widgets/controls/badged.dart';
 import 'widgets/controls/absorb_pointerd.dart';
 import 'widgets/controls/actionsd.dart';
 import 'widgets/controls/alert_dialog_adaptived.dart';
 import 'widgets/controls/alert_dialogd.dart';
+import 'widgets/controls/animated_alignd.dart';
 import 'widgets/controls/animated_builderd.dart';
 import 'widgets/controls/animated_containerd.dart';
 import 'widgets/controls/animated_cross_faded.dart';
@@ -77,6 +74,7 @@ import 'widgets/controls/animated_positionedd.dart';
 import 'widgets/controls/animated_switcherd.dart';
 import 'widgets/controls/aspect_ratiod.dart';
 import 'widgets/controls/backdrop_filterd.dart';
+import 'widgets/controls/badged.dart';
 import 'widgets/controls/baselined.dart';
 import 'widgets/controls/bottom_app_bard.dart';
 import 'widgets/controls/bottom_navigation_bard.dart';
@@ -88,7 +86,10 @@ import 'widgets/controls/color_filteredd.dart';
 import 'widgets/controls/constrained_boxd.dart';
 import 'widgets/controls/custom_scroll_viewd.dart';
 import 'widgets/controls/cutom_paintd.dart';
+import 'widgets/controls/decorated_box_transitiond.dart';
+import 'widgets/controls/decorated_sliverd.dart';
 import 'widgets/controls/default_tab_controllerd.dart';
+import 'widgets/controls/default_text_styled.dart';
 import 'widgets/controls/dismissibled.dart';
 import 'widgets/controls/draggable_scrollable_sheetd.dart';
 import 'widgets/controls/elevated_buttond.dart';
@@ -101,9 +102,13 @@ import 'widgets/controls/flipd.dart';
 import 'widgets/controls/focusable_action_detectord.dart';
 import 'widgets/controls/focusd.dart';
 import 'widgets/controls/formd.dart';
+import 'widgets/controls/fractional_translationd.dart';
 import 'widgets/controls/hero_moded.dart';
 import 'widgets/controls/icon_buttond.dart';
 import 'widgets/controls/ignore_pointerd.dart';
+import 'widgets/controls/ink_responsed.dart';
+import 'widgets/controls/ink_welld.dart';
+import 'widgets/controls/inkd.dart';
 import 'widgets/controls/interactive_viewerd.dart';
 import 'widgets/controls/linear_progress_indicatord.dart';
 import 'widgets/controls/list_wheel_scroll_viewd.dart';
@@ -136,6 +141,7 @@ import 'widgets/controls/slider_adaptived.dart';
 import 'widgets/controls/sliderd.dart';
 import 'widgets/controls/sliver_offstaged.dart';
 import 'widgets/controls/switch_list_tiled.dart';
+import 'widgets/controls/switchd.dart';
 import 'widgets/controls/tab_page_selectord.dart';
 import 'widgets/controls/text_button_icond.dart';
 import 'widgets/controls/text_buttond.dart';
@@ -145,16 +151,16 @@ import 'widgets/controls/transformd.dart';
 import 'widgets/controls/translated.dart';
 import 'widgets/controls/visibilityd.dart';
 import 'widgets/controls/will_pop_scoped.dart';
-import 'widgets/items/checkboxd.dart';
-import 'widgets/items/bottom_sheetd.dart';
 import 'widgets/items/about_dialogd.dart';
 import 'widgets/items/app_bard.dart';
 import 'widgets/items/border_sided.dart';
 import 'widgets/items/borderd.dart';
 import 'widgets/items/bottom_navigation_bar_itemd.dart';
+import 'widgets/items/bottom_sheetd.dart';
 import 'widgets/items/box_decorationd.dart';
 import 'widgets/items/box_shadowd.dart';
 import 'widgets/items/button_segmentd.dart';
+import 'widgets/items/checkboxd.dart';
 import 'widgets/items/date_celld.dart';
 import 'widgets/items/date_columnd.dart';
 import 'widgets/items/date_rowd.dart';
@@ -182,6 +188,7 @@ import 'widgets/items/tabbar_viewd.dart';
 import 'widgets/items/tabd.dart';
 import 'widgets/items/table_rowd.dart';
 import 'widgets/items/text_spand.dart';
+
 import 'widgets/scaffoldd.dart';
 import 'widgets/textd.dart';
 
@@ -279,8 +286,8 @@ const Centerd = Variadic(centerd) as dynamic;
 /// ```
 /// Drawer: 0:drawer, 1:endDrawer
 /// Color: 0:backgroundColor, 1:drawerScrimColor
-
-/// void Function(bool): 0:onDrawerChanged, 1:onEndDrawerChanged
+///
+/// - void Function(bool): 0:onDrawerChanged, 1:onEndDrawerChanged
 ///
 /// body: Widget
 /// appBar: PreferredSizeWidget
@@ -311,7 +318,7 @@ const Scaffoldd = Variadic(scaffoldd) as dynamic;
 ///
 /// **`supported positional arguments:`**
 /// ```
-/// required: `onPressed: void Function()`
+/// required: onPressed:void Function()
 ///
 /// Color: 0:foregroundColor, 1:backgroundColor, 2:focusColor, 3:hoverColor, 4:splashColor
 /// double|int: 0:elevation, 1:focusElevation, 2:hoverElevation, 3:highlightElevation, 4:disabledElevation
@@ -332,8 +339,8 @@ const FloatingActionButtond = Variadic(floatingactionbuttond) as dynamic;
 ///
 /// **`supported positional arguments:`**
 /// ```
-/// required: `onPressed: void Function()`
-/// required: `label: Widget`
+/// required: onPressed:void Function()
+/// required: label:Widget`
 ///
 /// Widget: 0:label, 1:icon
 /// Color: 0:foregroundColor, 1:backgroundColor, 2:focusColor, 3:hoverColor, 4:splashColor
@@ -433,13 +440,13 @@ const Drawerd = Variadic(drawerd) as dynamic;
 /// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
 /// color: Color
-/// image: DecorationImage
+/// shape: BoxShape
 /// border: BoxBorder
 /// borderRadius: BorderRadiusGeometry
 /// boxShadow: List<BoxShadow>
 /// gradient: Gradient
+/// image: DecorationImage
 /// backgroundBlendMode: BlendMode
-/// shape: BoxShape
 /// ```
 const Containerd = Variadic(containerd) as dynamic;
 
@@ -462,13 +469,13 @@ const BoxShadowd = Variadic(boxShadowd) as dynamic;
 /// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
 /// color: Color
-/// image: DecorationImage
+/// shape: BoxShape
 /// border: BoxBorder
 /// borderRadius: BorderRadiusGeometry
 /// boxShadow: List<BoxShadow>
 /// gradient: Gradient
+/// image: DecorationImage
 /// backgroundBlendMode: BlendMode
-/// shape: BoxShape
 /// ```
 const BoxDecorationd = Variadic(boxDecorationd) as dynamic;
 
@@ -531,7 +538,7 @@ const Paddingd = Variadic(paddingd) as dynamic;
 /// double: 0:scale, 1:opacity
 /// bool: 0:matchTextDirection, 1:invertColors, 2:isAntiAlias
 ///
-/// onError: void Function(Object, StackTrace?)
+/// - onError: void Function(Object, StackTrace?)
 ///
 /// colorFilter: ColorFilter
 /// image: ImageProvider<Object>
@@ -578,8 +585,8 @@ const Positionedd = Variadic(positionedd) as dynamic;
 ///   1. one widget invokes ElevatedButton as child
 ///   2. two widgets invoke ElevatedButton.Icon as icon and label
 ///
-/// void Function(): 0:onPress, 1:onLongPress
-/// void Function(bool): 0:onHover, 1:onFocusChange
+/// - void Function(): 0:onPress, 1:onLongPress
+/// - void Function(bool): 0:onHover, 1:onFocusChange
 ///
 /// style: ButtonStyle
 /// focusNode: FocusNode
@@ -650,9 +657,10 @@ const ListViewd = Variadic(listViewd) as dynamic;
 /// **`supported positional arguments:`**
 /// ```
 /// Widget: 0:title, 1:leading, 2:subtitle, 3:trailing
-/// void Function(): 0:onTap, 1:onLongPress
 ///
-/// onFocusChange: void Function(bool)
+/// - void Function(): 0:onTap, 1:onLongPress
+///
+/// - onFocusChange: void Function(bool)
 ///
 /// visualDensity: VisualDensity
 /// shape: ShapeBorder
@@ -770,7 +778,7 @@ const Opacityd = Variadic(opacityd) as dynamic;
 ///
 /// Widget will be added into children:List<Widget>
 ///
-/// onPageChanged: void Function(int)
+/// - onPageChanged: void Function(int)
 ///
 /// scrollDirection: Axis
 /// controller: PageController
@@ -821,13 +829,13 @@ const Tabled = Variadic(tabled) as dynamic;
 /// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
 /// color: Color
-/// image: DecorationImage
+/// shape: BoxShape
 /// border: BoxBorder
 /// borderRadius: BorderRadiusGeometry
 /// boxShadow: List<BoxShadow>
 /// gradient: Gradient
+/// image: DecorationImage
 /// backgroundBlendMode: BlendMode
-/// shape: BoxShape
 /// ```
 const TableRowd = Variadic(tableRowd) as dynamic;
 
@@ -921,9 +929,9 @@ const ClipRectd = Variadic(clipRectd) as dynamic;
 /// required: child:Widget
 /// required: tag:Object
 ///
-/// create: Tween<Rect?> Function(Rect?, Rect?)
-/// flightShuttleBuilder: Widget Function(BuildContext, Animation<double>, HeroFlightDirection,BuildContext, BuildContext)
-/// placeholderBuilder: Widget Function(BuildContext, Size, Widget)
+/// - create: Tween<Rect?> Function(Rect?, Rect?)
+/// - flightShuttleBuilder: Widget Function(BuildContext, Animation<double>, HeroFlightDirection,BuildContext, BuildContext)
+/// - placeholderBuilder: Widget Function(BuildContext, Size, Widget)
 ///
 /// transitionOnUserGestures: bool
 /// ```
@@ -949,7 +957,7 @@ const CustomPaintd = Variadic(customPaintd) as dynamic;
 /// Duration: 0:waitDuration, 1:showDuration
 /// bool: 0:preferBelow, 1:excludeFromSemantics, 2:enableFeedback
 ///
-/// void Function(): onTriggered
+/// - void Function(): onTriggered
 ///
 /// child: Widget
 /// message: String
@@ -965,13 +973,13 @@ const CustomPaintd = Variadic(customPaintd) as dynamic;
 /// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
 /// color: Color
-/// image: DecorationImage
+/// shape: BoxShape
 /// border: BoxBorder
 /// borderRadius: BorderRadiusGeometry
 /// boxShadow: List<BoxShadow>
 /// gradient: Gradient
+/// image: DecorationImage
 /// backgroundBlendMode: BlendMode
-/// shape: BoxShape
 /// ```
 const ToolTipd = Variadic(tooltipd) as dynamic;
 
@@ -986,7 +994,7 @@ const ToolTipd = Variadic(tooltipd) as dynamic;
 /// Color: 0:color, 1:focusColor, 2:hoverColor, 3:highlightColor, 4:splashColor, 5:disabledColor
 /// bool: 0:isSelected, 1:autofocus, 2:enableFeedback
 ///
-/// onPressed: void Function()
+/// - onPressed: void Function()
 ///
 /// visualDensity: VisualDensity
 /// padding: EdgeInsetsGeometry
@@ -1038,7 +1046,7 @@ const Transformd = Variadic(transformd) as dynamic;
 ///
 /// **`supported positional arguments:`**
 /// ```
-/// required: angle:double
+/// required: angle:double|int
 ///
 /// origin: Offset
 /// alignment: AlignmentGeometry
@@ -1052,7 +1060,7 @@ const Rotated = Variadic(rotated) as dynamic;
 ///
 /// **`supported positional arguments:`**
 /// ```
-/// required: double
+/// required: double|int
 ///   - one double: scale
 ///   - two doubles: scaleX, scaleY
 ///
@@ -1553,13 +1561,13 @@ const DataCelld = Variadic(dataCelld) as dynamic;
 /// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
 /// color: Color
-/// image: DecorationImage
+/// shape: BoxShape
 /// border: BoxBorder
 /// borderRadius: BorderRadiusGeometry
 /// boxShadow: List<BoxShadow>
 /// gradient: Gradient
+/// image: DecorationImage
 /// backgroundBlendMode: BlendMode
-/// shape: BoxShape
 /// ```
 /// ---
 /// ***`not supported:`***
@@ -1584,7 +1592,8 @@ const DataTabled = Variadic(dataTabled) as dynamic;
 ///
 /// double: 0:value, 1:min, 2:max, 3:secondaryTrackValue
 /// Color: 0:activeColor, 1:inactiveColor, 2:secondaryActiveColor, 3:thumbColor
-/// void Function(double): 0:onChanged, 1:onChangeStart, 2:onChangeEnd
+///
+/// - void Function(double): 0:onChanged, 1:onChangeStart, 2:onChangeEnd
 ///
 /// - semanticFormatterCallback: String Function(double)
 ///
@@ -1631,7 +1640,8 @@ const SliderAdaptived = Variadic(sliderAdaptived) as dynamic;
 ///
 /// double: 0:min, 1:max
 /// Color: 0:activeColor, 1:inactiveColor
-/// void Function(RangeValues): 0:onChanged, 1:onChangeStart, 2:onChangeEnd
+///
+/// - void Function(RangeValues): 0:onChanged, 1:onChangeStart, 2:onChangeEnd
 ///
 /// divisions: int
 /// labels: RangeLabels
@@ -3296,13 +3306,13 @@ const SliverPaddingd = Variadic(sliverPaddingd) as dynamic;
 /// BoxShadow will be added into boxShadow:List<BoxShadow>
 ///
 /// color: Color
-/// image: DecorationImage
+/// shape: BoxShape
 /// border: BoxBorder
 /// borderRadius: BorderRadiusGeometry
 /// boxShadow: List<BoxShadow>
 /// gradient: Gradient
+/// image: DecorationImage
 /// backgroundBlendMode: BlendMode
-/// shape: BoxShape
 /// ```
 const DecoratedSliverd = Variadic(decoratedSliverd) as dynamic;
 
@@ -3341,8 +3351,134 @@ const DefaultTextStyled = Variadic(defaultTextStyled) as dynamic;
 /// double|int: 0:radius, 1:minRadius, 2:maxRadius
 /// ImageProvider<Object>: 0:backgroundImage, 1:foregroundImage
 ///
-/// void Function(Object, StackTrace?): 0:onBackgroundImageError, 1:onForegroundImageError
+/// - void Function(Object, StackTrace?): 0:onBackgroundImageError, 1:onForegroundImageError
 ///
 /// child: Widget
 /// ```
 const CircleAvatard = Variadic(circleAvatard) as dynamic;
+
+/// Returns a `Ink`. (**Mixin with Decoration**)
+///
+/// **`supported positional arguments:`**
+/// ```
+/// double|int: 0:width, 1:height
+///
+/// child: Widget
+/// color: Color
+/// decoration: Decoration
+/// padding: EdgeInsetsGeometry
+/// ```
+/// ---
+/// **Decoration Mixin:**
+/// ```
+/// BoxShadow will be added into boxShadow:List<BoxShadow>
+///
+/// color: Color
+/// shape: BoxShape
+/// border: BoxBorder
+/// borderRadius: BorderRadiusGeometry
+/// boxShadow: List<BoxShadow>
+/// gradient: Gradient
+/// image: DecorationImage
+/// backgroundBlendMode: BlendMode
+/// ```
+const Inkd = Variadic(inkd) as dynamic;
+
+/// Returns a `InkResponse`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// bool: 0:containedInkWell, 1:enableFeedback, 2:excludeFromSemantics, 3:canRequestFocus, 4:autofocus
+/// Color: 0:focusColor, 1:hoverColor, 2:highlightColor, 3:splashColor
+///
+/// - void Function(): 0:onTap, 1:onDoubleTap, 2:onLongPress, 3:onSecondaryTap, 4:onTapCancel, 5:onSecondaryTapCancel
+/// - void Function(TapUpDetails): 0:onTapUp, 1:onSecondaryTapUp
+/// - void Function(TapDownDetails): 0:onTapDown, 1:onSecondaryTapDown
+/// - void Function(bool): 0:onHover, 1:onHighlightChanged, 2:onFocusChange
+///
+/// child: Widget
+/// mouseCursor: MouseCursor
+/// highlightShape: BoxShape
+/// radius: double
+/// borderRadius: BorderRadius
+/// customBorder: ShapeBorder
+/// overlayColor: MaterialStateProperty<Color?>
+/// splashFactory: InteractiveInkFeatureFactory
+/// statesController: MaterialStatesController
+/// ```
+const InkResponsed = Variadic(inkResponsed) as dynamic;
+
+/// Returns a `InkWell`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// bool: 0:enableFeedback, 1:excludeFromSemantics, 2:canRequestFocus, 3:autofocus
+/// Color: 0:focusColor, 1:hoverColor, 2:highlightColor, 3:splashColor
+///
+/// - void Function(): 0:onTap, 1:onDoubleTap, 2:onLongPress, 3:onSecondaryTap, 4:onTapCancel, 5:onSecondaryTapCancel
+/// - void Function(TapUpDetails): 0:onTapUp, 1:onSecondaryTapUp
+/// - void Function(TapDownDetails): 0:onTapDown, 1:onSecondaryTapDown
+/// - void Function(bool): 0:onHover, 1:onHighlightChanged, 2:onFocusChange
+///
+/// child: Widget
+/// mouseCursor: MouseCursor
+/// radius: double
+/// borderRadius: BorderRadius
+/// customBorder: ShapeBorder
+/// overlayColor: MaterialStateProperty<Color?>
+/// splashFactory: InteractiveInkFeatureFactory
+/// statesController: MaterialStatesController
+/// ```
+const InkWelld = Variadic(inkWelld) as dynamic;
+
+/// Returns a `AnimatedAlign`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: alignment:AlignmentGeometry
+/// required: duration:Duration
+///
+/// double|int: 0:widthFactor, 1:heightFactor
+///
+/// - onEnd: void Function()
+///
+/// child: Widget
+/// curve: Curve
+/// ```
+const AnimatedAlignd = Variadic(animatedAlignd) as dynamic;
+
+/// Returns a `DecoratedBoxTransition`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: child:Widget
+/// required: decoration:Animation<Decoration>
+///
+/// position: DecorationPosition
+/// ```
+const DecoratedBoxTransitiond = Variadic(decoratedBoxTransitiond) as dynamic;
+
+/// Returns a `Switch`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: value:bool
+/// required: onChanged:void Function(bool)
+///
+/// bool: 0:value, 1:autofocus
+/// Color: 0:activeColor, 1:focusColor, 2:hoverColor, 3:activeTrackColor, 4:inactiveTrackColor, 5:inactiveThumbColor
+/// ImageProvider<Object>: 0:activeThumbImage, 1:inactiveThumbImage
+/// MaterialStateProperty<Color?>: 0:thumbColor, 1:trackColor, 2:trackOutlineColor, 3:overlayColor
+///
+/// - void Function(bool): 0:onChanged, 1:onFocusChange
+/// - void Function(Object, StackTrace?): 0:onActiveThumbImageError, 1:onInactiveThumbImageError
+///
+/// trackOutlineWidth: MaterialStateProperty<double?>
+/// thumbIcon: MaterialStateProperty<Icon?>
+/// materialTapTargetSize: MaterialTapTargetSize
+/// dragStartBehavior: DragStartBehavior
+/// mouseCursor: MouseCursor
+/// splashRadius: double|int
+/// focusNode: FocusNode
+/// ```
+const Switchd = Variadic(switchd) as dynamic;
