@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 decoratedBoxTransitiond(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
-  int colori = 0;
-  int doublei = 0;
 
   for (final arg in argsList) {
     switch (arg) {

@@ -60,7 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
         AppBard(
           Theme.of(context).colorScheme.inversePrimary, // backgroundColor
           Text(widget.title), // title
-          title: Textd("named arguments precede positional ones", 20, const Color.fromARGB(255, 33, 211, 71)),
+          title: Textd("named arguments precede positional ones", 20,
+              const Color.fromARGB(255, 33, 211, 71)),
           TabBard(myTabs),
         ),
         TabBarViewd(
@@ -75,7 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 Textd("text TextStyle", Theme.of(context).textTheme.bodyLarge),
-                Textd("Styled TextD", Textd(18.5, FontWeight.w300, Colors.orange)),
+                Textd("Styled TextD",
+                    Textd(18.5, FontWeight.w300, Colors.orange)),
                 Textd("Styled TextD2", 18.5, backgroundColor: Colors.amber),
                 Textd(
                   "TextD", // text
@@ -102,9 +104,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Rowd(
                   MainAxisAlignment.center,
-                  Containerd(35, 35, Colors.red, BoxShape.circle, Borderd(3, Colors.redAccent)),
-                  Containerd(Colors.yellow, BoxShape.circle, 35, 35, Borderd(3, Colors.yellowAccent)),
-                  Containerd(35, 35, Borderd(3, Colors.greenAccent), Colors.green, BoxShape.circle),
+                  Containerd(35, 35, Colors.red, BoxShape.circle,
+                      Borderd(3, Colors.redAccent)),
+                  Containerd(Colors.yellow, BoxShape.circle, 35, 35,
+                      Borderd(3, Colors.yellowAccent)),
+                  Containerd(35, 35, Borderd(3, Colors.greenAccent),
+                      Colors.green, BoxShape.circle),
                 ),
                 Containerd(
                   Paddingd(
@@ -131,7 +136,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     5,
                     const Offset(0, 3),
                   ),
-                  borderRadius: BorderRadius.circular(10.5), // named arg precedes
+                  borderRadius:
+                      BorderRadius.circular(10.5), // named arg precedes
                   // named decoration precedes
                   decoration: BoxDecorationd(
                     LinearGradientd(
@@ -153,8 +159,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextSpand(
                     'This\n',
                     Textd(25, Colors.red, FontWeight.bold),
-                    TextSpand('is link\n', Textd(20, Colors.blue, TextDecoration.underline)),
-                    TextSpand('text.\n', Textd(Colors.yellow, FontStyle.italic)),
+                    TextSpand('is link\n',
+                        Textd(20, Colors.blue, TextDecoration.underline)),
+                    TextSpand(
+                        'text.\n', Textd(Colors.yellow, FontStyle.italic)),
                     TextSpand('bold\n', Textd(Colors.purple, FontWeight.bold)),
                   ),
                 ), // RichTextd
@@ -171,7 +179,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Alignment.center,
                 Containerd(80, 80, Colors.blue, BoxShape.circle),
                 Containerd(60, 60, Colors.yellow, BoxShape.circle),
-                LimitedBoxd(30, 30, Containerd(50, 50, Colors.red, BoxShape.circle)),
+                LimitedBoxd(
+                    30, 30, Containerd(50, 50, Colors.red, BoxShape.circle)),
               ),
               Stackd(
                 Containerd(50, 50, color: Colors.white),

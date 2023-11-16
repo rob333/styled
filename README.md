@@ -368,20 +368,21 @@ With ***Mixin*** of Decoration:
 <li> AnimatedAlignd
 <li> DecoratedBoxTransitiond
 <li> Switchd
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
+<li> NotificationListenerd
+<li> Chipd
+<li> InputChipd
+<li> ChoiceChipd
+<li> FilterChipd
+<li> ActionChipd
+<li> PopupMenuItemd
+<li> PopupMenuDividerd
+<li> CheckedPopupMenuItemd
+<li> ScrollConfigurationd
+<li> Radiod
+<li> RadioListTiled
+<li> NestedScrollViewd
+<li> SliverOverlapAbsorberd
+<li> SliverOverlapInjectord
 <li> 
 </ul>
 </td>
@@ -424,8 +425,8 @@ With ***Mixin*** of Decoration:
 <li> ImageFilter.matrix
 <li> LayoutBuilder
 <li> LongPressDraggable
-<li> NotificationListener
 <li> Positioned.*
+<li> PopupMenuButton
 <li> RadioListTile
 <li> ReorderableListView
 <li> ReorderableListView.builder

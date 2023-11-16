@@ -58,6 +58,18 @@ import 'widgets/layout/tabled.dart';
 import 'widgets/layout/unconstrained_boxd.dart';
 import 'widgets/layout/vertical_dividerd.dart';
 import 'widgets/layout/wrapd.dart';
+import 'widgets/controls/popup_menu_dividerd.dart';
+import 'widgets/controls/scroll_configurationd.dart';
+import 'widgets/controls/nested_scroll_viewd.dart';
+import 'widgets/controls/sliver_overlap_absorberd.dart';
+import 'widgets/controls/sliver_overlap_injectord.dart';
+import 'widgets/controls/popup_menu_itemd.dart';
+import 'widgets/controls/checked_popup_menu_itemd.dart';
+import 'widgets/controls/chipd.dart';
+import 'widgets/controls/input_chipd.dart';
+import 'widgets/controls/filter_chipd.dart';
+import 'widgets/controls/choice_chipd.dart';
+import 'widgets/controls/action_chipd.dart';
 import 'widgets/controls/absorb_pointerd.dart';
 import 'widgets/controls/actionsd.dart';
 import 'widgets/controls/alert_dialog_adaptived.dart';
@@ -85,6 +97,8 @@ import 'widgets/controls/circular_progress_indicatord.dart';
 import 'widgets/controls/color_filteredd.dart';
 import 'widgets/controls/constrained_boxd.dart';
 import 'widgets/controls/custom_scroll_viewd.dart';
+import 'widgets/controls/radio_list_tiled.dart';
+import 'widgets/controls/radiod.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/decorated_box_transitiond.dart';
 import 'widgets/controls/decorated_sliverd.dart';
@@ -117,6 +131,7 @@ import 'widgets/controls/mouse_regiond.dart';
 import 'widgets/controls/navigation_bard.dart';
 import 'widgets/controls/navigation_destinationd.dart';
 import 'widgets/controls/navigation_drawerd.dart';
+import 'widgets/controls/notification_listenerd.dart';
 import 'widgets/controls/offstaged.dart';
 import 'widgets/controls/outlined_button_icond.dart';
 import 'widgets/controls/outlined_buttond.dart';
@@ -357,7 +372,8 @@ const FloatingActionButtond = Variadic(floatingactionbuttond) as dynamic;
 /// extendedTextStyle: TextStyle
 /// heroTag: Object
 /// ```
-const FloatingActionButtonExtendedd = Variadic(floatingActionButtonExtendedd) as dynamic;
+const FloatingActionButtonExtendedd =
+    Variadic(floatingActionButtonExtendedd) as dynamic;
 
 /// Returns a `AppBar`.
 ///
@@ -1735,7 +1751,8 @@ const AnimatedCrossFaded = Variadic(animatedCrossFaded) as dynamic;
 /// snapAnimationDuration: Duration
 /// controller: DraggableScrollableController
 /// ```
-const DraggableScrollableSheetd = Variadic(draggableScrollableSheetd) as dynamic;
+const DraggableScrollableSheetd =
+    Variadic(draggableScrollableSheetd) as dynamic;
 
 /// Returns a `ColorFiltered`.
 ///
@@ -2047,7 +2064,8 @@ const Builderd = Variadic(builderd) as dynamic;
 /// valueColor: Animation<Color?>
 /// strokeCap: StrokeCap
 /// ```
-const CircularProgressIndicatord = Variadic(circularProgressIndicatord) as dynamic;
+const CircularProgressIndicatord =
+    Variadic(circularProgressIndicatord) as dynamic;
 
 /// Returns a `LinearProgressIndicator`.
 ///
@@ -2725,7 +2743,8 @@ const NavigationRaild = Variadic(navigationRaild) as dynamic;
 /// padding: EdgeInsetsGeometry
 /// disabled: bool
 /// ```
-const NavigationRailDestinationd = Variadic(navigationRailDestinationd) as dynamic;
+const NavigationRailDestinationd =
+    Variadic(navigationRailDestinationd) as dynamic;
 
 /// Returns a `NavigationBar`.
 ///
@@ -3482,3 +3501,286 @@ const DecoratedBoxTransitiond = Variadic(decoratedBoxTransitiond) as dynamic;
 /// focusNode: FocusNode
 /// ```
 const Switchd = Variadic(switchd) as dynamic;
+
+/// Returns a `NotificationListener`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: child:Widget
+///
+/// - onNotification: bool Function(dynamic)
+/// ```
+const NotificationListenerd = Variadic(notificationListenerd) as dynamic;
+
+/// Returns a `Chip`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: label:Widget
+///
+/// Widget: 0:label, 1:avatar, 2:deleteIcon
+/// EdgeInsetsGeometry: 0:padding, 1:labelPadding
+/// Color: 0:backgroundColor, 1:surfaceTintColor, 2:deleteIconColor, 3:shadowColor
+/// bool: 0:autofocus, 1:useDeleteButtonTooltip
+///
+/// - onDelete: void Function()
+///
+/// labelStyle: TextStyle
+/// deleteButtonTooltipMessage: String
+/// side: BorderSide
+/// shape: OutlinedBorder
+/// clipBehavior: Clip
+/// focusNode: FocusNode
+/// color: MaterialStateProperty<Color?>
+/// visualDensity: VisualDensity
+/// materialTapTargetSize: MaterialTapTargetSize
+/// elevation: double|int
+/// iconTheme: IconThemeData
+/// ```
+const Chipd = Variadic(chipd) as dynamic;
+
+/// Returns a `InputChip`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: label:Widget
+///
+/// Widget: 0:label, 1:avatar, 2:deleteIcon
+/// EdgeInsetsGeometry: 0:padding, 1:labelPadding
+/// double|int: 0:elevation, 1:pressElevation
+/// String: 0:tooltip, 1:deleteButtonTooltipMessage
+/// Color: 0:backgroundColor, 1:surfaceTintColor, 2:deleteIconColor, 3:shadowColor 4:selectedColor, 5:disabledColor, 6:selectedShadowColor, 7:checkmarkColor
+/// bool: 0:selected, 1:isEnabled, 2:autofocus, 3:showCheckmark, 4:useDeleteButtonTooltip
+///
+/// - void Function(): 0:onPressed, 1:onDelete
+///
+/// - onSelected: void Function(bool)
+///
+/// labelStyle: TextStyle
+/// deleteButtonTooltipMessage: String
+/// side: BorderSide
+/// shape: OutlinedBorder
+/// clipBehavior: Clip
+/// focusNode: FocusNode
+/// color: MaterialStateProperty<Color?>
+/// visualDensity: VisualDensity
+/// materialTapTargetSize: MaterialTapTargetSize
+/// iconTheme: IconThemeData
+/// avatarBorder: ShapeBorder
+/// ```
+const InputChipd = Variadic(inputChipd) as dynamic;
+
+/// Returns a `ChoiceChip`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: label:Widget
+/// required: selected:bool
+///
+/// Widget: 0:label, 1:avatar
+/// EdgeInsetsGeometry: 0:padding, 1:labelPadding
+/// double|int: 0:elevation, 1:pressElevation
+/// Color: 0:backgroundColor, 1:surfaceTintColor, 2:shadowColor, 3:selectedColor, 4:disabledColor, 5:selectedShadowColor, 6:checkmarkColor
+/// bool: 0:selected, 1:autofocus, 2:showCheckmark
+///
+/// - onSelected: void Function(bool)
+///
+/// labelStyle: TextStyle
+/// tooltip: String
+/// side: BorderSide
+/// shape: OutlinedBorder
+/// clipBehavior: Clip
+/// focusNode: FocusNode
+/// color: MaterialStateProperty<Color?>
+/// visualDensity: VisualDensity
+/// materialTapTargetSize: MaterialTapTargetSize
+/// iconTheme: IconThemeData
+/// avatarBorder: ShapeBorder
+/// ```
+const ChoiceChipd = Variadic(choiceChipd) as dynamic;
+
+/// Returns a `FilterChip`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: label:Widget
+/// required: onSelected:void Function(bool)
+///
+/// Widget: 0:label, 1:avatar
+/// EdgeInsetsGeometry: 0:padding, 1:labelPadding
+/// double|int: 0:elevation, 1:pressElevation
+/// Color: 0:backgroundColor, 1:surfaceTintColor, 2:shadowColor, 3:selectedColor, 4:disabledColor, 5:selectedShadowColor, 6:checkmarkColor
+/// bool: 0:selected, 1:autofocus, 2:showCheckmark
+///
+/// labelStyle: TextStyle
+/// tooltip: String
+/// side: BorderSide
+/// shape: OutlinedBorder
+/// clipBehavior: Clip
+/// focusNode: FocusNode
+/// color: MaterialStateProperty<Color?>
+/// visualDensity: VisualDensity
+/// materialTapTargetSize: MaterialTapTargetSize
+/// iconTheme: IconThemeData
+/// avatarBorder: ShapeBorder
+/// ```
+const FilterChipd = Variadic(filterChipd) as dynamic;
+
+/// Returns a `ActionChip`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: label:Widget
+///
+/// Widget: 0:label, 1:avatar
+/// EdgeInsetsGeometry: 0:padding, 1:labelPadding
+/// double|int: 0:elevation, 1:pressElevation
+/// Color: 0:backgroundColor, 1:surfaceTintColor, 2:disabledColor, 3:shadowColor
+///
+/// - onPressed: void Function()
+///
+/// autoFocus: bool
+/// labelStyle: TextStyle
+/// tooltip: String
+/// side: BorderSide
+/// shape: OutlinedBorder
+/// clipBehavior: Clip
+/// focusNode: FocusNode
+/// color: MaterialStateProperty<Color?>
+/// visualDensity: VisualDensity
+/// materialTapTargetSize: MaterialTapTargetSize
+/// iconTheme: IconThemeData
+/// ```
+const ActionChipd = Variadic(actionChipd) as dynamic;
+
+/// Returns a `PopupMenuItem`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: child:Widget
+///
+/// - onTap: void Function()
+///
+/// enabled: bool
+/// height: double
+/// padding: EdgeInsets
+/// textStyle: TextStyle
+/// labelTextStyle: MaterialStateProperty<TextStyle?>
+/// mouseCursor: MouseCursor
+/// value: Object
+/// ```
+const PopupMenuItemd = Variadic(popupMenuItemd) as dynamic;
+
+/// Returns a `PopupMenuDivider`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// height: double|int
+/// ```
+const PopupMenuDividerd = Variadic(popupMenuDividerd) as dynamic;
+
+/// Returns a `CheckedPopupMenuItem`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// bool: 0:checked, 1:enabled
+///
+/// child: Widget
+/// padding: EdgeInsets
+/// height: double|int
+/// mouseCursor: MouseCursor
+/// value: Object
+/// ```
+const CheckedPopupMenuItemd = Variadic(checkedPopupMenuItemd) as dynamic;
+
+/// Returns a `ScrollConfiguration`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: behavior:ScrollBehavior
+/// required: child:Widget
+/// ```
+const ScrollConfigurationd = Variadic(scrollConfigurationd) as dynamic;
+
+/// Returns a `Radio`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: Object: 0:value, 1:groupValue
+/// required: onChanged:void Function(dynamic)
+///
+/// bool: 0:toggleable, 1:autofocus
+/// MaterialStateProperty<Color?>: 0:fillColor, 1:overlayColor
+/// Color: 0:activeColor, 1:focusColor, 2:hoverColor
+///
+/// mouseCursor: MouseCursor
+/// splashRadius: double|int
+/// materialTapTargetSize: MaterialTapTargetSize
+/// visualDensity: VisualDensity
+/// focusNode: FocusNode
+/// ```
+const Radiod = Variadic(radiod) as dynamic;
+
+/// Returns a `RadioListTile`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: Object: 0:value, 1:groupValue
+/// required: onChanged:void Function(dynamic)
+///
+/// bool: 0:toggleable, 1:autofocus, 2:selected, 3:isThreeLine, 4:dense, 5:enableFeedback
+/// MaterialStateProperty<Color?>: 0:fillColor, 1:overlayColor
+/// Color: 0:activeColor, 1:hoverColor, 2:tileColor, 3:selectedTileColor
+/// Widget: 0:title, 1:subtitle, 2:secondary
+///
+/// - onFocusChange: void Function(bool)
+///
+/// mouseCursor: MouseCursor
+/// splashRadius: double|int
+/// materialTapTargetSize: MaterialTapTargetSize
+/// controlAffinity: ListTileControlAffinity
+/// contentPadding: EdgeInsetsGeometry,
+/// shape: ShapeBorder
+/// visualDensity: VisualDensity
+/// focusNode: FocusNode
+/// ```
+const RadioListTiled = Variadic(radioListTiled) as dynamic;
+
+/// Returns a `NestedScrollView`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: body:Widget
+/// required: headerSliverBuilder:List<Widget> Function(BuildContext, bool)
+///
+/// bool: 0:reverse, 1:floatHeaderSlivers
+///
+/// controller: ScrollController
+/// scrollDirection: Axis
+/// physics: ScrollPhysics
+/// dragStartBehavior: DragStartBehavior
+/// clipBehavior: Clip
+/// restorationId: String
+/// scrollBehavior: ScrollBehavior
+/// ```
+const NestedScrollViewd = Variadic(nestedScrollViewd) as dynamic;
+
+/// Returns a `SliverOverlapAbsorber`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: handle:SliverOverlapAbsorberHandle
+///
+/// sliver: Widget
+/// ```
+const SliverOverlapAbsorberd = Variadic(sliverOverlapAbsorberd) as dynamic;
+
+/// Returns a `SliverOverlapInjector`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: handle:SliverOverlapAbsorberHandle
+///
+/// sliver: Widget
+/// ```
+const SliverOverlapInjectord = Variadic(sliverOverlapInjectord) as dynamic;
