@@ -193,197 +193,201 @@ With ***Mixin*** of Decoration:
 <table><tr>
 <td>
 <ul> <!--style="column-count:5"-->
-<li> Textd
-<li> Centerd
-<li> Rowd
-<li> Columnd
-<li> Scaffoldd (partial)
+<li> AboutDialogd
+<li> AbsorbPointerd
+<li> ActionChipd
+<li> Actionsd
+<li> AlertDialogAdaptived
+<li> AlertDialogd
+<li> Alignd
+<li> AnimatedAlignd
+<li> AnimatedBuilder
+<li> AnimatedContainerd
+<li> AnimatedCrossFaded
+<li> AnimatedIcond
+<li> AnimatedListd
+<li> AnimatedOpacityd
+<li> AnimatedPaddingd
+<li> AnimatedPositionedd
+<li> AnimatedSwitcherd
 <li> AppBard (partial)
-<li> FloatingActionButtond
-<li> Drawerd
-<li> SafeAread
+<li> AspectRatiod
+<li> Autocomplete
+<li> BackdropFilterd
+<li> Badged
+<li> Baselined
+<li> BottomAppBard
+<li> BottomNavigationBarItemd
+<li> BottomNavigationBard
+<li> Builderd
+<li> CallbackShortcutsd
+<li> Cardd
+<li> Centerd
+<li> CheckboxListTiled (partial)
+<li> CheckedPopupMenuItemd
+<li> Chipd
+<li> ChoiceChipd
+<li> CircleAvatard
+<li> CircularProgressIndicatord
+<li> ClipOvald
+<li> ClipPathd
+<li> ClipRRectd
+<li> ClipRectd
+<li> ColorFilteredd
+<li> Columnd
+<li> ConstrainedBoxd
 <li> Containerd
-<li> Paddingd
-<li> Stackd
-<li> Positionedd
+<li> CustomMultiChildLayoutd
+<li> CustomPaintd
+<li> CustomScrollViewd
+<li> CustomSingleChildLayoutd
+<li> DataTabled (partial)
+<li> DecoratedBoxTransitiond
+<li> DecoratedSliverd
+<li> DefaultTabControllerd
+<li> DefaultTextStyled
+<li> Dismissibled
+<li> Dividerd
+<li> DragTarget
+<li> Draggable (partial)
+<li> DraggableScrollableSheetd
+<li> Drawerd
 <li> ElevatedButtond
-<li> SizedBoxd
-<li> LimitedBoxd
-<li> Spacerd
-<li> ListViewd (partial)
-<li> ListTiled (partial)
-<li> GridViewd
+<li> ExcludeSemanticsd
+<li> Expandedd
+<li> ExpansionPanelListd
+</ul>
+</td><td>
+<ul>
+<li> ExpansionPaneld
+<li> FilledButtonTonalIcond
+<li> FilledButtond
+<li> FilterChipd
+<li> FittedBoxd
+<li> Flexd
+<li> Flexibled
+<li> Flipd as Transform.flip
+<li> FloatingActionButtonExtendedd
+<li> FloatingActionButtond
+<li> Flowd
+<li> FocusableActionDetectord
+<li> Focusd
+<li> FormField
+<li> Formd
+<li> FractionalTranslationd
+<li> FractionallySizedBoxd
 <li> GridTiled
 <li> GridViewBuilderd
 <li> GridViewCountd
 <li> GridViewCustomd
 <li> GridViewExtentd
-<li> Expandedd
-<li> Wrapd
-<li> Opacityd
-<li> PageViewd (partial)
-<li> Tabled
-<li> TableRowd
-<li> SliverAppBard (partial)
+<li> GridViewd
+<li> HeroModed
 <li> Herod
-<li> CustomPaintd
-<li> ToolTipd
 <li> IconButtond
-<li> FittedBoxd
-<li> AbsorbPointerd
-<li> Rotated as Transform.rotate
-<li> Scaled as Transform.scale
-<li> Translated as Transform.translate
-<li> Flipd as Transform.flip
-<li> BackdropFilterd
-<li> Alignd
-<li> Dismissibled
-<li> Flexibled
-<li> AspectRatiod
-<li> Placeholderd
-<li> RichTextd
-<li> IndexedStackd
-</ul>
-</td><td>
-<ul>
-<li> AnimatedContainerd
-<li> AnimatedBuilder
-<li> AnimatedListd
-<li> AnimatedIcond
-<li> AnimatedSwitcherd
-<li> AnimatedPositionedd
-<li> AnimatedPaddingd
-<li> AnimatedOpacityd
-<li> AnimatedCrossFaded
-<li> Semanticsd (partial)
-<li> ConstrainedBoxd
-<li> FractionallySizedBoxd
-<li> SingleChildScrollViewd
-<li> DataTabled (partial)
-<li> Sliderd
-<li> SliderAdaptived as Slider.adaptive
-<li> RangeSliderd
-<li> AlertDialogd
-<li> AlertDialogAdaptived as AlertDialog.adaptive
-<li> DraggableScrollableSheetd
-<li> ColorFilteredd
-<li> ToggleButtonsd
-<li> Imaged
+<li> IgnorePointerd
 <li> ImageAssetd
 <li> ImageFiled
 <li> ImageMemoryd
 <li> ImageNetworkd
-<li> DefaultTabControllerd
-<li> TabBard
-<li> Tabd
-<li> TabBarViewd
-<li> SnackBard
-<li> ListWheelScrollViewd
-<li> ShaderMaskd
-<li> Builderd
-<li> CircularProgressIndicatord
-<li> LinearProgressIndicatord
-<li> Dividerd
-<li> IgnorePointerd
-<li> CheckboxListTiled (partial)
-<li> AboutDialogd
-<li> Flexd
+<li> Imaged
+<li> IndexedStackd
+<li> InkResponsed
+<li> InkWelld
+<li> Inkd
+<li> InputChipd
 <li> InteractiveViewerd
-<li> ClipRRectd
-<li> ClipOvald
-<li> ClipPathd
-<li> ClipRectd
+<li> IntrinsicHeightd
+<li> IntrinsicWidthd
+<li> LimitedBoxd
+<li> LinearProgressIndicatord
+<li> ListBodyd
+<li> ListTiled (partial)
 <li> ListViewBuilderd
-<li> ListViewSeparatedd
 <li> ListViewCustomd
+<li> ListViewSeparatedd
+<li> ListViewd (partial)
+<li> ListWheelScrollViewd
+<li> MergeSemanticsd
+<li> MouseRegiond
+<li> NavigationBard
+<li> NavigationDestinationd
+<li> NavigationDrawerd
+<li> NavigationRailDestinationd
+<li> NavigationRaild
+<li> NestedScrollViewd
+<li> NotificationListenerd
+<li> Offstaged
+<li> Opacityd
+<li> OutlinedButtonIcond
+<li> OutlinedButtond
+<li> OverflowBoxd
 </ul>
 </td><td>
 <ul>
-<li> SwitchListTiled
+<li> Paddingd
+<li> PageViewd (partial)
 <li> PhysicalModeld
-<li> RotatedBoxd
-<li> ExpansionPaneld
-<li> ExpansionPanelListd
-<li> Scrollbard
-<li> MouseRegiond
-<li> HeroModed
-<li> RefreshIndicatord
-<li> Flowd
-<li> TabPageSelectord
-<li> Baselined
-<li> RepaintBoundaryd
-<li> TextButtond
-<li> TextButtonIcond
-<li> OutlinedButtond
-<li> OutlinedButtonIcond
-<li> Shortcutsd
-<li> Actionsd
-<li> Focusd
-<li> FocusableActionDetectord
-<li> VerticalDividerd
-<li> NavigationRaild
-<li> NavigationRailDestinationd
-<li> NavigationBard
-<li> NavigationDrawerd
-<li> NavigationDestinationd
-<li> BottomNavigationBard
-<li> BottomNavigationBarItemd
-<li> BottomAppBard
-<li> RawMagnifierd
-<li> CallbackShortcutsd
-<li> MergeSemanticsd
-<li> ExcludeSemanticsd
+<li> Placeholderd
+<li> PopScoped
+<li> PopupMenuDividerd
+<li> PopupMenuItemd
+<li> Positionedd
+<li> RadioListTiled
+<li> Radiod
+<li> RangeSliderd
 <li> RawImaged
 <li> RawKeyboardListenerd
-<li> Formd
-<li> PopScoped
-<li> Scrollabled
-<li> CustomScrollViewd
-<li> Cardd
-<li> CustomSingleChildLayoutd
-<li> IntrinsicHeightd
-<li> IntrinsicWidthd
-<li> Offstaged
-<li> SliverOffstaged
-<li> Visibilityd
-<li> OverflowBoxd
-<li> UnconstrainedBoxd
-<li> SizedOverflowBoxd
-<li> CustomMultiChildLayoutd
+<li> RawMagnifierd
 <li> RawMaterialButtond
-<li> ListBodyd
-<li> FilledButtond
-<li> FilledButtonTonalIcond
-<li> FloatingActionButtonExtendedd
-<li> SegmentedButtond
-<li> Badged
-<li> SliverPaddingd
-<li> DecoratedSliverd
-<li> FractionalTranslationd
-<li> DefaultTextStyled
-<li> CircleAvatard
-<li> Inkd
-<li> InkResponsed
-<li> InkWelld
-<li> AnimatedAlignd
-<li> DecoratedBoxTransitiond
-<li> Switchd
-<li> NotificationListenerd
-<li> Chipd
-<li> InputChipd
-<li> ChoiceChipd
-<li> FilterChipd
-<li> ActionChipd
-<li> PopupMenuItemd
-<li> PopupMenuDividerd
-<li> CheckedPopupMenuItemd
+<li> RefreshIndicatord
+<li> RepaintBoundaryd
+<li> RichTextd
+<li> Rotated as Transform.rotate
+<li> RotatedBoxd
+<li> Rowd
+<li> SafeAread
+<li> Scaffoldd (partial)
+<li> Scaled as Transform.scale
 <li> ScrollConfigurationd
-<li> Radiod
-<li> RadioListTiled
-<li> NestedScrollViewd
+<li> Scrollabled
+<li> Scrollbard
+<li> SegmentedButtond
+<li> Semanticsd (partial)
+<li> ShaderMaskd
+<li> Shortcutsd
+<li> SingleChildScrollViewd
+<li> SizedBoxd
+<li> SizedOverflowBoxd
+<li> SliderAdaptived as Slider.adaptive
+<li> Sliderd
+<li> SliverAppBard (partial)
+<li> SliverOffstaged
 <li> SliverOverlapAbsorberd
 <li> SliverOverlapInjectord
-<li> 
+<li> SliverPaddingd
+<li> SnackBard
+<li> Spacerd
+<li> Stackd
+<li> SwitchListTiled
+<li> Switchd
+<li> TabBarViewd
+<li> TabBard
+<li> TabPageSelectord
+<li> Tabd
+<li> TableRowd
+<li> Tabled
+<li> TextButtonIcond
+<li> TextButtond
+<li> Textd
+<li> TickerMode
+<li> ToggleButtonsd
+<li> ToolTipd
+<li> Translated as Transform.translate
+<li> UnconstrainedBoxd
+<li> VerticalDividerd
+<li> Visibilityd
+<li> Wrapd
 </ul>
 </td>
 </tr></table>
@@ -409,11 +413,6 @@ With ***Mixin*** of Decoration:
 <li> LinearGradientd
 <li> MagnifierDecorationd
 <li> TextSpand
-<li> Autocomplete
-<li> DragTarget
-<li> Draggable (partial)
-<li> FormField
-<li> TickerMode
 </ul>
 
 ### Known not supported:
