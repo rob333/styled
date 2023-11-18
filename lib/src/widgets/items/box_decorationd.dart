@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 boxDecorationd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
-  final List<BoxShadow> boxShadow = [];
+  final List<BoxShadow> boxShadows = [];
 
   for (final arg in argsList) {
     switch (arg) {
@@ -16,9 +16,9 @@ boxDecorationd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#borderRadius] = arg;
       case List<BoxShadow> arg:
         // argsMap[#boxShadow] = arg;
-        boxShadow.addAll(arg);
+        boxShadows.addAll(arg);
       case BoxShadow arg:
-        boxShadow.add(arg);
+        boxShadows.add(arg);
       case Gradient arg:
         argsMap[#gradient] = arg;
       case BlendMode arg:
@@ -28,13 +28,19 @@ boxDecorationd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  if (boxShadow.isNotEmpty) {
-    argsMap[#boxShadow] = boxShadow;
-  }
-
   // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge boxShadows
+    final list = argsMap[#boxShadow] as List<BoxShadow>?;
+    if (list != null) {
+      boxShadows.addAll(list);
+    }
+  }
+
+  if (boxShadows.isNotEmpty) {
+    argsMap[#boxShadow] = boxShadows;
   }
 
   return Function.apply(BoxDecoration.new, [], argsMap);

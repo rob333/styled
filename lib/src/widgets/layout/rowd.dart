@@ -33,9 +33,9 @@ rowd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     argsMap.addAll(origArgsMap);
 
     // merge widgets
-    final chMap = argsMap[#children] as List<Widget>?;
-    if (chMap != null) {
-      widgets.addAll(chMap);
+    final list = argsMap[#children] as List<Widget>?;
+    if (list != null) {
+      widgets.addAll(list);
     }
   }
   argsMap[#children] = widgets;

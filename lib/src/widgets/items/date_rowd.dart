@@ -26,12 +26,18 @@ dataRowd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#cells] = cells;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge cells
+    final list = argsMap[#cells] as List<DataCell>?;
+    if (list != null) {
+      cells.addAll(list);
+    }
   }
+
+  argsMap[#cells] = cells;
 
   return Function.apply(DataRow.new, [], argsMap);
 }

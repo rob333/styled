@@ -81,12 +81,18 @@ tabBard(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#tabs] = tabs;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge tabs
+    final list = argsMap[#tabs] as List<Widget>?;
+    if (list != null) {
+      tabs.addAll(list);
+    }
   }
+
+  argsMap[#tabs] = tabs;
 
   //* required:
   assert(() {

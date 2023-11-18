@@ -61,12 +61,18 @@ listViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#children] = widgets;
-
   // named args(origArgsMap) precedes positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge widgets
+    final list = argsMap[#children] as List<Widget>?;
+    if (list != null) {
+      widgets.addAll(list);
+    }
   }
+
+  argsMap[#children] = widgets;
 
   return Function.apply(ListView.new, [], argsMap);
 }

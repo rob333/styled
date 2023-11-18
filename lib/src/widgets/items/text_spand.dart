@@ -37,12 +37,18 @@ textSpand(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#children] = spans;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge spans
+    final list = argsMap[#children] as List<InlineSpan>?;
+    if (list != null) {
+      spans.addAll(list);
+    }
   }
+
+  argsMap[#children] = spans;
 
   return Function.apply(TextSpan.new, [], argsMap);
 }

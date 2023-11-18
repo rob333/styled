@@ -59,12 +59,18 @@ customScrollViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#slivers] = widgets;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge widgets
+    final list = argsMap[#slivers] as List<Widget>?;
+    if (list != null) {
+      widgets.addAll(list);
+    }
   }
+
+  argsMap[#slivers] = widgets;
 
   return Function.apply(CustomScrollView.new, [], argsMap);
 }

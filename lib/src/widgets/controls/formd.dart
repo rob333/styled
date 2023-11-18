@@ -9,6 +9,10 @@ formd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#key] = arg;
       case Widget arg:
         argsMap[#child] = arg;
+      case void Function(bool) arg:
+        argsMap[#onPopInvoked] = arg;
+      case bool arg:
+        argsMap[#canPop] = arg;
       case Future<bool> Function() arg:
         argsMap[#onWillPop] = arg;
       case void Function() arg:

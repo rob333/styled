@@ -46,9 +46,6 @@ tableRowd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  //* handle children:Widget
-  argsMap[#children] = widgets;
-
   mergeDecoration(argsMap, origArgsMap, decoMap, decoInList, boxShadow, null);
 
   //* handled in `mergeDecoration`
@@ -56,6 +53,14 @@ tableRowd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   // if (origArgsMap.isNotEmpty) {
   //   argsMap.addAll(origArgsMap);
   // }
+
+  // merge widgets
+  final list = argsMap[#children] as List<Widget>?;
+  if (list != null) {
+    widgets.addAll(list);
+  }
+
+  argsMap[#children] = widgets;
 
   return Function.apply(TableRow.new, [], argsMap);
 }

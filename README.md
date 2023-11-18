@@ -336,7 +336,7 @@ With ***Mixin*** of Decoration:
 <li> RawImaged
 <li> RawKeyboardListenerd
 <li> Formd
-<li> WillPopScoped
+<li> PopScoped
 <li> Scrollabled
 <li> CustomScrollViewd
 <li> Cardd
@@ -409,25 +409,25 @@ With ***Mixin*** of Decoration:
 <li> LinearGradientd
 <li> MagnifierDecorationd
 <li> TextSpand
+<li> Autocomplete
+<li> DragTarget
+<li> Draggable (partial)
+<li> FormField
+<li> TickerMode
 </ul>
 
 ### Known not supported:
 <ul>
-<li> Autocomplete
 <li> ButtonStyle
 <li> Cupertino widgets
-<li> DragTarget
-<li> Draggable
 <li> DropdownButton
-<li> FormField
 <li> FutureBuilder
 <li> GestureDetector
 <li> ImageFilter.matrix
 <li> LayoutBuilder
 <li> LongPressDraggable
-<li> Positioned.*
 <li> PopupMenuButton
-<li> RadioListTile
+<li> Positioned.*
 <li> ReorderableListView
 <li> ReorderableListView.builder
 <li> SelectableText
@@ -436,7 +436,6 @@ With ***Mixin*** of Decoration:
 <li> TableBorder
 <li> TextField
 <li> TextFormField
-<li> TickerMode
 <li> TweenAnimationBuilder
 <li> ValueListenableBuilder 
 </ul>

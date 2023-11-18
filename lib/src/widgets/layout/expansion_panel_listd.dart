@@ -45,12 +45,18 @@ expansionPanelListd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#children] = panels;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge panels
+    final list = argsMap[#children] as List<ExpansionPanel>?;
+    if (list != null) {
+      panels.addAll(list);
+    }
   }
+
+  argsMap[#children] = panels;
 
   return Function.apply(ExpansionPanelList.new, [], argsMap);
 }

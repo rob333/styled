@@ -71,17 +71,24 @@ listWheelScrollViewd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#children] = widgets;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge widgets
+    final list = argsMap[#children] as List<Widget>?;
+    if (list != null) {
+      widgets.addAll(list);
+    }
   }
+
+  argsMap[#children] = widgets;
 
   //* required:
   assert(() {
     if (argsMap[#children] == null || argsMap[#itemExtent]) {
-      throw FlutterError("ListWheelScrollViewd requires `children:List<Widget>` and `itemExtent:double`");
+      throw FlutterError(
+          "ListWheelScrollViewd requires `children:List<Widget>` and `itemExtent:double`");
     }
     return true;
   }());

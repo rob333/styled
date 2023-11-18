@@ -20,12 +20,18 @@ magnifierDecorationd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#shadows] = shadows;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge shadows
+    final list = argsMap[#shadows] as List<BoxShadow>?;
+    if (list != null) {
+      shadows.addAll(list);
+    }
   }
+
+  argsMap[#shadows] = shadows;
 
   return Function.apply(MagnifierDecoration.new, [], argsMap);
 }

@@ -28,12 +28,18 @@ tabled(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#children] = rows;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge widgets
+    final list = argsMap[#children] as List<TableRow>?;
+    if (list != null) {
+      rows.addAll(list);
+    }
   }
+
+  argsMap[#children] = rows;
 
   return Function.apply(Table.new, [], argsMap);
 }

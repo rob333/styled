@@ -46,12 +46,18 @@ navigationBard(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#destinations] = widgets;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge destinations
+    final list = argsMap[#destinations] as List<Widget>?;
+    if (list != null) {
+      widgets.addAll(list);
+    }
   }
+
+  argsMap[#destinations] = widgets;
 
   return Function.apply(NavigationBar.new, [], argsMap);
 }

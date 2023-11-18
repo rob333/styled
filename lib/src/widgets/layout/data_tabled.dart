@@ -94,15 +94,26 @@ dataTabled(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#columns] = columns;
-  argsMap[#rows] = rows;
-
   mergeDecoration(argsMap, origArgsMap, decoMap, decoInList, boxShadow, null);
+
+  // merge columns and rows
+  final list = argsMap[#columns] as List<DataColumn>?;
+  if (list != null) {
+    columns.addAll(list);
+  }
+  argsMap[#columns] = columns;
+
+  final map2 = argsMap[#rows] as List<DataRow>?;
+  if (map2 != null) {
+    rows.addAll(map2);
+  }
+  argsMap[#rows] = rows;
 
   //* required:
   assert(() {
     if (argsMap[#columns] == null || argsMap[#rows] == null) {
-      throw FlutterError("DataTabled requires `columns:List<DataColumn>` and `rows:List<DataRow>`");
+      throw FlutterError(
+          "DataTabled requires `columns:List<DataColumn>` and `rows:List<DataRow>`");
     }
     return true;
   }());

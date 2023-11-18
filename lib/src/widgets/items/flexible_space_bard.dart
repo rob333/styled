@@ -34,12 +34,18 @@ flexibleSpaceBard(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#stretchModes] = stretchModes;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge stretchModes
+    final list = argsMap[#stretchModes] as List<StretchMode>?;
+    if (list != null) {
+      stretchModes.addAll(list);
+    }
   }
+
+  argsMap[#stretchModes] = stretchModes;
 
   return Function.apply(FlexibleSpaceBar.new, [], argsMap);
 }

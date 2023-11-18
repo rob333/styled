@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-willPopScoped(List argsList, Map<Symbol, dynamic> origArgsMap) {
+popScoped(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
 
   for (final arg in argsList) {
@@ -9,8 +9,10 @@ willPopScoped(List argsList, Map<Symbol, dynamic> origArgsMap) {
         argsMap[#key] = arg;
       case Widget arg:
         argsMap[#child] = arg;
-      case Future<bool> Function() arg:
-        argsMap[#onWillPop] = arg;
+      case void Function(bool) arg:
+        argsMap[#onPopInvoked] = arg;
+      case bool arg:
+        argsMap[#canPop] = arg;
     }
   }
 
@@ -21,11 +23,11 @@ willPopScoped(List argsList, Map<Symbol, dynamic> origArgsMap) {
 
   //* required:
   assert(() {
-    if (argsMap[#child] == null || argsMap[#onWillPop] == null) {
-      throw FlutterError("WillPopScoped requires `child:Widget` and `onWillPop:Future<bool> Function()`");
+    if (argsMap[#child] == null) {
+      throw FlutterError("PopScoped requires `child:Widget`");
     }
     return true;
   }());
 
-  return Function.apply(WillPopScope.new, [], argsMap);
+  return Function.apply(PopScope.new, [], argsMap);
 }

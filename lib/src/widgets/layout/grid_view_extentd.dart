@@ -65,17 +65,24 @@ gridViewExtentd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#children] = widgets;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge widgets
+    final list = argsMap[#children] as List<Widget>?;
+    if (list != null) {
+      widgets.addAll(list);
+    }
   }
+
+  argsMap[#children] = widgets;
 
   //* required:
   assert(() {
     if (argsMap[#maxCrossAxisExtent] == null) {
-      throw FlutterError("GridViewExtentd requires `maxCrossAxisExtent:double`");
+      throw FlutterError(
+          "GridViewExtentd requires `maxCrossAxisExtent:double`");
     }
     return true;
   }());

@@ -78,12 +78,18 @@ bottomNavigationBard(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#items] = items;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge items
+    final list = argsMap[#items] as List<BottomNavigationBarItem>?;
+    if (list != null) {
+      items.addAll(list);
+    }
   }
+
+  argsMap[#items] = items;
 
   return Function.apply(BottomNavigationBar.new, [], argsMap);
 }

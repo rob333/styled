@@ -58,19 +58,8 @@ import 'widgets/layout/tabled.dart';
 import 'widgets/layout/unconstrained_boxd.dart';
 import 'widgets/layout/vertical_dividerd.dart';
 import 'widgets/layout/wrapd.dart';
-import 'widgets/controls/popup_menu_dividerd.dart';
-import 'widgets/controls/scroll_configurationd.dart';
-import 'widgets/controls/nested_scroll_viewd.dart';
-import 'widgets/controls/sliver_overlap_absorberd.dart';
-import 'widgets/controls/sliver_overlap_injectord.dart';
-import 'widgets/controls/popup_menu_itemd.dart';
-import 'widgets/controls/checked_popup_menu_itemd.dart';
-import 'widgets/controls/chipd.dart';
-import 'widgets/controls/input_chipd.dart';
-import 'widgets/controls/filter_chipd.dart';
-import 'widgets/controls/choice_chipd.dart';
-import 'widgets/controls/action_chipd.dart';
 import 'widgets/controls/absorb_pointerd.dart';
+import 'widgets/controls/action_chipd.dart';
 import 'widgets/controls/actionsd.dart';
 import 'widgets/controls/alert_dialog_adaptived.dart';
 import 'widgets/controls/alert_dialogd.dart';
@@ -85,6 +74,7 @@ import 'widgets/controls/animated_paddingd.dart';
 import 'widgets/controls/animated_positionedd.dart';
 import 'widgets/controls/animated_switcherd.dart';
 import 'widgets/controls/aspect_ratiod.dart';
+import 'widgets/controls/autocompleted.dart';
 import 'widgets/controls/backdrop_filterd.dart';
 import 'widgets/controls/badged.dart';
 import 'widgets/controls/baselined.dart';
@@ -93,28 +83,33 @@ import 'widgets/controls/bottom_navigation_bard.dart';
 import 'widgets/controls/builderd.dart';
 import 'widgets/controls/callback_shortcutsd.dart';
 import 'widgets/controls/checkbox_list_tiled.dart';
+import 'widgets/controls/checked_popup_menu_itemd.dart';
+import 'widgets/controls/chipd.dart';
+import 'widgets/controls/choice_chipd.dart';
 import 'widgets/controls/circular_progress_indicatord.dart';
 import 'widgets/controls/color_filteredd.dart';
 import 'widgets/controls/constrained_boxd.dart';
 import 'widgets/controls/custom_scroll_viewd.dart';
-import 'widgets/controls/radio_list_tiled.dart';
-import 'widgets/controls/radiod.dart';
 import 'widgets/controls/cutom_paintd.dart';
 import 'widgets/controls/decorated_box_transitiond.dart';
 import 'widgets/controls/decorated_sliverd.dart';
 import 'widgets/controls/default_tab_controllerd.dart';
 import 'widgets/controls/default_text_styled.dart';
 import 'widgets/controls/dismissibled.dart';
+import 'widgets/controls/drag_targetd.dart';
 import 'widgets/controls/draggable_scrollable_sheetd.dart';
+import 'widgets/controls/draggabled.dart';
 import 'widgets/controls/elevated_buttond.dart';
 import 'widgets/controls/exclude_semanticsd.dart';
 import 'widgets/controls/filled_button_tonal_icond.dart';
 import 'widgets/controls/filled_button_tonald.dart';
 import 'widgets/controls/filled_buttond.dart';
+import 'widgets/controls/filter_chipd.dart';
 import 'widgets/controls/flexibled.dart';
 import 'widgets/controls/flipd.dart';
 import 'widgets/controls/focusable_action_detectord.dart';
 import 'widgets/controls/focusd.dart';
+import 'widgets/controls/form_fieldd.dart';
 import 'widgets/controls/formd.dart';
 import 'widgets/controls/fractional_translationd.dart';
 import 'widgets/controls/hero_moded.dart';
@@ -123,6 +118,7 @@ import 'widgets/controls/ignore_pointerd.dart';
 import 'widgets/controls/ink_responsed.dart';
 import 'widgets/controls/ink_welld.dart';
 import 'widgets/controls/inkd.dart';
+import 'widgets/controls/input_chipd.dart';
 import 'widgets/controls/interactive_viewerd.dart';
 import 'widgets/controls/linear_progress_indicatord.dart';
 import 'widgets/controls/list_wheel_scroll_viewd.dart';
@@ -131,11 +127,17 @@ import 'widgets/controls/mouse_regiond.dart';
 import 'widgets/controls/navigation_bard.dart';
 import 'widgets/controls/navigation_destinationd.dart';
 import 'widgets/controls/navigation_drawerd.dart';
+import 'widgets/controls/nested_scroll_viewd.dart';
 import 'widgets/controls/notification_listenerd.dart';
 import 'widgets/controls/offstaged.dart';
 import 'widgets/controls/outlined_button_icond.dart';
 import 'widgets/controls/outlined_buttond.dart';
 import 'widgets/controls/page_viewd.dart';
+import 'widgets/controls/pop_scoped.dart';
+import 'widgets/controls/popup_menu_dividerd.dart';
+import 'widgets/controls/popup_menu_itemd.dart';
+import 'widgets/controls/radio_list_tiled.dart';
+import 'widgets/controls/radiod.dart';
 import 'widgets/controls/range_sliderd.dart';
 import 'widgets/controls/raw_keyboard_listenerd.dart';
 import 'widgets/controls/raw_magnifierd.dart';
@@ -145,6 +147,7 @@ import 'widgets/controls/repaint_boundaryd.dart';
 import 'widgets/controls/rich_textd.dart';
 import 'widgets/controls/rotated.dart';
 import 'widgets/controls/scaled.dart';
+import 'widgets/controls/scroll_configurationd.dart';
 import 'widgets/controls/scrollabled.dart';
 import 'widgets/controls/scrollbard.dart';
 import 'widgets/controls/segmented_buttond.dart';
@@ -155,17 +158,19 @@ import 'widgets/controls/single_child_scroll_viewd.dart';
 import 'widgets/controls/slider_adaptived.dart';
 import 'widgets/controls/sliderd.dart';
 import 'widgets/controls/sliver_offstaged.dart';
+import 'widgets/controls/sliver_overlap_absorberd.dart';
+import 'widgets/controls/sliver_overlap_injectord.dart';
 import 'widgets/controls/switch_list_tiled.dart';
 import 'widgets/controls/switchd.dart';
 import 'widgets/controls/tab_page_selectord.dart';
 import 'widgets/controls/text_button_icond.dart';
 import 'widgets/controls/text_buttond.dart';
+import 'widgets/controls/ticker_moded.dart';
 import 'widgets/controls/toggle_buttonsd.dart';
 import 'widgets/controls/tooltipd.dart';
 import 'widgets/controls/transformd.dart';
 import 'widgets/controls/translated.dart';
 import 'widgets/controls/visibilityd.dart';
-import 'widgets/controls/will_pop_scoped.dart';
 import 'widgets/items/about_dialogd.dart';
 import 'widgets/items/app_bard.dart';
 import 'widgets/items/border_sided.dart';
@@ -1275,8 +1280,6 @@ const Placeholderd = Variadic(placeholderd) as dynamic;
 /// ```
 /// int: 0:fontSize, 1:letterSpacing, 2:wordSpacing
 ///
-/// Widget will be added into children:List<Widget>
-///
 /// text: InlineSpan
 /// textAlign: TextAlign
 /// textDirection: TextDirection
@@ -1299,7 +1302,7 @@ const RichTextd = Variadic(richTextd) as dynamic;
 /// ```
 /// string: 0:text, 1:semanticsLabel
 ///
-/// InlineSpan(TextSpan) will be added into children:List<InlineSpan>
+/// InlineSpan will be added into children:List<InlineSpan>
 ///
 /// - onEnter: void Function(PointerEnterEvent)
 /// - onExit: void Function(PointerExitEvent)
@@ -2939,21 +2942,26 @@ const RawKeyboardListenerd = Variadic(rawKeyboardListenerd) as dynamic;
 /// ```
 /// required: child:Widget
 ///
+/// - onPopInvoked: void Function(bool)
 /// - onWillPop: Future<bool> Function()
 /// - onChanged: void Function()
 ///
+/// canPop: bool
 /// autovalidateMode: AutovalidateMode
 /// ```
 const Formd = Variadic(formd) as dynamic;
 
-/// Returns a `WillPopScope`.
+/// Returns a `PopScope`.
 ///
 /// **`supported positional arguments:`**
 /// ```
 /// required: child:Widget
-/// required: onWillPop:Future<bool> Function()
+///
+/// - onPopInvoked: void Function(bool)
+///
+/// canPop: bool
 /// ```
-const WillPopScoped = Variadic(willPopScoped) as dynamic;
+const PopScoped = Variadic(popScoped) as dynamic;
 
 /// Returns a `Scrollable`.
 ///
@@ -3784,3 +3792,87 @@ const SliverOverlapAbsorberd = Variadic(sliverOverlapAbsorberd) as dynamic;
 /// sliver: Widget
 /// ```
 const SliverOverlapInjectord = Variadic(sliverOverlapInjectord) as dynamic;
+
+/// Returns a `Autocomplete`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: optionsBuilder:FutureOr<Iterable<T>> Function(TextEditingValue)
+///
+/// - optionsBuilder: FutureOr<Iterable> Function(TextEditingValue)
+/// - displayStringForOption: String Function(dynamic)
+/// - fieldViewBuilder: Widget Function(BuildContext, TextEditingController, FocusNode, void Function())
+/// - onSelected: void Function(dynamic)
+/// - optionsViewBuilder: Widget Function(BuildContext, void Function(dynamic), Iterable)
+///
+/// optionsMaxHeight: double|int
+/// optionsViewOpenDirection: OptionsViewOpenDirection
+/// initialValue: TextEditingValue
+/// ```
+const Autocompleted = Variadic(autocompleted) as dynamic;
+
+/// Returns a `DragTarget`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: builder: Widget Function(BuildContext, List, List<dynamic>)
+///
+/// - bool Function(dynamic): 0:onWillAccept, 1:onAccept, 2:onLeave
+/// - bool Function(DragTargetDetails): 0:onWillAcceptWithDetails, 1:onAcceptWithDetails, 2:onMove
+///
+/// hitTestBehavior: HitTestBehavior
+/// ```
+const DragTargetd = Variadic(dragTargetd) as dynamic;
+
+/// Returns a `Draggable`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: child:Widget:0
+/// required: feedback:Widget:1
+///
+/// Widget: 0:child, 1:feedback, 2:childWhenDragging
+/// axis: 0:axis, 1:affinity
+/// bool: 0:ignoringFeedbackSemantics, 1:ignoringFeedbackPointer, 2:rootOverlay
+///
+/// data: Object
+/// hitTestBehavior: HitTestBehavior
+/// ```
+/// ---
+/// ***`not supported:`***
+/// ```
+/// dragAnchorStrategy: Offset Function(Draggable<Object>, BuildContext, Offset)
+/// onDragStarted: void Function()
+/// onDragUpdate: void Function(DragUpdateDetails)
+/// onDraggableCanceled: void Function(Velocity, Offset)
+/// onDragEnd: void Function(DraggableDetails)
+/// onDragCompleted: void Function()
+/// allowedButtonsFilter: bool Function(int)
+/// ```
+const Draggabled = Variadic(draggabled) as dynamic;
+
+/// Returns a `FormField`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: builder: Widget Function(FormFieldState)
+///
+/// - builder:  Widget Function(FormFieldState)
+/// - validator: String Function(dynamic)
+/// - onSaved: void Function(dynamic)
+///
+/// enabled: bool
+/// autovalidateMode: AutovalidateMode
+/// restorationId: String
+/// initialValue: Object
+/// ```
+const FormFieldd = Variadic(formFieldd) as dynamic;
+
+/// Returns a `TickerMode`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: child:Widget
+/// required: enabled:bool
+/// ```
+const TickerModed = Variadic(tickerModed) as dynamic;

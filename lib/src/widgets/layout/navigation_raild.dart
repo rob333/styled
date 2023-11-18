@@ -76,15 +76,24 @@ navigationRaild(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge destinations
+    final list = argsMap[#destinations] as List<NavigationRailDestination>?;
+    if (list != null) {
+      destinations.addAll(list);
+    }
   }
+
+  argsMap[#destinations] = destinations;
 
   //* required:
   assert(() {
     if (argsMap[#selectedIndex] == null || argsMap[#destinations] == null) {
-      throw FlutterError("NavigationRaild requires `selectedIndex:int` and `destinations:List<NavigationRailDestination>`");
+      throw FlutterError(
+          "NavigationRaild requires `selectedIndex:int` and `destinations:List<NavigationRailDestination>`");
     }
     return true;
   }());

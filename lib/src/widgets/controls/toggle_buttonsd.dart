@@ -10,11 +10,11 @@ toggleButtonsd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case Widget arg:
-        widgets.add(arg);
       case List<Widget> arg:
         // argsMap[#children] = arg;
         widgets.addAll(arg);
+      case Widget arg:
+        widgets.add(arg);
       case List<bool> arg:
         argsMap[#isSelected] = arg;
       case void Function(int) arg:
@@ -70,18 +70,30 @@ toggleButtonsd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#children] = widgets;
-  argsMap[#focusNodes] = focusnodes;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge widgets
+    final list = argsMap[#children] as List<Widget>?;
+    if (list != null) {
+      widgets.addAll(list);
+    }
+
+    final map2 = argsMap[#focusNodes] as List<FocusNode>?;
+    if (map2 != null) {
+      focusnodes.addAll(map2);
+    }
   }
+
+  argsMap[#children] = widgets;
+  argsMap[#focusNodes] = focusnodes;
 
   //* required:
   assert(() {
     if (argsMap[#children] == null || argsMap[#isSelected] == null) {
-      throw FlutterError("ToggleButtonsd requires `children:Widget` and `isSelected:bool");
+      throw FlutterError(
+          "ToggleButtonsd requires `children:Widget` and `isSelected:bool");
     }
     return true;
   }());

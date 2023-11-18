@@ -20,10 +20,18 @@ flowd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge widgets
+    final list = argsMap[#children] as List<Widget>?;
+    if (list != null) {
+      widgets.addAll(list);
+    }
   }
+
+  argsMap[#children] = widgets;
 
   //* required:
   assert(() {

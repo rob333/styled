@@ -4,7 +4,7 @@ linearGradientd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
   int aligni = 0;
   final List<Color> colors = <Color>[];
-  final List<double> doubles = <double>[];
+  final List<double> stops = <double>[];
 
   for (final arg in argsList) {
     switch (arg) {
@@ -22,9 +22,9 @@ linearGradientd(List argsList, Map<Symbol, dynamic> origArgsMap) {
         colors.add(arg);
       case List<double> arg:
         // argsMap[#stops] = arg;
-        doubles.addAll(arg);
+        stops.addAll(arg);
       case double arg:
-        doubles.add(arg);
+        stops.add(arg);
       case TileMode arg:
         argsMap[#tileMode] = arg;
       case GradientTransform arg:
@@ -32,17 +32,29 @@ linearGradientd(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
+  // named args(origArgsMap) precede positional ones
+  if (origArgsMap.isNotEmpty) {
+    argsMap.addAll(origArgsMap);
+
+    // merge colors
+    final list = argsMap[#colors] as List<Color>?;
+    if (list != null) {
+      colors.addAll(list);
+    }
+
+    // merge stops
+    final map2 = argsMap[#stops] as List<double>?;
+    if (map2 != null) {
+      stops.addAll(map2);
+    }
+  }
+
   // required arguments
   argsMap[#colors] = colors;
 
   // optional arguments
-  if (doubles.isNotEmpty) {
-    argsMap[#stops] = doubles;
-  }
-
-  // named args(origArgsMap) precede positional ones
-  if (origArgsMap.isNotEmpty) {
-    argsMap.addAll(origArgsMap);
+  if (stops.isNotEmpty) {
+    argsMap[#stops] = stops;
   }
 
   return Function.apply(LinearGradient.new, [], argsMap);

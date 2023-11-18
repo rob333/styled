@@ -34,17 +34,24 @@ segmentedButtond(List argsList, Map<Symbol, dynamic> origArgsMap) {
     }
   }
 
-  argsMap[#segments] = segments;
-
-  // named args(origArgsMap) precedes positional ones
+  // named args(origArgsMap) precede positional ones
   if (origArgsMap.isNotEmpty) {
     argsMap.addAll(origArgsMap);
+
+    // merge segments
+    final list = argsMap[#segments] as List<ButtonSegment>?;
+    if (list != null) {
+      segments.addAll(list);
+    }
   }
+
+  argsMap[#segments] = segments;
 
   //* required:
   assert(() {
     if (argsMap[#segments] == null || argsMap[#selected] == null) {
-      throw FlutterError("SegmentedButtond requires `segments:List<ButtonSegment>` and `selected:Set`");
+      throw FlutterError(
+          "SegmentedButtond requires `segments:List<ButtonSegment>` and `selected:Set`");
     }
     return true;
   }());
