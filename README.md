@@ -11,7 +11,7 @@
 
 ## Features
 
-A declarative UI tool for flutter to simplify the creation of widgets, pass arguments in positional without order.
+A declarative UI tool for Flutter to simplify the creation of widgets, passing arguments in positional and without orders.
 
 
 <table border="0" align="center" cellpadding="0" cellspacing="0">
