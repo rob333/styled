@@ -43,7 +43,8 @@ animatedAlignd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   //* required:
   assert(() {
     if (argsMap[#alignment] == null || argsMap[#duration] == null) {
-      throw FlutterError("AnimatedAlignd requires `alignment:AlignmentGeometry` and `duration:Duration`");
+      throw FlutterError(
+          "AnimatedAlignd requires `alignment:AlignmentGeometry` and `duration:Duration`");
     }
     return true;
   }());

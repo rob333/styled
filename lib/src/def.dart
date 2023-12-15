@@ -132,6 +132,7 @@ import 'widgets/controls/notification_listenerd.dart';
 import 'widgets/controls/offstaged.dart';
 import 'widgets/controls/outlined_button_icond.dart';
 import 'widgets/controls/outlined_buttond.dart';
+import 'widgets/controls/overlay_portald.dart';
 import 'widgets/controls/page_viewd.dart';
 import 'widgets/controls/pop_scoped.dart';
 import 'widgets/controls/popup_menu_dividerd.dart';
@@ -3876,3 +3877,14 @@ const FormFieldd = Variadic(formFieldd) as dynamic;
 /// required: enabled:bool
 /// ```
 const TickerModed = Variadic(tickerModed) as dynamic;
+
+/// Returns a `OverlayPortal`.
+///
+/// **`supported positional arguments:`**
+/// ```
+/// required: controller:OverlayPortalController
+/// required: overlayChildBuilder:Widget Function(BuildContext)
+///
+/// child: Widget
+/// ```
+const OverlayPortald = Variadic(overlayPortald) as dynamic;

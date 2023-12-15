@@ -57,6 +57,15 @@
       "    argsMap.addAll(origArgsMap);",
       "  }",
       "",
+      "  //* required:",
+      "  assert(() {",
+      "    if (argsMap[#child] == null || argsMap[#actions] == null) {",
+      "      throw FlutterError(",
+      "          \"Actionsd requires `child:Widget` and `actions:Map<Type, Action<Intent>>`\");",
+      "    }",
+      "    return true;",
+      "  }());"
+      "",
       "  return Function.apply(${1:Widget}.new, [], argsMap);",
       "}",
       ""

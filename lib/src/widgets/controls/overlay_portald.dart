@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-actionsd(List argsList, Map<Symbol, dynamic> origArgsMap) {
+overlayPortald(List argsList, Map<Symbol, dynamic> origArgsMap) {
   final argsMap = <Symbol, dynamic>{};
 
   for (final arg in argsList) {
     switch (arg) {
       case Key arg:
         argsMap[#key] = arg;
-      case Map<Type, Action<Intent>> arg:
-        argsMap[#actions] = arg;
+      case OverlayPortalController arg:
+        argsMap[#controller] = arg;
+      case Widget Function(BuildContext) arg:
+        argsMap[#overlayChildBuilder] = arg;
       case Widget arg:
         argsMap[#child] = arg;
-      case ActionDispatcher arg:
-        argsMap[#dispatcher] = arg;
     }
   }
 
@@ -25,10 +25,10 @@ actionsd(List argsList, Map<Symbol, dynamic> origArgsMap) {
   assert(() {
     if (argsMap[#child] == null || argsMap[#actions] == null) {
       throw FlutterError(
-          "Actionsd requires `child:Widget` and `actions:Map<Type, Action<Intent>>`");
+          "Actionsd requires `controller:OverlayPortalController` and `overlayChildBuilder:Widget Function(BuildContext)`");
     }
     return true;
   }());
 
-  return Function.apply(Actions.new, [], argsMap);
+  return Function.apply(OverlayPortal.new, [], argsMap);
 }
